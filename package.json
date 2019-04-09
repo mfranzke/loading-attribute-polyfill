@@ -1,0 +1,28 @@
+{
+  "name": "loading-attribute-polyfill",
+  "version": "0.0.1",
+  "description": "TBD",
+  "main": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mfranzke/loading-attribute-polyfill.git"
+  },
+  "author": "Maximilian Franzke",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "keywords": [
+    "lazy loading",
+    "img",
+    "iframe",
+    "polyfill",
+    "web development",
+    "javascript",
+    "html"
+  ],
+  "bugs": {
+    "url": "https://github.com/mfranzke/loading-attribute-polyfill/issues"
+  },
+  "homepage": "https://github.com/mfranzke/loading-attribute-polyfill",
+  "dependencies": {},
+  "devDependencies": {}
+}
