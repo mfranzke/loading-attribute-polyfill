@@ -1,2 +1,2 @@
-# loading attribute polyfill
+# loading="lazy" attribute polyfill
 *Work in progress*
