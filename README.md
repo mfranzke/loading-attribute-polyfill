@@ -1,6 +1,7 @@
 # loading="lazy" attribute polyfill
 *Work in progress*
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/16c763924903400ca82cfed618a82a6e)](https://app.codacy.com/app/mfranzke_2/loading-attribute-polyfill?utm_source=github.com&utm_medium=referral&utm_content=mfranzke/loading-attribute-polyfill&utm_campaign=Badge_Grade_Dashboard)
 [![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg 'license badge')](https://opensource.org/licenses/mit-license.php)
 [![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg 'npm version')][npm]
 [![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg 'Count of total downloads – NPM')][npm]
