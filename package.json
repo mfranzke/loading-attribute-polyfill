@@ -23,6 +23,18 @@
     "url": "https://github.com/mfranzke/loading-attribute-polyfill/issues"
   },
   "homepage": "https://github.com/mfranzke/loading-attribute-polyfill",
-  "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "prettier": "1.17.0",
+    "xo": "^0.24.0"
+  },
+  "scripts": {
+    "test": "xo"
+  },
+  "xo": {
+    "envs": [
+      "browser"
+    ],
+    "prettier": true,
+    "esnext": false
+  }
 }

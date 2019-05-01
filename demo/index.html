@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>loading-attribute polyfill demo</title>
+
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<style>
+			/*** These are demo related styles ***/
+			body {
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+					Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+					"Segoe UI Symbol";
+			}
+			/* Defing the header to be two screen sizes height at minimum to ensure that the images within the main section are being loaded lazy */
+			body > header {
+				min-height: 200vh;
+			}
+			body > header img,
+			body > header iframe,
+			body > main img,
+			body > main iframe {
+				margin: 1rem;
+			}
+		</style>
+		<script
+			type="text/javascript"
+			src="../loading-attribute-polyfill.js"
+		></script>
+	</head>
+	<body>
+		<header>
+			<!-- Regular images with loading="lazy" attribute provided for testing -->
+			<noscript class="loading-lazy">
+				<img
+					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+					loading="lazy"
+					alt=".."
+					width="250"
+					height="150"
+				/>
+			</noscript>
+
+			<img
+				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22eager%22"
+				loading="eager"
+				alt=".."
+				width="250"
+				height="150"
+			/>
+
+			<img
+				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22auto%22"
+				loading="auto"
+				alt=".."
+				width="250"
+				height="150"
+			/>
+
+			<picture>
+				<source
+					media="(min-width: 40em)"
+					srcset="
+						https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+1x_br_loading%3D%22lazy%22 1x,
+						https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+2x_br_loading%3D%22lazy%22 2x
+					"
+				/>
+				<source
+					srcset="
+						https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_1x_br_loading%3D%22lazy%22 1x,
+						https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_2x_br_loading%3D%22lazy%22 2x
+					"
+				/>
+				<noscript class="loading-lazy">
+					<img
+						src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_img+src_br_loading%3D%22lazy%22"
+						loading="lazy"
+						alt=".."
+						width="250"
+						height="150"
+					/>
+				</noscript>
+			</picture>
+
+			<noscript class="loading-lazy">
+				<img
+					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+					srcset="
+						https://imgplaceholder.com/1024x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+1024w_br_loading%3D%22lazy%22 1024w,
+						https://imgplaceholder.com/640x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+640w_br_loading%3D%22lazy%22    640w,
+						https://imgplaceholder.com/320x320/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+320w_br_loading%3D%22lazy%22    320w
+					"
+					sizes="(min-width: 36em) 33.3vw, 100vw"
+					alt="A rad wolf"
+					loading="lazy"
+				/>
+			</noscript>
+
+			<!-- Regular iframe with loading="lazy" attribute provided for testing -->
+			<noscript class="loading-lazy">
+				<iframe
+					src="https://player.vimeo.com/video/87110435"
+					width="320"
+					height="180"
+					loading="lazy"
+				></iframe>
+			</noscript>
+		</header>
+
+		<main>
+			<!-- Lazy-load an offscreen image when the user scrolls near it -->
+			<noscript class="loading-lazy">
+				<img
+					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_src_br_loading%3D%22lazy%22"
+					loading="lazy"
+					alt=".."
+					width="250"
+					height="150"
+				/>
+			</noscript>
+
+			<!-- Load an image right away instead of lazy-loading -->
+			<img
+				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22eager%22"
+				loading="eager"
+				alt=".."
+				width="250"
+				height="150"
+			/>
+
+			<!-- Browser decides whether or not to lazy-load the image -->
+			<img
+				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22auto%22"
+				loading="auto"
+				alt=".."
+				width="250"
+				height="150"
+			/>
+
+			<!-- Lazy-load images in <picture>. <img> is the one driving image
+			loading so <picture> and srcset fall off of that -->
+			<picture>
+				<source
+					media="(min-width: 40em)"
+					srcset="
+						https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+1x_br_loading%3D%22lazy%22 1x,
+						https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+2x_br_loading%3D%22lazy%22 2x
+					"
+				/>
+				<source
+					srcset="
+						https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_1x_br_loading%3D%22lazy%22 1x,
+						https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_2x_br_loading%3D%22lazy%22 2x
+					"
+				/>
+				<noscript class="loading-lazy">
+					<img
+						src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_img+src_br_loading%3D%22lazy%22"
+						loading="lazy"
+						alt=".."
+						width="250"
+						height="150"
+					/>
+				</noscript>
+			</picture>
+
+			<!-- Lazy-load an image that has srcset specified -->
+			<noscript class="loading-lazy">
+				<img
+					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_src_br_loading%3D%22lazy%22"
+					srcset="
+						https://imgplaceholder.com/1024x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_srcset+1024w_br_loading%3D%22lazy%22 1024w,
+						https://imgplaceholder.com/640x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_srcset+640w_br_loading%3D%22lazy%22    640w,
+						https://imgplaceholder.com/320x320/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_srcset+320w_br_loading%3D%22lazy%22    320w
+					"
+					sizes="(min-width: 36em) 33.3vw, 100vw"
+					alt="A rad wolf"
+					loading="lazy"
+				/>
+			</noscript>
+
+			<!-- Lazy-load an offscreen iframe when the user scrolls near it -->
+			<noscript class="loading-lazy">
+				<iframe
+					src="https://player.vimeo.com/video/20997150"
+					width="320"
+					height="180"
+					loading="lazy"
+				></iframe>
+			</noscript>
+		</main>
+	</body>
+</html>
