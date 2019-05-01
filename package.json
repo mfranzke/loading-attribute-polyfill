@@ -1,8 +1,8 @@
 {
   "name": "loading-attribute-polyfill",
-  "version": "0.1.0",
-  "description": "TBD",
-  "main": "README.md",
+  "version": "0.1.1",
+  "description": "A minimal and dependency-free vanilla JavaScript polyfill for the awesome loading='lazy'-attribute.",
+  "main": "loading-attribute-polyfill.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/mfranzke/loading-attribute-polyfill.git"
