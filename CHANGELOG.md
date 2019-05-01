@@ -7,20 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-  - Documentation
-  - Cross browser todos
-  - Tests
+- Documentation
+- Cross browser todos
+- Tests
 
 ## [0.1.1] - 2019-05-01
 
 ### Added
 
-  - CHANGELOG.md file
+- CHANGELOG.md file
 
 ## [0.1.0] - 2019-05-01
 
 ### Added
 
-  - Initial files
-  - npm and bower support
-  - code formatting and linting
+- Initial files
+- npm and bower support
+- code formatting and linting

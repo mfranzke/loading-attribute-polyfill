@@ -10,9 +10,9 @@
 
 This is a minimal and dependency-free vanilla JavaScript polyfill for the awesome loading="lazy"-attribute, that will be a huge improve for todays web performance challenges.
 
-  - Supports the standard loading="lazy" attribute
-  - Released under the MIT license
-  - Made in Germany
+- Supports the standard loading="lazy" attribute
+- Released under the MIT license
+- Made in Germany
 
 ## Features
 
@@ -22,8 +22,8 @@ This is a minimal and dependency-free vanilla JavaScript polyfill for the awesom
 
 The polyfill was designed with the following concepts kept in mind:
 
-  - dependency-free
-  - Using JavaScript with graceful degradation
+- dependency-free
+- Using JavaScript with graceful degradation
 
 ## Installation
 
@@ -44,6 +44,6 @@ See the polyfill in action either by downloading / forking this repo and have a 
 
 ## things to keep in mind
 
-  - The demo HTML code is meant to be simple
+- The demo HTML code is meant to be simple
 
 [npm]: https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM'
