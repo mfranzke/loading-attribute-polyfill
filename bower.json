@@ -1,0 +1,33 @@
+{
+	"name": "loading-attribute-polyfill",
+	"description": "A minimal and dependency-free vanilla JavaScript polyfill for the awesome loading='lazy'-attribute.",
+	"version": "0.0.1",
+	"homepage": "https://github.com/mfranzke/loading-attribute-polyfill",
+	"authors": [
+		{
+			"name": "Maximilian Franzke",
+			"url": "https://www.mfranzke.net/",
+			"email": "contact_mfr@nzke.net"
+		}
+	],
+	"keywords": [
+		"lazy loading",
+		"img",
+		"iframe",
+		"polyfill",
+		"web development",
+		"javascript",
+		"html"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "https://opensource.org/licenses/mit-license.php"
+		}
+	],
+	"ignore": [
+		"bower.json",
+		"demo/index.html",
+		"README.md"
+	]
+}
