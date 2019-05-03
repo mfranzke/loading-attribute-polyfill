@@ -1,7 +1,6 @@
 # loading="lazy" attribute polyfill
 *Work in progress*
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/16c763924903400ca82cfed618a82a6e)](https://app.codacy.com/app/mfranzke_2/loading-attribute-polyfill?utm_source=github.com&utm_medium=referral&utm_content=mfranzke/loading-attribute-polyfill&utm_campaign=Badge_Grade_Dashboard)
 [![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg 'license badge')](https://opensource.org/licenses/mit-license.php)
 [![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg 'npm version')][npm]
 [![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg 'Count of total downloads – NPM')][npm]
@@ -34,6 +33,82 @@ You may optionally load via NPM or Bower:
 
     $ npm install loading-attribute-polyfill
     $ bower install loading-attribute-polyfill
+
+Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a {{loading="lazy"}} attribute as well) by an `<iframe>` HTML tag:
+
+### Simple image
+
+```html
+<noscript class="loading-lazy">
+	<img
+		src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+		loading="lazy"
+		alt=".."
+		width="250"
+		height="150"
+	/>
+</noscript>
+```
+
+### Image wrapped in a picture tag
+
+```html
+<picture>
+	<source
+		media="(min-width: 40em)"
+		srcset="
+			https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+1x_br_loading%3D%22lazy%22 1x,
+			https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+2x_br_loading%3D%22lazy%22 2x
+		"
+	/>
+	<source
+		srcset="
+			https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_1x_br_loading%3D%22lazy%22 1x,
+			https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_2x_br_loading%3D%22lazy%22 2x
+		"
+	/>
+	<noscript class="loading-lazy">
+		<img
+			src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_img+src_br_loading%3D%22lazy%22"
+			loading="lazy"
+			alt=".."
+			width="250"
+			height="150"
+		/>
+	</noscript>
+</picture>
+```
+
+### Image with `srcset`
+
+```html
+<noscript class="loading-lazy">
+	<img
+		src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+		srcset="
+			https://imgplaceholder.com/1024x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+1024w_br_loading%3D%22lazy%22 1024w,
+			https://imgplaceholder.com/640x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+640w_br_loading%3D%22lazy%22    640w,
+			https://imgplaceholder.com/320x320/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+320w_br_loading%3D%22lazy%22    320w
+		"
+		sizes="(min-width: 36em) 33.3vw, 100vw"
+		alt="A rad wolf"
+		loading="lazy"
+	/>
+</noscript>
+```
+
+### Iframe
+
+```html
+<noscript class="loading-lazy">
+	<iframe
+		src="https://player.vimeo.com/video/87110435"
+		width="320"
+		height="180"
+		loading="lazy"
+	></iframe>
+</noscript>
+```
 
 ## API
 
