@@ -8,7 +8,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
-This is a minimal and dependency-free vanilla JavaScript polyfill for the awesome loading="lazy"-attribute, that will be a huge improve for todays web performance challenges.
+Fast and lightweight vanilla JavaScript polyfill for the native behaviour to load elements right before they enter the viewport. Provides graceful degradation, and is - not just thatfor - SEO friendly. Handles images with srcset and within picture, as well as iframes. loading="lazy" will be a huge improve for todays web performance challenges, so use and polyfill it today!
 
 - Supports the standard loading="lazy" attribute
 - Released under the MIT license
@@ -109,6 +109,14 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 	></iframe>
 </noscript>
 ```
+
+## Optional additional dependencies
+
+In case you'd like to support [older versions of Microsoft EDGE, Microsoft Internet Explorer 11 or Apple Safari up to 12.0](https://caniuse.com/#feat=intersectionobserver), you would could (conditionally) load an IntersectionObserver polyfill:
+
+https://www.npmjs.com/package/intersection-observer
+
+Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users]((https://caniuse.com/#feat=intersectionobserver)) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazyloading resource hints](https://caniuse.com/#feat=lazyload).
 
 ## API
 
