@@ -12,6 +12,23 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - Cross browser todos
 - Tests
 
+## [0.2.0] - 2019-05-22
+
+### Added
+
+- Changelog
+- Codacy integration and badge
+- Code examples
+- Optional additional dependencies section within the README
+- Optional polyfill for the demo page
+- "Conventional Commits" support as well as their badge - yeah !
+
+### Changed
+
+- Docs formatting
+- Some docs content enhancements
+- Internal namings within the JS file
+
 ## [0.1.1] - 2019-05-01
 
 ### Added
