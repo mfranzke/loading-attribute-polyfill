@@ -29,6 +29,12 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - Some docs content enhancements
 - Internal namings within the JS file
 
+## [0.1.2] - 2019-05-04
+
+### Added
+
+- Documentation
+
 ## [0.1.1] - 2019-05-01
 
 ### Added
