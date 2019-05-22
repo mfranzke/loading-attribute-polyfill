@@ -148,6 +148,7 @@
 	 */
 	function onIntersection(entries, observer) {
 		entries.forEach(function(entry) {
+			// Mitigation for EDGE lacking support of .isIntersecting until v15, compare to e.g. https://github.com/w3c/IntersectionObserver/issues/211#issuecomment-309144669
 			if (entry.intersectionRatio === 0) {
 				return;
 			}
