@@ -1,10 +1,11 @@
 # loading="lazy" attribute polyfill
-*Work in progress*
 
-[![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg 'license badge')](https://opensource.org/licenses/mit-license.php)
-[![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg 'npm version')][npm]
-[![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg 'Count of total downloads – NPM')][npm]
-[![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge 'Count of total downloads – jsDelivr')](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill 'loading-attribute polyfill – on jsDelivr')
+_Work in progress_
+
+[![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg "license badge")](https://opensource.org/licenses/mit-license.php)
+[![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg "npm version")][npm]
+[![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg "Count of total downloads – NPM")][npm]
+[![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge "Count of total downloads – jsDelivr")](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill "loading-attribute polyfill – on jsDelivr")
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 
@@ -16,7 +17,7 @@ Fast and lightweight vanilla JavaScript polyfill for the native behaviour to loa
 
 ## Features
 
-*TBD*
+_TBD_
 
 ## Core concepts
 
@@ -41,7 +42,7 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 ```html
 <noscript class="loading-lazy">
 	<img
-		src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+		src="simpleimage.jpg"
 		loading="lazy"
 		alt=".."
 		width="250"
@@ -57,19 +58,19 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 	<source
 		media="(min-width: 40em)"
 		srcset="
-			https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+1x_br_loading%3D%22lazy%22 1x,
-			https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+2x_br_loading%3D%22lazy%22 2x
+			simpleimage.huge.jpg 1x,
+			simpleimage.huge.2x.jpg 2x
 		"
 	/>
 	<source
 		srcset="
-			https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_1x_br_loading%3D%22lazy%22 1x,
-			https://imgplaceholder.com/500x500/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_2x_br_loading%3D%22lazy%22 2x
+			simpleimage.jpg 1x,
+			simpleimage.2x.jpg 2x
 		"
 	/>
 	<noscript class="loading-lazy">
 		<img
-			src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_img+src_br_loading%3D%22lazy%22"
+			src="simpleimage.jpg"
 			loading="lazy"
 			alt=".."
 			width="250"
@@ -84,11 +85,11 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 ```html
 <noscript class="loading-lazy">
 	<img
-		src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+		src="simpleimage.jpg"
 		srcset="
-			https://imgplaceholder.com/1024x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+1024w_br_loading%3D%22lazy%22 1024w,
-			https://imgplaceholder.com/640x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+640w_br_loading%3D%22lazy%22    640w,
-			https://imgplaceholder.com/320x320/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+320w_br_loading%3D%22lazy%22    320w
+			simpleimage.1024.jpg 1024w,
+			simpleimage.640.jpg   640w,
+			simpleimage.320.jpg   320w
 		"
 		sizes="(min-width: 36em) 33.3vw, 100vw"
 		alt="A rad wolf"
@@ -116,7 +117,7 @@ In case you'd like to support [older versions of Microsoft EDGE, Microsoft Inter
 
 https://www.npmjs.com/package/intersection-observer
 
-Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users]((https://caniuse.com/#feat=intersectionobserver)) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazyloading resource hints](https://caniuse.com/#feat=lazyload).
+Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users](<(https://caniuse.com/#feat=intersectionobserver)>) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazyloading resource hints](https://caniuse.com/#feat=lazyload).
 
 ## API
 
