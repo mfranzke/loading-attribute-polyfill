@@ -28,12 +28,12 @@
 	}
 
 	// On using a browser w/o requestAnimationFrame support (IE9, Opera Mini), just run the passed function
-	var requestanimationframe;
+	var rAFWrapper;
 
 	if ('requestAnimationFrame' in window) {
-		requestanimationframe = window.requestAnimationFrame;
+		rAFWrapper = window.requestAnimationFrame;
 	} else {
-		requestanimationframe = function(func) {
+		rAFWrapper = function(func) {
 			func();
 		};
 	}
@@ -225,10 +225,10 @@
 	// If the page has loaded already, run setup - if it hasn't, run as soon as it has.
 	// Use requestAnimationFrame as this will propably cause repaints
 	if (/comp|inter/.test(document.readyState)) {
-		requestanimationframe(prepareElements);
+		rAFWrapper(prepareElements);
 	} else if ('addEventListener' in document) {
 		document.addEventListener('DOMContentLoaded', function() {
-			requestanimationframe(prepareElements);
+			rAFWrapper(prepareElements);
 		});
 	} else {
 		document.attachEvent('onreadystatechange', function() {
