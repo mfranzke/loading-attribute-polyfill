@@ -36,6 +36,8 @@ You may optionally load via NPM or Bower:
     $ npm install loading-attribute-polyfill
     $ bower install loading-attribute-polyfill
 
+You could even load the polyfill asynchronously: https://jsbin.com/yitarajawe/edit?html,css
+
 Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a `loading="lazy"` attribute as well) by an `<iframe>` HTML tag:
 
 ### Simple image
