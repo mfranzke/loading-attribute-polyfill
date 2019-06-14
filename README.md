@@ -36,7 +36,7 @@ You may optionally load via NPM or Bower:
     $ npm install loading-attribute-polyfill
     $ bower install loading-attribute-polyfill
 
-You could even load the polyfill asynchronously: https://jsbin.com/yitarajawe/edit?html,css
+You could even load the polyfill asynchronously: <https://jsbin.com/yitarajawe/edit?html,css>
 
 Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a `loading="lazy"` attribute as well) by an `<iframe>` HTML tag:
 
@@ -118,7 +118,7 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 
 In case you'd like to support [older versions of Microsoft EDGE, Microsoft Internet Explorer 11 or Apple Safari up to 12.0](https://caniuse.com/#feat=intersectionobserver), you would could (conditionally) load an IntersectionObserver polyfill:
 
-https://www.npmjs.com/package/intersection-observer
+<https://www.npmjs.com/package/intersection-observer>
 
 Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users](<(https://caniuse.com/#feat=intersectionobserver)>) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazyloading resource hints](https://caniuse.com/#feat=lazyload).
 
