@@ -147,23 +147,22 @@
 				height="150"
 			/>
 
-			<!-- Lazy-load images in <picture>. <img> is the one driving image
-			loading so <picture> and srcset fall off of that -->
+			<!-- Lazy-load images in <picture> -->
 			<picture>
-				<source
-					media="(min-width: 40em)"
-					srcset="
-						https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+1x_br_loading%3D%22lazy%22 1x,
-						https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+2x_br_loading%3D%22lazy%22 2x
-					"
-				/>
-				<source
-					srcset="
-						https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_1x_br_loading%3D%22lazy%22 1x,
-						https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_2x_br_loading%3D%22lazy%22 2x
-					"
-				/>
 				<noscript class="loading-lazy">
+					<source
+						media="(min-width: 40em)"
+						srcset="
+							https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+1x_br_loading%3D%22lazy%22 1x,
+							https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+2x_br_loading%3D%22lazy%22 2x
+						"
+					/>
+					<source
+						srcset="
+							https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_1x_br_loading%3D%22lazy%22 1x,
+							https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_2x_br_loading%3D%22lazy%22 2x
+						"
+					/>
 					<img
 						src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_img+src_br_loading%3D%22lazy%22"
 						loading="lazy"
