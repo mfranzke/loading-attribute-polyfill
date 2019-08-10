@@ -43,69 +43,38 @@
 
 	/**
 	 * Temporarily replace a expensive resource load with a simple one
-	 * @param {Object} lazyItem Current item to be transformed for lazy loading.
-	 * @param {string} tempData Temporary data to be inserted as a 'placeholder'.
+	 * @param {String} lazyItem Current item to be transformed for lazy loading.
 	 */
-	function storeSourceForLater(lazyItem, tempData) {
-		// Store the actual source and srcset for later
-		lazyItem.dataset.lazySrc = lazyItem.getAttribute('src');
-		if (lazyItem.getAttribute('srcset')) {
-			lazyItem.dataset.lazySrcset = lazyItem.getAttribute('srcset');
-		}
-
-		// Set the item to point to a temporary replacement (data URI) and remove srcset
-		lazyItem.setAttribute('src', tempData);
-		lazyItem.removeAttribute('srcset');
-
-		// Now observe the item so that loading could start when it gets close to the viewport
-		intersectionObserver.observe(lazyItem);
+	function rewriteSourceForLater(lazyItem) {
+		// Store the actual source and srcset for later and point src to a temporary replacement (data URI)
+		return lazyItem
+			.replace(/(?:\r\n|\r|\n|\t| )srcset=/g, ' data-lazy-srcset=')
+			.replace(
+				/(?:\r\n|\r|\n|\t| )src=/g,
+				' src="' + temporaryImage + '" data-lazy-src='
+			);
 	}
 
 	/**
 	 * Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
-	 * @param {Object} lazyItem Current item to be transformed for lazy loading.
-	 * @param {string} tempData Temporary data to be inserted as a 'placeholder'.
+	 * @param {String} lazyItem Current item to be transformed for lazy loading.
 	 */
-	function placeholderSourceLoading(lazyItem, tempData) {
-		var placeholderSource = document.createElement('source');
-
-		placeholderSource.setAttribute('srcset', tempData);
-		placeholderSource.dataset.lazyRemove = true;
-
+	function placeholderSourceLoading(lazyItem) {
 		// Adding this <source> tag at the start of the picture tag means the browser will load it first
-		lazyItem.insertBefore(placeholderSource, lazyItem.firstChild);
-
-		var baseImage = lazyItem.querySelector('img');
-
-		if (baseImage) {
-			// On <picture> tags image needs to get observed (as the picture tag is smaller than the image most likely)
-			intersectionObserver.observe(baseImage);
-		}
+		return (
+			'<source srcset="' +
+			temporaryImage +
+			'" data-lazy-remove="true"></source>' +
+			lazyItem
+		);
 	}
 
 	/**
-	 * Set up the lazy items so that they won't try to load after adding them to the document
-	 * @param {Object} lazyArea Temporary created element for handling the <noscript> content
-	 * @param {Object} noScriptTagParentNode Parent node of <noscript> HTML tag
+	 * Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
+	 * @param {String} lazyItem Current item to be transformed for lazy loading.
 	 */
-	function prepareLazyContents(lazyArea, noScriptTagParentNode) {
-		var lazyItem = lazyArea.querySelector(
-			config.lazyImage + ',' + config.lazyIframe
-		);
-
-		// Check for IntersectionObserver support to not delay loading of the items content
-		if (typeof intersectionObserver === 'undefined') {
-			// Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
-			lazyItem.setAttribute('lazyload', 1);
-
-			return;
-		}
-
-		storeSourceForLater(lazyItem, temporaryImage);
-
-		if (noScriptTagParentNode.tagName.toLowerCase() === 'picture') {
-			placeholderSourceLoading(noScriptTagParentNode, temporaryImage);
-		}
+	function addLazyloadAttribute(lazyItem) {
+		return lazyItem.replace(/(?:\r\n|\r|\n|\t| )src=/g, ' lazyload="1" src=');
 	}
 
 	/**
@@ -113,18 +82,26 @@
 	 * @param {Object} lazyItem Current item to be restored after lazy loading.
 	 */
 	function restoreSource(lazyItem) {
+		var itemsToRestore = [];
+
 		// Just in case the img is the decendent of a picture element, check for source tags
 		if (lazyItem.parentNode.tagName.toLowerCase() === 'picture') {
 			removePlaceholderSource(lazyItem.parentNode);
+
+			itemsToRestore.push(...lazyItem.parentNode.querySelectorAll('source'));
 		}
 
-		if (lazyItem.dataset.lazySrcset) {
-			lazyItem.setAttribute('srcset', lazyItem.dataset.lazySrcset);
-			delete lazyItem.dataset.lazySrcset;
-		}
+		itemsToRestore.push(lazyItem);
 
-		lazyItem.setAttribute('src', lazyItem.dataset.lazySrc);
-		delete lazyItem.dataset.lazySrc;
+		itemsToRestore.forEach(function(item) {
+			if (item.dataset.lazySrcset) {
+				item.setAttribute('srcset', item.dataset.lazySrcset);
+				delete item.dataset.lazySrcset;
+			}
+
+			item.setAttribute('src', item.dataset.lazySrc);
+			delete item.dataset.lazySrc;
+		});
 	}
 
 	/**
@@ -170,16 +147,16 @@
 
 		mediaQueryList.addListener(function(mql) {
 			if (mql.matches) {
-				var lazyItems = document.querySelectorAll(
-					config.lazyImage +
-						'[data-lazy-src],' +
-						config.lazyIframe +
-						'[data-lazy-src]'
-				);
-
-				lazyItems.forEach(function(lazyItem) {
-					restoreSource(lazyItem);
-				});
+				document
+					.querySelectorAll(
+						config.lazyImage +
+							'[data-lazy-src],' +
+							config.lazyIframe +
+							'[data-lazy-src]'
+					)
+					.forEach(function(lazyItem) {
+						restoreSource(lazyItem);
+					});
 			}
 		});
 	}
@@ -195,13 +172,6 @@
 			// The contents of a <noscript> tag are treated as text to JavaScript
 			var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
 
-			// Sticking them in the innerHTML of a new <div> tag to 'load' them
-			var lazyArea = document.createElement('div');
-
-			lazyArea.innerHTML = lazyAreaHtml;
-
-			var noScriptTagParentNode = noScriptTag.parentNode;
-
 			// Feature detection for both image as well as iframe
 			if (
 				!(
@@ -209,13 +179,39 @@
 					'loading' in HTMLIFrameElement.prototype
 				)
 			) {
-				prepareLazyContents(lazyArea, noScriptTagParentNode);
+				// Check for IntersectionObserver support
+				if (typeof intersectionObserver !== 'undefined') {
+					if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
+						lazyAreaHtml = placeholderSourceLoading(lazyAreaHtml);
+					}
+
+					lazyAreaHtml = rewriteSourceForLater(lazyAreaHtml);
+				} else {
+					lazyAreaHtml = addLazyloadAttribute(lazyAreaHtml);
+				}
 			}
 
-			noScriptTagParentNode.replaceChild(
-				lazyArea.firstElementChild,
-				noScriptTag
-			);
+			// Sticking them in the innerHTML of a new <div> tag to 'load' them
+			var lazyArea = document.createElement('div');
+
+			lazyArea.innerHTML = lazyAreaHtml;
+
+			// move all children out of the element
+			while (lazyArea.firstChild) {
+				if (
+					lazyArea.firstChild.tagName &&
+					(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
+						lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
+				) {
+					// Observe the item so that loading could start when it gets close to the viewport
+					intersectionObserver.observe(lazyArea.firstChild);
+				}
+
+				noScriptTag.parentNode.insertBefore(lazyArea.firstChild, noScriptTag);
+			}
+
+			// remove the empty element
+			noScriptTag.remove();
 		});
 
 		// Bind for someone priting the page
