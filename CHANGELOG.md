@@ -8,9 +8,25 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ## [Unreleased]
 
-- Documentation
-- Cross browser todos
-- Tests
+- Ongoing: Further documentation
+
+## [1.0.0] - 2019-08-10
+
+### Added
+
+- Comment regarding asynchronous loading
+- Webdriver.io testing
+
+### Changed
+
+- BREAKING CHANGE: You#ll need to also wrap the `<source>` HTML tags within the `<picture>` tags with `<noscript>`
+
+### Fix
+
+- Documents markup regarding codacy suggestions
+- Corrected sample image measurements
+- The images didn't load lazily in Safari, but directly, as reported with #GH-3
+- Displaying the images on smaller viewports on the sample page
 
 ## [0.2.0] - 2019-05-22
 
