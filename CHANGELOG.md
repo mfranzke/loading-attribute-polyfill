@@ -10,6 +10,12 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 - Ongoing: Further documentation
 
+## [1.0.1] - 2019-08-10
+
+### Changed
+
+- Corrected both the demo-page as well as the documentation on the aspect of wrapping the `<source>` HTML tags as well
+
 ## [1.0.0] - 2019-08-10
 
 ### Added
