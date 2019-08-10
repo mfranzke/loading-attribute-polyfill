@@ -82,26 +82,26 @@
 	 * @param {Object} lazyItem Current item to be restored after lazy loading.
 	 */
 	function restoreSource(lazyItem) {
-		var itemsToRestore = [];
+		var srcsetItems = [];
 
 		// Just in case the img is the decendent of a picture element, check for source tags
 		if (lazyItem.parentNode.tagName.toLowerCase() === 'picture') {
 			removePlaceholderSource(lazyItem.parentNode);
 
-			itemsToRestore.push(...lazyItem.parentNode.querySelectorAll('source'));
+			srcsetItems.push(...lazyItem.parentNode.querySelectorAll('source'));
 		}
 
-		itemsToRestore.push(lazyItem);
+		srcsetItems.push(lazyItem);
 
-		itemsToRestore.forEach(function(item) {
+		srcsetItems.forEach(function(item) {
 			if (item.dataset.lazySrcset) {
 				item.setAttribute('srcset', item.dataset.lazySrcset);
 				delete item.dataset.lazySrcset;
 			}
-
-			item.setAttribute('src', item.dataset.lazySrc);
-			delete item.dataset.lazySrc;
 		});
+
+		lazyItem.setAttribute('src', lazyItem.dataset.lazySrc);
+		delete lazyItem.dataset.lazySrc;
 	}
 
 	/**
