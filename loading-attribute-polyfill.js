@@ -17,7 +17,10 @@
 		rootMargin: rootMargin || '0px 0px 256px 0px',
 		threshold: 0.01,
 		lazyImage: 'img[loading="lazy"]',
-		lazyIframe: 'iframe[loading="lazy"]'
+		lazyIframe: 'iframe[loading="lazy"]',
+		loadingSupported:
+			'loading' in HTMLImageElement.prototype &&
+			'loading' in HTMLIFrameElement.prototype
 	};
 
 	// Define according to browsers support of the IntersectionObserver feature (missing e.g. on IE11 or Safari 11)
@@ -173,12 +176,7 @@
 			var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
 
 			// Feature detection for both image as well as iframe
-			if (
-				!(
-					'loading' in HTMLImageElement.prototype &&
-					'loading' in HTMLIFrameElement.prototype
-				)
-			) {
+			if (!config.loadingSupported) {
 				// Check for IntersectionObserver support
 				if (typeof intersectionObserver !== 'undefined') {
 					if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
@@ -199,6 +197,7 @@
 			// move all children out of the element
 			while (lazyArea.firstChild) {
 				if (
+					!config.loadingSupported &&
 					lazyArea.firstChild.tagName &&
 					(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
 						lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
