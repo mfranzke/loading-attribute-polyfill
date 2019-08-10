@@ -58,20 +58,20 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 
 ```html
 <picture>
-	<source
-		media="(min-width: 40em)"
-		srcset="
-			simpleimage.huge.jpg 1x,
-			simpleimage.huge.2x.jpg 2x
-		"
-	/>
-	<source
-		srcset="
-			simpleimage.jpg 1x,
-			simpleimage.2x.jpg 2x
-		"
-	/>
 	<noscript class="loading-lazy">
+		<source
+			media="(min-width: 40em)"
+			srcset="
+				simpleimage.huge.jpg 1x,
+				simpleimage.huge.2x.jpg 2x
+			"
+		/>
+		<source
+			srcset="
+				simpleimage.jpg 1x,
+				simpleimage.2x.jpg 2x
+			"
+		/>
 		<img
 			src="simpleimage.jpg"
 			loading="lazy"
