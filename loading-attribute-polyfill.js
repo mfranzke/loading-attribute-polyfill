@@ -23,6 +23,12 @@
 			'loading' in HTMLIFrameElement.prototype
 	};
 
+	// Nodelist foreach polyfill / source: https://stackoverflow.com/a/46929259
+	if (typeof NodeList !== "undefined" && NodeList.prototype && !NodeList.prototype.forEach) {
+		// Yes, there's really no need for `Object.defineProperty` here
+		NodeList.prototype.forEach = Array.prototype.forEach;
+	}
+
 	// Define according to browsers support of the IntersectionObserver feature (missing e.g. on IE11 or Safari 11)
 	var intersectionObserver;
 
@@ -91,7 +97,7 @@
 		if (lazyItem.parentNode.tagName.toLowerCase() === 'picture') {
 			removePlaceholderSource(lazyItem.parentNode);
 
-			srcsetItems.push(...lazyItem.parentNode.querySelectorAll('source'));
+			srcsetItems = Array.prototype.slice.call(lazyItem.parentNode.querySelectorAll('source'));
 		}
 
 		srcsetItems.push(lazyItem);
@@ -198,6 +204,7 @@
 			while (lazyArea.firstChild) {
 				if (
 					!config.loadingSupported &&
+					typeof intersectionObserver !== 'undefined' &&
 					lazyArea.firstChild.tagName &&
 					(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
 						lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
