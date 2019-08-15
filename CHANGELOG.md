@@ -10,6 +10,12 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 - Ongoing: Further documentation
 
+## [1.1.0] - 2019-08-15
+
+### Changed
+
+- Added IE, EDGE < version 16 and Safari < version 12 support
+
 ## [1.0.1] - 2019-08-10
 
 ### Changed
