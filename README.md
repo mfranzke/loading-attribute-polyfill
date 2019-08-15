@@ -116,7 +116,7 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 
 ## Optional additional dependencies
 
-In case you'd like to support [older versions of Microsoft EDGE, Microsoft Internet Explorer 11 or Apple Safari up to 12.0](https://caniuse.com/#feat=intersectionobserver), you would could (conditionally) load an IntersectionObserver polyfill:
+In case you'd like to support [older versions of Microsoft EDGE, Microsoft Internet Explorer 11 or Apple Safari up to 12.0](https://caniuse.com/#feat=intersectionobserver), you could (conditionally) load an IntersectionObserver polyfill:
 
 <https://www.npmjs.com/package/intersection-observer>
 
