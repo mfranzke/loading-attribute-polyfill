@@ -217,7 +217,7 @@
 			}
 
 			// remove the empty element
-			noScriptTag.remove();
+			noScriptTag.parentNode.removeChild(noScriptTag);
 		});
 
 		// Bind for someone priting the page
