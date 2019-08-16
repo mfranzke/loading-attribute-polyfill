@@ -88,44 +88,51 @@ exports.config = {
 			browserName: 'Chrome',
 			platform: 'Windows 10',
 			version: 'latest',
-			maxInstances: 5
+			maxInstances: 5,
+			record_video: true
 		},
 		{
 			browserName: 'Chrome',
 			platform: 'Windows 10',
 			version: 'latest-1',
-			maxInstances: 5
+			maxInstances: 5,
+			record_video: true
 		},/*
 		{
 			browserName: 'Firefox',
 			platform: 'Windows 10',
 			version: 'latest',
-			maxInstances: 5
+			maxInstances: 5,
+			record_video: true
 		},
 		{
 			browserName: 'Firefox',
 			platform: 'Windows 10',
 			version: 'latest-1',
-			maxInstances: 5
-		},
+			maxInstances: 5,
+			record_video: true
+		},*/
 		{
 			browserName: 'MicrosoftEdge',
 			platform: 'Windows 10',
 			version: '18',
-			maxInstances: 5
+			maxInstances: 5,
+			record_video: true
 		},
 		{
 			browserName: 'MicrosoftEdge',
 			platform: 'Windows 10',
 			version: '17',
-			maxInstances: 5
-		},*/
-		/*{
+			maxInstances: 5,
+			record_video: true
+		},
+		{
 			browserName: 'Internet Explorer',
 			platform: 'Windows 10',
 			version: '11',
-			maxInstances: 5
-		},*/
+			maxInstances: 5,
+			record_video: true
+		},
 		{
 			browserName: 'Safari',
 			platform: 'Mac OSX 10.14',

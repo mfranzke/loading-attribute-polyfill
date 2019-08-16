@@ -53,6 +53,7 @@
 	/**
 	 * Temporarily replace a expensive resource load with a simple one
 	 * @param {String} lazyItem Current item to be transformed for lazy loading.
+	 * @returns {String} Transformed HTML code from src and srcset to data-* attributes
 	 */
 	function rewriteSourceForLater(lazyItem) {
 		// Store the actual source and srcset for later and point src to a temporary replacement (data URI)
@@ -67,6 +68,7 @@
 	/**
 	 * Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
 	 * @param {String} lazyItem Current item to be transformed for lazy loading.
+	 * @returns {String} Transformed HTML code by adding a <source> at the very beginning
 	 */
 	function placeholderSourceLoading(lazyItem) {
 		// Adding this <source> tag at the start of the picture tag means the browser will load it first
@@ -81,6 +83,7 @@
 	/**
 	 * Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
 	 * @param {String} lazyItem Current item to be transformed for lazy loading.
+	 * @returns {String} Transformed HTML code by adding a lazyload attribute
 	 */
 	function addLazyloadAttribute(lazyItem) {
 		return lazyItem.replace(/(?:\r\n|\r|\n|\t| )src=/g, ' lazyload="1" src=');
@@ -184,14 +187,14 @@
 			// Feature detection for both image as well as iframe
 			if (!config.loadingSupported) {
 				// Check for IntersectionObserver support
-				if (typeof intersectionObserver !== 'undefined') {
+				if (typeof intersectionObserver === 'undefined') {
+					lazyAreaHtml = addLazyloadAttribute(lazyAreaHtml);
+				} else {
 					if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
 						lazyAreaHtml = placeholderSourceLoading(lazyAreaHtml);
 					}
 
 					lazyAreaHtml = rewriteSourceForLater(lazyAreaHtml);
-				} else {
-					lazyAreaHtml = addLazyloadAttribute(lazyAreaHtml);
 				}
 			}
 
@@ -200,7 +203,7 @@
 
 			lazyArea.innerHTML = lazyAreaHtml;
 
-			// move all children out of the element
+			// Move all children out of the element
 			while (lazyArea.firstChild) {
 				if (
 					!config.loadingSupported &&
@@ -216,7 +219,7 @@
 				noScriptTag.parentNode.insertBefore(lazyArea.firstChild, noScriptTag);
 			}
 
-			// remove the empty element - not using .remove() here for IE11 compatibility
+			// Remove the empty element - not using .remove() here for IE11 compatibility
 			noScriptTag.parentNode.removeChild(noScriptTag);
 		});
 
