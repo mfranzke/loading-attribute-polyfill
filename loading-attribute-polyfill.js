@@ -216,11 +216,11 @@
 				noScriptTag.parentNode.insertBefore(lazyArea.firstChild, noScriptTag);
 			}
 
-			// remove the empty element
+			// remove the empty element - not using .remove() here for IE11 compatibility
 			noScriptTag.parentNode.removeChild(noScriptTag);
 		});
 
-		// Bind for someone priting the page
+		// Bind for someone printing the page
 		onPrinting();
 	}
 
