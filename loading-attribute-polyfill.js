@@ -1,6 +1,7 @@
 /*
  * Loading attribute polyfill - https://github.com/mfranzke/loading-attribute-polyfill
  * @license Copyright(c) 2019 by Maximilian Franzke
+ * Supported by @diogoterremoto, @dracos and @Flimm - many thanks for that !
  */
 /*
  * A minimal and dependency-free vanilla JavaScript loading attribute polyfill.

@@ -130,8 +130,37 @@ Nothing really, just plug it in, it ~~will~~ should work out of the box.
 
 See the polyfill in action either by downloading / forking this repo and have a look at `demo/index.html`, or at the hosted demo: <https://mfranzke.github.io/loading-attribute-polyfill/demo/>
 
+## Credits
+
+Supported by @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
+
+## Tested with
+
+- Mac
+  - Mac OSX 10.14, Mozilla Firefox 68.0.1
+  - Mac OSX 10.14, Safari 12
+  - Mac OSX 10.13, Safari 11
+- iOS
+  - iPad 6th Generation Simulator, Mobile Safari 12.0
+- Windows
+  - Windows 10, Google Chrome / versions latest & latest-1
+  - Windows 10, Microsoft EDGE / versions 17, 18
+  - Windows 10, Microsoft Internet Explorer / version 11
+
+### Big Thanks
+
+Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertestinghomepage]
+
+[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png 'CrossBrowserTesting')][crossbrowsertestinghomepage]
+
+[crossbrowsertestinghomepage]: https://crossbrowsertesting.com
+
 ## things to keep in mind
 
 - The demo HTML code is meant to be simple
+
+## Outro
+
+If you're trying out and using my work, feel free to contact me and give me any feedback. I'm curious about how it's gonna be used.
 
 [npm]: https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM'
