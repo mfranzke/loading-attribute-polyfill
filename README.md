@@ -132,7 +132,7 @@ See the polyfill in action either by downloading / forking this repo and have a 
 
 ## Credits
 
-Credits for the initial kickstarter / script to @Sora2455 for expressing my ideas & concepts and support by @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
+Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
 
 ## Tested with
 
