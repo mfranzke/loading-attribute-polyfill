@@ -97,7 +97,7 @@ exports.config = {
 			version: 'latest-1',
 			maxInstances: 5,
 			record_video: true
-		},/*
+		},
 		{
 			browserName: 'Firefox',
 			platform: 'Windows 10',
@@ -111,7 +111,7 @@ exports.config = {
 			version: 'latest-1',
 			maxInstances: 5,
 			record_video: true
-		},*/
+		},
 		{
 			browserName: 'MicrosoftEdge',
 			platform: 'Windows 10',
