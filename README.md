@@ -159,6 +159,11 @@ Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertes
 
 - The demo HTML code is meant to be simple
 
+## More information on the standard
+
+- [Specification](https://github.com/whatwg/html/pull/3752)
+- [LazyLoad Explainer](https://github.com/scott-little/lazyload)
+
 ## Outro
 
 If you're trying out and using my work, feel free to contact me and give me any feedback. I'm curious about how it's gonna be used.
