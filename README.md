@@ -153,8 +153,6 @@ Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertes
 
 [![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png 'CrossBrowserTesting')][crossbrowsertestinghomepage]
 
-[crossbrowsertestinghomepage]: https://crossbrowsertesting.com
-
 ## things to keep in mind
 
 - The demo HTML code is meant to be simple
@@ -169,3 +167,4 @@ Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertes
 If you're trying out and using my work, feel free to contact me and give me any feedback. I'm curious about how it's gonna be used.
 
 [npm]: https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM'
+[crossbrowsertestinghomepage]: https://crossbrowsertesting.com
