@@ -151,7 +151,7 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertestinghomepage]
 
-[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png 'CrossBrowserTesting')][crossbrowsertestinghomepage]
+[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png "CrossBrowserTesting")][crossbrowsertestinghomepage]
 
 ## things to keep in mind
 
@@ -166,5 +166,5 @@ Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertes
 
 If you're trying out and using my work, feel free to contact me and give me any feedback. I'm curious about how it's gonna be used.
 
-[npm]: https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM'
+[npm]: https://npmjs.com/package/loading-attribute-polyfill "loading="lazy"-attribute polyfill – on NPM"
 [crossbrowsertestinghomepage]: https://crossbrowsertesting.com
