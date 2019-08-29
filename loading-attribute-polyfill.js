@@ -49,7 +49,7 @@
 	}
 
 	var temporaryImage =
-		'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+		'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 	/**
 	 * Temporarily replace a expensive resource load with a simple one
