@@ -166,5 +166,6 @@ Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertes
 
 If you're trying out and using my work, feel free to contact me and give me any feedback. I'm curious about how it's gonna be used.
 
-[npm]: https://npmjs.com/package/loading-attribute-polyfill "loading="lazy"-attribute polyfill – on NPM"
+[npm]: https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM'
+
 [crossbrowsertestinghomepage]: https://crossbrowsertesting.com
