@@ -34,7 +34,7 @@ describe('demo page - img', () => {
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 	});
 	it('should not get loaded if in main (nested in picture)', () => {
 		const element = $('main picture img[loading="lazy"]');
@@ -42,14 +42,14 @@ describe('demo page - img', () => {
 		element.waitForDisplayed(5000);
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 	});
 	it('should not get loaded if in main (with srcset attribute)', () => {
 		const element = $('main img[data-lazy-srcset][loading="lazy"]');
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 	});
 });
 describe('demo page - iframe', () => {
@@ -65,7 +65,7 @@ describe('demo page - iframe', () => {
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==");
+		assert.equal(element.getAttribute('src'), "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
 	});
 });
 
