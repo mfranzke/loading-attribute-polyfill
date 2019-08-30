@@ -11,7 +11,7 @@ describe('demo page - img', () => {
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 	it('should get loaded if in header (nested in picture)', () => {
 		const element = $('header picture img[loading="lazy"]');
@@ -19,14 +19,14 @@ describe('demo page - img', () => {
 		element.waitForDisplayed(5000);
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 	it('should get loaded if in header (with srcset attribute)', () => {
 		const element = $('header img[srcset][loading="lazy"]');
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 
 	it('should not get loaded if in main (simple)', () => {
@@ -81,7 +81,7 @@ describe('demo page - scrolled - img', () => {
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 	it('should still be loaded if in header (nested in picture)', () => {
 		const element = $('header picture img[loading="lazy"]');
@@ -89,14 +89,14 @@ describe('demo page - scrolled - img', () => {
 		element.waitForDisplayed(5000);
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 	it('should still be loaded if in header (with srcset attribute)', () => {
 		const element = $('header img[srcset][loading="lazy"]');
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 
 	it('should still be loaded if in main (simple)', () => {
@@ -104,7 +104,7 @@ describe('demo page - scrolled - img', () => {
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 	it('should still be loaded if in main (nested in picture)', () => {
 		const element = $('main picture img[loading="lazy"]');
@@ -112,14 +112,14 @@ describe('demo page - scrolled - img', () => {
 		element.waitForDisplayed(5000);
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 	it('should still be loaded if in main (with srcset attribute)', () => {
 		const element = $('main img[srcset][loading="lazy"]');
 
 		element.waitForDisplayed(5000);
 
-		assert.equal(element.getAttribute('src').substr(0, 27), "https://imgplaceholder.com/");
+		assert.equal(element.getAttribute('src').substr(0, 4), "img/");
 	});
 });
 describe('demo page - scrolled - iframe', () => {

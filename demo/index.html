@@ -50,7 +50,7 @@
 			<!-- Regular images with loading="lazy" attribute provided for testing -->
 			<noscript class="loading-lazy">
 				<img
-					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+					src="img/img-src-loadinglazy.250x150.png"
 					loading="lazy"
 					alt=".."
 					width="250"
@@ -59,7 +59,7 @@
 			</noscript>
 
 			<img
-				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22eager%22"
+				src="img/img-src-loadingeager.250x150.png"
 				loading="eager"
 				alt=".."
 				width="250"
@@ -67,7 +67,7 @@
 			/>
 
 			<img
-				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22auto%22"
+				src="img/img-src-loadingauto.250x150.png"
 				loading="auto"
 				alt=".."
 				width="250"
@@ -79,18 +79,18 @@
 					<source
 						media="(min-width: 40em)"
 						srcset="
-							https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+1x_br_loading%3D%22lazy%22 1x,
-							https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_media+2x_br_loading%3D%22lazy%22 2x
+							img/picture-media1x-loadinglazy.250x150.png 1x,
+							img/picture-media2x-loadinglazy.500x300.png 2x
 						"
 					/>
 					<source
 						srcset="
-							https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_1x_br_loading%3D%22lazy%22 1x,
-							https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_2x_br_loading%3D%22lazy%22 2x
+							img/picture-1x-loadinglazy.250x150.png 1x,
+							img/picture-2x-loadinglazy.500x300.png 2x
 						"
 					/>
 					<img
-						src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=picture_br_img+src_br_loading%3D%22lazy%22"
+						src="img/picture-imgsrc-loadinglazy.250x150.png"
 						loading="lazy"
 						alt=".."
 						width="250"
@@ -101,11 +101,11 @@
 
 			<noscript class="loading-lazy">
 				<img
-					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22lazy%22"
+					src="img/img-src-loadinglazy.250x150.png"
 					srcset="
-						https://imgplaceholder.com/1024x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+1024w_br_loading%3D%22lazy%22 1024w,
-						https://imgplaceholder.com/640x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+640w_br_loading%3D%22lazy%22    640w,
-						https://imgplaceholder.com/320x320/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_srcset+320w_br_loading%3D%22lazy%22    320w
+						img/img-srcset1024w-loadinglazy.1024x400.png 1024w,
+						img/img-srcset640w-loadinglazy.640x400.png    640w,
+						img/img-srcset320w-loadinglazy.320x320.png    320w
 					"
 					sizes="(min-width: 36em) 33.3vw, 100vw"
 					alt="A rad wolf"
@@ -128,7 +128,7 @@
 			<!-- Lazy-load an offscreen image when the user scrolls near it -->
 			<noscript class="loading-lazy">
 				<img
-					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_src_br_loading%3D%22lazy%22"
+					src="img/lazyimg-src-loadinglazy.250x150.png"
 					loading="lazy"
 					alt=".."
 					width="250"
@@ -138,7 +138,7 @@
 
 			<!-- Load an image right away instead of lazy-loading -->
 			<img
-				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22eager%22"
+				src="img/img-src-loadingeager.250x150.png"
 				loading="eager"
 				alt=".."
 				width="250"
@@ -147,7 +147,7 @@
 
 			<!-- Browser decides whether or not to lazy-load the image -->
 			<img
-				src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=img_br_src_br_loading%3D%22auto%22"
+				src="img/img-src-loadingauto.250x150.png"
 				loading="auto"
 				alt=".."
 				width="250"
@@ -160,18 +160,18 @@
 					<source
 						media="(min-width: 40em)"
 						srcset="
-							https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+1x_br_loading%3D%22lazy%22 1x,
-							https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_media+2x_br_loading%3D%22lazy%22 2x
+							img/lazypicture-media1x-loadinglazy.250x150.png 1x,
+							img/lazypicture-media2x-loadinglazy.500x300.png 2x
 						"
 					/>
 					<source
 						srcset="
-							https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_1x_br_loading%3D%22lazy%22 1x,
-							https://imgplaceholder.com/500x300/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_2x_br_loading%3D%22lazy%22 2x
+							img/lazypicture-1x-loadinglazy.250x150.png 1x,
+							img/lazypicture-2x-loadinglazy.500x300.png 2x
 						"
 					/>
 					<img
-						src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+picture_br_img+src_br_loading%3D%22lazy%22"
+						src="img/lazypicture-imgsrc-loadinglazy.250x150.png"
 						loading="lazy"
 						alt=".."
 						width="250"
@@ -183,11 +183,11 @@
 			<!-- Lazy-load an image that has srcset specified -->
 			<noscript class="loading-lazy">
 				<img
-					src="https://imgplaceholder.com/250x150/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_src_br_loading%3D%22lazy%22"
+					src="img/lazyimg-src-loadinglazy.250x150.png"
 					srcset="
-						https://imgplaceholder.com/1024x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_srcset+1024w_br_loading%3D%22lazy%22 1024w,
-						https://imgplaceholder.com/640x400/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_srcset+640w_br_loading%3D%22lazy%22    640w,
-						https://imgplaceholder.com/320x320/fbfbfb/0f0f0f?font-family=OpenSans_Bold&text=lazy+img_br_srcset+320w_br_loading%3D%22lazy%22    320w
+						img/lazyimg-srcset1024w-loadinglazy.1024x400.png 1024w,
+						img/lazyimg-srcset640w-loadinglazy.640x400.png    640w,
+						img/lazyimg-srcset320w-loadinglazy.320x320.png    320w
 					"
 					sizes="(min-width: 36em) 33.3vw, 100vw"
 					alt="A rad wolf"
