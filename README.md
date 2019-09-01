@@ -13,21 +13,21 @@
 
 Fast and lightweight vanilla JavaScript polyfill for the native behaviour to load elements right before they enter the viewport. Provides graceful degradation, and is - not just thatfor - SEO friendly. Handles images with `srcset` and within `picture`, as well as `iframe` elements. `loading="lazy"` will be a huge improvement for todays web performance challenges, so use and polyfill it today!
 
-- Released under the MIT license
-- Made in Germany
+-  Released under the MIT license
+-  Made in Germany
 
 ## Features
 
-- Web standards: Supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
-- Performance: It's based on highly efficient, best practice code.
-- SEO & crawlers: The image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
+-  Web standards: Supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
+-  Performance: It's based on highly efficient, best practice code.
+-  SEO & crawlers: The image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
 
 ## Core concepts
 
 The polyfill was designed with the following concepts kept in mind:
 
-- dependency-free
-- Using JavaScript with graceful degradation
+-  dependency-free
+-  Using JavaScript with graceful degradation
 
 ## Installation
 
@@ -138,16 +138,16 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 ## Tested with
 
-- Mac
-  - Mac OSX 10.14, Mozilla Firefox 68.0.1 (manually, localhost)
-  - Mac OSX 10.14, Safari 12 (via CrossBrowserTesting)
-  - Mac OSX 10.13, Safari 11 (via CrossBrowserTesting)
-- iOS
-  - iPad 6th Generation Simulator, Mobile Safari 12.0 (via CrossBrowserTesting)
-- Windows
-  - Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
-  - Windows 10, Microsoft EDGE / versions 17, 18 (via CrossBrowserTesting)
-  - Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting)
+-  Mac
+  -  Mac OSX 10.14, Mozilla Firefox 68.0.1 (manually, localhost)
+  -  Mac OSX 10.14, Safari 12 (via CrossBrowserTesting)
+  -  Mac OSX 10.13, Safari 11 (via CrossBrowserTesting)
+-  iOS
+  -  iPad 6th Generation Simulator, Mobile Safari 12.0 (via CrossBrowserTesting)
+-  Windows
+  -  Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
+  -  Windows 10, Microsoft EDGE / versions 17, 18 (via CrossBrowserTesting)
+  -  Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting)
 
 ### Big Thanks
 
@@ -157,12 +157,12 @@ Cross-browser testing platform provided by [CrossBrowserTesting][crossbrowsertes
 
 ## things to keep in mind
 
-- The demo HTML code is meant to be simple
+-  The demo HTML code is meant to be simple
 
 ## More information on the standard
 
-- [Specification](https://github.com/whatwg/html/pull/3752)
-- [LazyLoad Explainer](https://github.com/scott-little/lazyload)
+-  [Specification](https://github.com/whatwg/html/pull/3752)
+-  [LazyLoad Explainer](https://github.com/scott-little/lazyload)
 
 ## Outro
 
