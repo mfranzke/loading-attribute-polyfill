@@ -256,4 +256,4 @@
 			}
 		});
 	}
-})('loading-lazy', '256px 0px');
+}('loading-lazy', '256px 0px'));
