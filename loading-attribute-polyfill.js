@@ -18,10 +18,15 @@
 		rootMargin: rootMargin || '0px 0px 256px 0px',
 		threshold: 0.01,
 		lazyImage: 'img[loading="lazy"]',
-		lazyIframe: 'iframe[loading="lazy"]',
-		loadingSupported:
+		lazyIframe: 'iframe[loading="lazy"]'
+	};
+
+	// Device/browser capabilities object
+	var capabilities = {
+		loading:
 			'loading' in HTMLImageElement.prototype &&
-			'loading' in HTMLIFrameElement.prototype
+			'loading' in HTMLIFrameElement.prototype,
+		scrolling: 'onscroll' in window
 	};
 
 	// Nodelist foreach polyfill / source: https://stackoverflow.com/a/46929259
@@ -191,8 +196,9 @@
 			// The contents of a <noscript> tag are treated as text to JavaScript
 			var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
 
-			// Feature detection for both image as well as iframe
-			if (!config.loadingSupported) {
+			/* 	Rewriting the src-urls to prevent the initial loading depending on feature detection
+				for both image as well as iframe, and if not scrolling supported, because it's a Google Bot */
+			if (!capabilities.loading && capabilities.scrolling) {
 				// Check for IntersectionObserver support
 				if (typeof intersectionObserver === 'undefined') {
 					lazyAreaHtml = addLazyloadAttribute(lazyAreaHtml);
@@ -213,7 +219,8 @@
 			// Move all children out of the element
 			while (lazyArea.firstChild) {
 				if (
-					!config.loadingSupported &&
+					!capabilities.loading &&
+					capabilities.scrolling &&
 					typeof intersectionObserver !== 'undefined' &&
 					lazyArea.firstChild.tagName &&
 					(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
