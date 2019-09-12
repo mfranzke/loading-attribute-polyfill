@@ -12,6 +12,7 @@
   "readmeFilename": "README.md",
   "keywords": [
     "lazy loading",
+    "native lazy loading",
     "img",
     "iframe",
     "polyfill",
