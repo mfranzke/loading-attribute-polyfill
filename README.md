@@ -132,6 +132,13 @@ Nothing really, just plug it in, it ~~will~~ should work out of the box.
 
 See the polyfill in action either by downloading / forking this repo and have a look at `demo/index.html`, or at the hosted demo: <https://mfranzke.github.io/loading-attribute-polyfill/demo/>
 
+## Further implementations
+
+### Wordpress
+
+Nico23 has developed a Wordpress plugin: https://wordpress.org/plugins/native-lazyload-polyfill/
+Kudos for that !
+
 ## Credits
 
 Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
