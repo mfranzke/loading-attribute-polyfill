@@ -31,7 +31,7 @@
     "@wdio/mocha-framework": "^5.8.1",
     "@wdio/sync": "^5.8.6",
     "prettier": "1.18.2",
-    "webdriverio": "^5.8.5",
+    "webdriverio": "^5.13.2",
     "xo": "^0.24.0"
   },
   "scripts": {
