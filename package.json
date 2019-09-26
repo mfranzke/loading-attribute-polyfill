@@ -32,7 +32,7 @@
     "@wdio/sync": "^5.8.6",
     "prettier": "1.18.2",
     "webdriverio": "^5.8.5",
-    "xo": "^0.24.0"
+    "xo": "^0.25.0"
   },
   "scripts": {
     "test": "xo"
