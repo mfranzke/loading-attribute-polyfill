@@ -138,7 +138,7 @@
 		);
 
 		if (placeholderSource) {
-			lazyItemPicture.removeChild(placeholderSource);
+			lazyItemPicture.removeChild(placeholderSource); // Preferred .removeChild over .remove here for IE
 		}
 	}
 
@@ -234,7 +234,7 @@
 			}
 
 			// Remove the empty element - not using .remove() here for IE11 compatibility
-			noScriptTag.parentNode.removeChild(noScriptTag);
+			noScriptTag.parentNode.removeChild(noScriptTag); // Preferred .removeChild over .remove here for IE
 		});
 
 		// Bind for someone printing the page
