@@ -132,12 +132,15 @@ Nothing really, just plug it in, it ~~will~~ should work out of the box.
 
 See the polyfill in action either by downloading / forking this repo and have a look at `demo/index.html`, or at the hosted demo: <https://mfranzke.github.io/loading-attribute-polyfill/demo/>
 
-## Further implementations
+## Further implementations - Kudos for that !
 
 ### Wordpress
 
 Nico23 has developed a Wordpress plugin: https://wordpress.org/plugins/native-lazyload-polyfill/
-Kudos for that !
+
+### PHP Twig
+
+@tim-thaler has developed a PHP Twig Extension that generates markup for using native browser lazyload: https://packagist.org/packages/tim-thaler/twig-loading-lazy
 
 ## Credits
 
