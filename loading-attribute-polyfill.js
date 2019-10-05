@@ -187,41 +187,47 @@
 	}
 
 	/**
-	 * Retrieve the elements from the 'lazy load' <noscript> tags and prepare them for display
+	 * Get all the <noscript> tags on the page and setup the printing
 	 */
 	function prepareElements() {
-		// Get all the <noscript> tags on the page
+		//
 		var lazyLoadAreas = document.querySelectorAll('noscript.' + noscriptClass);
 
-		lazyLoadAreas.forEach(function(noScriptTag) {
-			// Sticking the noscript HTML code in the innerHTML of a new <div> tag to 'load' it after creating that <div>
-			var lazyArea = document.createElement('div');
-
-			lazyArea.innerHTML = getAndPrepareHTMLCode(noScriptTag);
-
-			// Move all children out of the element
-			while (lazyArea.firstChild) {
-				if (
-					!capabilities.loading &&
-					capabilities.scrolling &&
-					typeof intersectionObserver !== 'undefined' &&
-					lazyArea.firstChild.tagName &&
-					(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
-						lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
-				) {
-					// Observe the item so that loading could start when it gets close to the viewport
-					intersectionObserver.observe(lazyArea.firstChild);
-				}
-
-				noScriptTag.parentNode.insertBefore(lazyArea.firstChild, noScriptTag);
-			}
-
-			// Remove the empty element - not using .remove() here for IE11 compatibility
-			noScriptTag.parentNode.removeChild(noScriptTag); // Preferred .removeChild over .remove here for IE
-		});
+		lazyLoadAreas.forEach(prepareElement);
 
 		// Bind for someone printing the page
 		onPrinting();
+	}
+
+	/**
+	 * Retrieve the elements from the 'lazy load' <noscript> tag and prepare them for display
+	 * @param {Object} noScriptTag noscript HTML tag that should get initially transformed
+	 */
+	function prepareElement(noScriptTag) {
+		// Sticking the noscript HTML code in the innerHTML of a new <div> tag to 'load' it after creating that <div>
+		var lazyArea = document.createElement('div');
+
+		lazyArea.innerHTML = getAndPrepareHTMLCode(noScriptTag);
+
+		// Move all children out of the element
+		while (lazyArea.firstChild) {
+			if (
+				!capabilities.loading &&
+				capabilities.scrolling &&
+				typeof intersectionObserver !== 'undefined' &&
+				lazyArea.firstChild.tagName &&
+				(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
+					lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
+			) {
+				// Observe the item so that loading could start when it gets close to the viewport
+				intersectionObserver.observe(lazyArea.firstChild);
+			}
+
+			noScriptTag.parentNode.insertBefore(lazyArea.firstChild, noScriptTag);
+		}
+
+		// Remove the empty element - not using .remove() here for IE11 compatibility
+		noScriptTag.parentNode.removeChild(noScriptTag); // Preferred .removeChild over .remove here for IE
 	}
 
 	// If the page has loaded already, run setup - if it hasn't, run as soon as it has.
