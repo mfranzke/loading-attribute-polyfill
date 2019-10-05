@@ -159,7 +159,10 @@
 			// Check for IntersectionObserver support
 			if (typeof intersectionObserver === 'undefined') {
 				// Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
-				lazyAreaHtml.replace(/(?:\r\n|\r|\n|\t| )src=/g, ' lazyload="1" src=');
+				lazyAreaHtml = lazyAreaHtml.replace(
+					/(?:\r\n|\r|\n|\t| )src=/g,
+					' lazyload="1" src='
+				);
 			} else {
 				if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
 					// Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
@@ -171,7 +174,7 @@
 				}
 
 				// Temporarily replace a expensive resource load with a simple one by storing the actual source and srcset for later and point src to a temporary replacement (data URI)
-				lazyAreaHtml
+				lazyAreaHtml = lazyAreaHtml
 					.replace(/(?:\r\n|\r|\n|\t| )srcset=/g, ' data-lazy-srcset=')
 					.replace(
 						/(?:\r\n|\r|\n|\t| )src=/g,
