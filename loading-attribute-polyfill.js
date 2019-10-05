@@ -61,45 +61,6 @@
 		'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
 	/**
-	 * Temporarily replace a expensive resource load with a simple one
-	 * @param {String} lazyItem Current item to be transformed for lazy loading.
-	 * @returns {String} Transformed HTML code from src and srcset to data-* attributes
-	 */
-	function rewriteSourceForLater(lazyItem) {
-		// Store the actual source and srcset for later and point src to a temporary replacement (data URI)
-		return lazyItem
-			.replace(/(?:\r\n|\r|\n|\t| )srcset=/g, ' data-lazy-srcset=')
-			.replace(
-				/(?:\r\n|\r|\n|\t| )src=/g,
-				' src="' + temporaryImage + '" data-lazy-src='
-			);
-	}
-
-	/**
-	 * Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
-	 * @param {String} lazyItem Current item to be transformed for lazy loading.
-	 * @returns {String} Transformed HTML code by adding a <source> at the very beginning
-	 */
-	function placeholderSourceLoading(lazyItem) {
-		// Adding this <source> tag at the start of the picture tag means the browser will load it first
-		return (
-			'<source srcset="' +
-			temporaryImage +
-			'" data-lazy-remove="true"></source>' +
-			lazyItem
-		);
-	}
-
-	/**
-	 * Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
-	 * @param {String} lazyItem Current item to be transformed for lazy loading.
-	 * @returns {String} Transformed HTML code by adding a lazyload attribute
-	 */
-	function addLazyloadAttribute(lazyItem) {
-		return lazyItem.replace(/(?:\r\n|\r|\n|\t| )src=/g, ' lazyload="1" src=');
-	}
-
-	/**
 	 * Put the source and srcset back where it belongs - now that the elements content is attached to the document, it will load now
 	 * @param {Object} lazyItem Current item to be restored after lazy loading.
 	 */
@@ -186,6 +147,44 @@
 	}
 
 	/**
+	 * Get and prepare the HTML code depending on feature detection for both image as well as iframe,
+	 * and if not scrolling supported, because it's a Google or Bing Bot
+	 * @param {String} lazyAreaHtml Noscript inner HTML code that src-urls need to get rewritten
+	 */
+	function getAndPrepareHTMLCode(noScriptTag) {
+		// The contents of a <noscript> tag are treated as text to JavaScript
+		var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
+
+		if (!capabilities.loading && capabilities.scrolling) {
+			return lazyAreaHtml;
+		}
+		// Check for IntersectionObserver support
+		if (typeof intersectionObserver === 'undefined') {
+			// Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
+			lazyAreaHtml.replace(/(?:\r\n|\r|\n|\t| )src=/g, ' lazyload="1" src=');
+		} else {
+			if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
+				// Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
+				lazyAreaHtml =
+					'<source srcset="' +
+					temporaryImage +
+					'" data-lazy-remove="true"></source>' +
+					lazyAreaHtml;
+			}
+
+			// Temporarily replace a expensive resource load with a simple one by storing the actual source and srcset for later and point src to a temporary replacement (data URI)
+			lazyAreaHtml
+				.replace(/(?:\r\n|\r|\n|\t| )srcset=/g, ' data-lazy-srcset=')
+				.replace(
+					/(?:\r\n|\r|\n|\t| )src=/g,
+					' src="' + temporaryImage + '" data-lazy-src='
+				);
+		}
+
+		return lazyAreaHtml;
+	}
+
+	/**
 	 * Retrieve the elements from the 'lazy load' <noscript> tags and prepare them for display
 	 */
 	function prepareElements() {
@@ -193,28 +192,10 @@
 		var lazyLoadAreas = document.querySelectorAll('noscript.' + noscriptClass);
 
 		lazyLoadAreas.forEach(function(noScriptTag) {
-			// The contents of a <noscript> tag are treated as text to JavaScript
-			var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
-
-			/* 	Rewriting the src-urls to prevent the initial loading depending on feature detection
-				for both image as well as iframe, and if not scrolling supported, because it's a Google Bot */
-			if (!capabilities.loading && capabilities.scrolling) {
-				// Check for IntersectionObserver support
-				if (typeof intersectionObserver === 'undefined') {
-					lazyAreaHtml = addLazyloadAttribute(lazyAreaHtml);
-				} else {
-					if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
-						lazyAreaHtml = placeholderSourceLoading(lazyAreaHtml);
-					}
-
-					lazyAreaHtml = rewriteSourceForLater(lazyAreaHtml);
-				}
-			}
-
-			// Sticking them in the innerHTML of a new <div> tag to 'load' them
+			// Sticking the noscript HTML code in the innerHTML of a new <div> tag to 'load' it after creating that <div>
 			var lazyArea = document.createElement('div');
 
-			lazyArea.innerHTML = lazyAreaHtml;
+			lazyArea.innerHTML = getAndPrepareHTMLCode(noScriptTag);
 
 			// Move all children out of the element
 			while (lazyArea.firstChild) {
