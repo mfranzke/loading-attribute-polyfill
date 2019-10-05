@@ -140,7 +140,7 @@ Nico23 has developed a Wordpress plugin: https://wordpress.org/plugins/native-la
 
 ### PHP Twig
 
-@tim-thaler has developed a PHP Twig Extension that generates markup for using native browser lazyload: https://packagist.org/packages/tim-thaler/twig-loading-lazy
+@tim-thaler has developed a PHP Twig Extension: https://packagist.org/packages/tim-thaler/twig-loading-lazy
 
 ## Credits
 
