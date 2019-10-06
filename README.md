@@ -132,7 +132,7 @@ Nothing really, just plug it in, it ~~will~~ should work out of the box.
 
 See the polyfill in action either by downloading / forking this repo and have a look at `demo/index.html`, or at the hosted demo: <https://mfranzke.github.io/loading-attribute-polyfill/demo/>
 
-## Further implementations - Kudos for that !
+## Further implementations - Kudos for that
 
 ### Wordpress
 
