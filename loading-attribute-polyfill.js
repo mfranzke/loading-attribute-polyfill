@@ -187,19 +187,6 @@
 	}
 
 	/**
-	 * Get all the <noscript> tags on the page and setup the printing
-	 */
-	function prepareElements() {
-		//
-		var lazyLoadAreas = document.querySelectorAll('noscript.' + noscriptClass);
-
-		lazyLoadAreas.forEach(prepareElement);
-
-		// Bind for someone printing the page
-		onPrinting();
-	}
-
-	/**
 	 * Retrieve the elements from the 'lazy load' <noscript> tag and prepare them for display
 	 * @param {Object} noScriptTag noscript HTML tag that should get initially transformed
 	 */
@@ -228,6 +215,19 @@
 
 		// Remove the empty element - not using .remove() here for IE11 compatibility
 		noScriptTag.parentNode.removeChild(noScriptTag); // Preferred .removeChild over .remove here for IE
+	}
+
+	/**
+	 * Get all the <noscript> tags on the page and setup the printing
+	 */
+	function prepareElements() {
+		//
+		var lazyLoadAreas = document.querySelectorAll('noscript.' + noscriptClass);
+
+		lazyLoadAreas.forEach(prepareElement);
+
+		// Bind for someone printing the page
+		onPrinting();
 	}
 
 	// If the page has loaded already, run setup - if it hasn't, run as soon as it has.
