@@ -13,21 +13,21 @@
 
 Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meaning the behaviour to load elements right before they enter the viewport. Provides graceful degradation, and is - not just thatfor - SEO friendly. Handles images with `srcset` and within `picture`, as well as `iframe` elements. `loading="lazy"` will be a huge improvement for todays web performance challenges, so use and polyfill it today!
 
--  Released under the MIT license
--  Made in Germany
+- Released under the MIT license
+- Made in Germany
 
 ## Features
 
--  Web standards: Supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
--  Performance: It's based on highly efficient, best practice code.
--  SEO & crawlers: The image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
+- Web standards: Supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
+- Performance: It's based on highly efficient, best practice code.
+- SEO & crawlers: The image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
 
 ## Core concepts
 
 The polyfill was designed with the following concepts kept in mind:
 
--  dependency-free
--  Using JavaScript with graceful degradation
+- dependency-free
+- Using JavaScript with graceful degradation
 
 ## Installation
 
@@ -167,12 +167,12 @@ Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbr
 
 ## things to keep in mind
 
--  The demo HTML code is meant to be simple
+- The demo HTML code is meant to be simple
 
 ## More information on the standard
 
--  [Specification](https://github.com/whatwg/html/pull/3752)
--  [LazyLoad Explainer](https://github.com/scott-little/lazyload)
+- [Specification](https://github.com/whatwg/html/pull/3752)
+- [LazyLoad Explainer](https://github.com/scott-little/lazyload)
 
 ## Outro
 
