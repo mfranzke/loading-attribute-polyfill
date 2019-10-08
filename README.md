@@ -179,3 +179,5 @@ Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbr
 ## Outro
 
 If you're trying out and using my work, feel free to contact me and give me any feedback. I'm curious about how it's gonna be used.
+
+And if you do like this polyfill, please consider even also having a look at the other polyfill we've developed: <https://github.com/mfranzke/datalist-polyfill/>
