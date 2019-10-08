@@ -138,9 +138,13 @@ See the polyfill in action either by downloading / forking this repo and have a 
 
 Nico23 has developed a Wordpress plugin: <https://wordpress.org/plugins/native-lazyload-polyfill/>
 
-### PHP Twig
+### PHP Twig Extension
 
-@tim-thaler has developed a PHP Twig Extension: <https://packagist.org/packages/tim-thaler/twig-loading-lazy>
+@tim-thaler has developed a PHP Twig Extension: <https://github.com/tim-thaler/twig-loading-lazy>
+
+### Craft Twig Loading Lazy plugin
+
+@tim-thaler has developed a Craft Twig Loading Lazy plugin: <https://github.com/tim-thaler/craft-twig-loading-lazy>
 
 ## Credits
 
