@@ -10,6 +10,31 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 - Ongoing: Further documentation
 
+## [1.2.0] - 2019-10-09
+
+### Added
+
+- Crawler/"SEO" capabilities
+- Testing: Further browsers and activated the video-recording
+- Lots of further information and documentation
+- Codacy, dependency and Greenkeeper (#18) integrations and badges, yeah !
+- Comment within the demo page clarifying the images content #8
+- Links to further implementations / plugins & extensions
+
+### Changed
+
+- Made changes regarding to xo/prettier tools and codacys (#12) remarks
+- Some even smaller base64 image as an image replacement
+- Loading the sample images locally
+- Update xo to version 0.25
+- Updated webdriver.io's packages to version 5.13.2
+- Code simplifications
+
+### Fixed
+
+- Outdated JSBin link
+- Markdown regarding some readers/interpreters malfunctions
+
 ## [1.1.0] - 2019-08-15
 
 ### Changed
