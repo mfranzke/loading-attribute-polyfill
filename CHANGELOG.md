@@ -10,7 +10,7 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 - Ongoing: Further documentation
 
-## [1.2.0] - 2019-10-09
+## [1.2.0] - 2019-10-15
 
 ### Added
 
