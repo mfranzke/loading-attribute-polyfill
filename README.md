@@ -136,7 +136,7 @@ See the polyfill in action either by downloading / forking this repo and have a 
 
 ### Wordpress
 
-Nico23 has developed a Wordpress plugin: <https://wordpress.org/plugins/native-lazyload-polyfill/>
+Nico23 has developed a Wordpress plugin: <https://wordpress.org/plugins/native-lazyload-polyfill/> (which is much better than the one by Google !)
 
 ### PHP Twig Extension
 
@@ -144,11 +144,11 @@ Nico23 has developed a Wordpress plugin: <https://wordpress.org/plugins/native-l
 
 ### Craft Twig Loading Lazy plugin
 
-@tim-thaler has developed a Craft Twig Loading Lazy plugin: <https://github.com/tim-thaler/craft-twig-loading-lazy>
+@tim-thaler has even also developed a Craft Twig Loading Lazy plugin: <https://github.com/tim-thaler/craft-twig-loading-lazy>
 
 ## Credits
 
-Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
+Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @nextgenthemes, @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
 
 ## Tested with
 
@@ -174,6 +174,7 @@ Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbr
 ## things to keep in mind
 
 - The demo HTML code is meant to be simple
+- This polyfill doesn't (so far) provide any functionality for the `loading="eager"` value, as this was released even already, but still seems to be in the measure, learn and improvements phase.
 
 ## More information on the standard
 
