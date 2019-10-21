@@ -169,7 +169,7 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbrowsertesting.com)
 
-[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png "CrossBrowserTesting")](https://crossbrowsertesting.com)
+[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png "CrossBrowserTesting")](https://crossbrowsertesting.com) [![Join the chat at https://gitter.im/loading-attribute-polyfill/community](https://badges.gitter.im/loading-attribute-polyfill/community.svg)](https://gitter.im/loading-attribute-polyfill/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## things to keep in mind
 
