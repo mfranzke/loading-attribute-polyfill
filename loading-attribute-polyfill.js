@@ -30,13 +30,15 @@
 	};
 
 	// Nodelist foreach polyfill / source: https://stackoverflow.com/a/46929259
-	if (
-		typeof NodeList !== 'undefined' &&
-		NodeList.prototype &&
-		!NodeList.prototype.forEach
-	) {
+	if (typeof NodeList !== 'undefined' && NodeList.prototype) {
 		// Yes, there's really no need for `Object.defineProperty` here
-		NodeList.prototype.forEach = Array.prototype.forEach;
+		if (!NodeList.prototype.forEach) {
+			NodeList.prototype.forEach = Array.prototype.forEach;
+		}
+
+		if (!NodeList.prototype.some) {
+			NodeList.prototype.some = Array.prototype.some;
+		}
 	}
 
 	// Define according to browsers support of the IntersectionObserver feature (missing e.g. on IE11 or Safari 11)
@@ -238,26 +240,28 @@
 			subtree: true
 		};
 		var observerCallback = function(mutationsList) {
-			var newImages = mutationsList.some(function(mutation) {
+			var isNeedReinit = mutationsList.some(function(mutation) {
+				var newImages = false;
 				if (mutation.type === 'childList') {
-					for (let addedNode of mutation.addedNodes) {
-						if (
+					newImages = mutation.addedNodes.some(function(addedNode) {
+						var thisNodeIsLazyLoad =
 							addedNode.tagName === 'NOSCRIPT' &&
-							addedNode.className === 'loading-lazy'
-						) {
-							return true;
-						}
-					}
+							addedNode.className === 'loading-lazy';
+						var lazyLoadNodeIsInsideThisNode =
+							addedNode.querySelector &&
+							addedNode.querySelector('noscript.loading-lazy');
+						return thisNodeIsLazyLoad || lazyLoadNodeIsInsideThisNode;
+					});
 				}
 
-				return false;
+				return newImages;
 			});
-			if (newImages) {
+			if (isNeedReinit) {
 				prepareElements();
 			}
 		};
 
-		const mutationObserver = new MutationObserver(observerCallback);
+		var mutationObserver = new MutationObserver(observerCallback);
 		mutationObserver.observe(observerTarget, observerСonfig);
 	}
 
