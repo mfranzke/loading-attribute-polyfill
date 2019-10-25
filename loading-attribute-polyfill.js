@@ -214,6 +214,7 @@
 		}
 
 		// Remove the empty element - not using .remove() here for IE11 compatibility
+		// eslint-disable-next-line unicorn/prefer-node-remove
 		noScriptTag.parentNode.removeChild(noScriptTag); // Preferred .removeChild over .remove here for IE
 	}
 
@@ -231,7 +232,7 @@
 	}
 
 	function startMutationObserve() {
-		var observerTarget = document.getElementsByTagName('body')[0];
+		var observerTarget = document.querySelector('body');
 		var observerСonfig = {
 			childList: true,
 			subtree: true
@@ -240,16 +241,22 @@
 			var newImages = mutationsList.some(function(mutation) {
 				if (mutation.type === 'childList') {
 					for (let addedNode of mutation.addedNodes) {
-						if (addedNode.tagName === "NOSCRIPT" && addedNode.className === "loading-lazy") {
+						if (
+							addedNode.tagName === 'NOSCRIPT' &&
+							addedNode.className === 'loading-lazy'
+						) {
 							return true;
 						}
 					}
 				}
+
+				return false;
 			});
 			if (newImages) {
 				prepareElements();
 			}
 		};
+
 		const mutationObserver = new MutationObserver(observerCallback);
 		mutationObserver.observe(observerTarget, observerСonfig);
 	}
@@ -272,4 +279,4 @@
 			}
 		});
 	}
-}('loading-lazy', '256px 0px'));
+})('loading-lazy', '256px 0px');
