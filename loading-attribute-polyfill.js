@@ -230,18 +230,45 @@
 		onPrinting();
 	}
 
+	function startMutationObserve() {
+		var observerTarget = document.getElementsByTagName('body')[0];
+		var observerСonfig = {
+			childList: true,
+			subtree: true
+		};
+		var observerCallback = function(mutationsList) {
+			var newImages = mutationsList.some(function(mutation) {
+				if (mutation.type === 'childList') {
+					for (let addedNode of mutation.addedNodes) {
+						if (addedNode.tagName === "NOSCRIPT" && addedNode.className === "loading-lazy") {
+							return true;
+						}
+					}
+				}
+			});
+			if (newImages) {
+				prepareElements();
+			}
+		};
+		const mutationObserver = new MutationObserver(observerCallback);
+		mutationObserver.observe(observerTarget, observerСonfig);
+	}
+
 	// If the page has loaded already, run setup - if it hasn't, run as soon as it has.
 	// Use requestAnimationFrame as this will propably cause repaints
 	if (/comp|inter/.test(document.readyState)) {
 		rAFWrapper(prepareElements);
+		rAFWrapper(startMutationObserve);
 	} else if ('addEventListener' in document) {
 		document.addEventListener('DOMContentLoaded', function() {
 			rAFWrapper(prepareElements);
+			rAFWrapper(startMutationObserve);
 		});
 	} else {
 		document.attachEvent('onreadystatechange', function() {
 			if (document.readyState === 'complete') {
 				prepareElements();
+				startMutationObserve();
 			}
 		});
 	}
