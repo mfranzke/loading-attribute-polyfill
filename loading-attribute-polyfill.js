@@ -30,15 +30,13 @@
 	};
 
 	// Nodelist foreach polyfill / source: https://stackoverflow.com/a/46929259
-	if (typeof NodeList !== 'undefined' && NodeList.prototype) {
+	if (
+		typeof NodeList !== 'undefined' &&
+		NodeList.prototype &&
+		!NodeList.prototype.forEach
+	) {
 		// Yes, there's really no need for `Object.defineProperty` here
-		if (!NodeList.prototype.forEach) {
-			NodeList.prototype.forEach = Array.prototype.forEach;
-		}
-
-		if (!NodeList.prototype.some) {
-			NodeList.prototype.some = Array.prototype.some;
-		}
+		NodeList.prototype.forEach = Array.prototype.forEach;
 	}
 
 	// Define according to browsers support of the IntersectionObserver feature (missing e.g. on IE11 or Safari 11)
@@ -233,17 +231,19 @@
 		onPrinting();
 	}
 
-	function startMutationObserve() {
+	function startMutationObserver() {
 		var observerTarget = document.querySelector('body');
 		var observerСonfig = {
 			childList: true,
 			subtree: true
 		};
 		var observerCallback = function(mutationsList) {
-			var isNeedReinit = mutationsList.some(function(mutation) {
+			var isReinitNeeded = mutationsList.some(function(mutation) {
 				var newImages = false;
 				if (mutation.type === 'childList') {
-					newImages = mutation.addedNodes.some(function(addedNode) {
+					newImages = Array.prototype.some.call(mutation.addedNodes, function(
+						addedNode
+					) {
 						var thisNodeIsLazyLoad =
 							addedNode.tagName === 'NOSCRIPT' &&
 							addedNode.className === 'loading-lazy';
@@ -256,7 +256,7 @@
 
 				return newImages;
 			});
-			if (isNeedReinit) {
+			if (isReinitNeeded) {
 				prepareElements();
 			}
 		};
@@ -269,17 +269,17 @@
 	// Use requestAnimationFrame as this will propably cause repaints
 	if (/comp|inter/.test(document.readyState)) {
 		rAFWrapper(prepareElements);
-		rAFWrapper(startMutationObserve);
+		rAFWrapper(startMutationObserver);
 	} else if ('addEventListener' in document) {
 		document.addEventListener('DOMContentLoaded', function() {
 			rAFWrapper(prepareElements);
-			rAFWrapper(startMutationObserve);
+			rAFWrapper(startMutationObserver);
 		});
 	} else {
 		document.attachEvent('onreadystatechange', function() {
 			if (document.readyState === 'complete') {
 				prepareElements();
-				startMutationObserve();
+				startMutationObserver();
 			}
 		});
 	}

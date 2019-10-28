@@ -1,5 +1,5 @@
 {
-  "name": "@regru/loading-attribute-polyfill",
+  "name": "loading-attribute-polyfill",
   "version": "1.2.1",
   "description": "Fast and lightweight dependency-free vanilla JavaScript polyfill for native lazy loading / the awesome loading='lazy'-attribute.",
   "main": "loading-attribute-polyfill.min.js",
