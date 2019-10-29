@@ -18,16 +18,16 @@ Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meanin
 
 ## Features
 
-- Web standards: Supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
-- Performance: It's based on highly efficient, best practice code.
-- SEO & crawlers: The image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
+- Web standards: supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
+- Performance: it's based on highly efficient, best practice code.
+- SEO & crawlers: the image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
 
 ## Core concepts
 
 The polyfill was designed with the following concepts kept in mind:
 
 - dependency-free
-- Using JavaScript with graceful degradation
+- using JavaScript with graceful degradation
 
 ## Installation
 
@@ -46,13 +46,13 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 
 ```html
 <noscript class="loading-lazy">
-	<img
-		src="simpleimage.jpg"
-		loading="lazy"
-		alt=".."
-		width="250"
-		height="150"
-	/>
+    <img
+        src="simpleimage.jpg"
+        loading="lazy"
+        alt=".."
+        width="250"
+        height="150"
+    />
 </noscript>
 ```
 
@@ -60,28 +60,28 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 
 ```html
 <picture>
-	<noscript class="loading-lazy">
-		<source
-			media="(min-width: 40em)"
-			srcset="
-				simpleimage.huge.jpg 1x,
-				simpleimage.huge.2x.jpg 2x
-			"
-		/>
-		<source
-			srcset="
-				simpleimage.jpg 1x,
-				simpleimage.2x.jpg 2x
-			"
-		/>
-		<img
-			src="simpleimage.jpg"
-			loading="lazy"
-			alt=".."
-			width="250"
-			height="150"
-		/>
-	</noscript>
+    <noscript class="loading-lazy">
+        <source
+            media="(min-width: 40em)"
+            srcset="
+                simpleimage.huge.jpg 1x,
+                simpleimage.huge.2x.jpg 2x
+            "
+        />
+        <source
+            srcset="
+                simpleimage.jpg 1x,
+                simpleimage.2x.jpg 2x
+            "
+        />
+        <img
+            src="simpleimage.jpg"
+            loading="lazy"
+            alt=".."
+            width="250"
+            height="150"
+        />
+    </noscript>
 </picture>
 ```
 
@@ -89,17 +89,17 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 
 ```html
 <noscript class="loading-lazy">
-	<img
-		src="simpleimage.jpg"
-		srcset="
-			simpleimage.1024.jpg 1024w,
-			simpleimage.640.jpg   640w,
-			simpleimage.320.jpg   320w
-		"
-		sizes="(min-width: 36em) 33.3vw, 100vw"
-		alt="A rad wolf"
-		loading="lazy"
-	/>
+    <img
+        src="simpleimage.jpg"
+        srcset="
+            simpleimage.1024.jpg 1024w,
+            simpleimage.640.jpg   640w,
+            simpleimage.320.jpg   320w
+        "
+        sizes="(min-width: 36em) 33.3vw, 100vw"
+        alt="A rad wolf"
+        loading="lazy"
+    />
 </noscript>
 ```
 
@@ -107,22 +107,22 @@ Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that
 
 ```html
 <noscript class="loading-lazy">
-	<iframe
-		src="https://player.vimeo.com/video/87110435"
-		width="320"
-		height="180"
-		loading="lazy"
-	></iframe>
+    <iframe
+        src="https://player.vimeo.com/video/87110435"
+        width="320"
+        height="180"
+        loading="lazy"
+    ></iframe>
 </noscript>
 ```
 
 ## Optional additional dependencies
 
-In case you'd like to support [older versions of Microsoft EDGE, Microsoft Internet Explorer 11 or Apple Safari up to 12.0](https://caniuse.com/#feat=intersectionobserver), you could (conditionally) load an IntersectionObserver polyfill:
+In case you'd like to support [older versions of Microsoft Edge, Microsoft Internet Explorer 11 or Apple Safari up to 12.0](https://caniuse.com/#feat=intersectionobserver), you could (conditionally) load an IntersectionObserver polyfill:
 
 <https://www.npmjs.com/package/intersection-observer>
 
-Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users](<(https://caniuse.com/#feat=intersectionobserver)>) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazyloading resource hints](https://caniuse.com/#feat=lazyload).
+Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users](<(https://caniuse.com/#feat=intersectionobserver)>) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazy loading resource hints](https://caniuse.com/#feat=lazyload).
 
 ## API
 
@@ -134,9 +134,9 @@ See the polyfill in action either by downloading / forking this repo and have a 
 
 ## Further implementations - Kudos for that
 
-### Wordpress
+### WordPress
 
-Nico23 has developed a Wordpress plugin: <https://wordpress.org/plugins/native-lazyload-polyfill/> (which is much better than the one by Google !)
+Nico23 has developed a WordPress plugin: <https://wordpress.org/plugins/native-lazyload-polyfill/> (which is much better than the one by Google !)
 
 ### PHP Twig Extension
 
@@ -153,17 +153,17 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 ## Tested with
 
 -  Mac
-	-  Mac OSX 10.14, Mozilla Firefox 68.0.1 (manually, localhost)
-	-  Mac OSX 10.14, Safari 12 (via CrossBrowserTesting)
-	-  Mac OSX 10.13, Safari 11 (via CrossBrowserTesting)
+    -  macOS 10.14, Mozilla Firefox 68.0.1 (manually, localhost)
+    -  macOS 10.14, Safari 12 (via CrossBrowserTesting)
+    -  macOS 10.13, Safari 11 (via CrossBrowserTesting)
 
 -  iOS
-	-  iPad 6th Generation Simulator, Mobile Safari 12.0 (via CrossBrowserTesting)
-	
+    -  iPad 6th Generation Simulator, Mobile Safari 12.0 (via CrossBrowserTesting)
+    
 -  Windows
-	-  Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
-	-  Windows 10, Microsoft EDGE / versions 17, 18 (via CrossBrowserTesting)
-	-  Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting)
+    -  Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
+    -  Windows 10, Microsoft Edge / versions 17, 18 (via CrossBrowserTesting)
+    -  Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting)
 
 ### Big Thanks
 
@@ -171,9 +171,9 @@ Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbr
 
 [![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png "CrossBrowserTesting")](https://crossbrowsertesting.com) [![Join the chat at https://gitter.im/loading-attribute-polyfill/community](https://badges.gitter.im/loading-attribute-polyfill/community.svg)](https://gitter.im/loading-attribute-polyfill/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## things to keep in mind
+## Things to keep in mind
 
-- The demo HTML code is meant to be simple
+- The HTML demo code is meant to be simple
 - This polyfill doesn't (so far) provide any functionality for the `loading="eager"` value, as this was released even already, but still seems to be in the measure, learn and improvements phase.
 
 ## More information on the standard
