@@ -148,7 +148,7 @@ Nico23 has developed a WordPress plugin: <https://wordpress.org/plugins/native-l
 
 ## Credits
 
-Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @nextgenthemes, @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
+Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @DaPo, @nextgenthemes, @diogoterremoto, @dracos and @Flimm. Thank you very much for that, highly appreciated !
 
 ## Tested with
 
