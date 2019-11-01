@@ -214,6 +214,7 @@
 		}
 
 		// Remove the empty element - not using .remove() here for IE11 compatibility
+		// eslint-disable-next-line unicorn/prefer-node-remove
 		noScriptTag.parentNode.removeChild(noScriptTag); // Preferred .removeChild over .remove here for IE
 	}
 
@@ -230,19 +231,56 @@
 		onPrinting();
 	}
 
+	function startMutationObserver() {
+		var observerTarget = document.querySelector('body');
+		var observerСonfig = {
+			childList: true,
+			subtree: true
+		};
+		var observerCallback = function(mutationsList) {
+			var isReinitNeeded = mutationsList.some(function(mutation) {
+				var newImages = false;
+				if (mutation.type === 'childList') {
+					newImages = Array.prototype.some.call(mutation.addedNodes, function(
+						addedNode
+					) {
+						var thisNodeIsLazyLoad =
+							addedNode.tagName === 'NOSCRIPT' &&
+							addedNode.className === 'loading-lazy';
+						var lazyLoadNodeIsInsideThisNode =
+							addedNode.querySelector &&
+							addedNode.querySelector('noscript.loading-lazy');
+						return thisNodeIsLazyLoad || lazyLoadNodeIsInsideThisNode;
+					});
+				}
+
+				return newImages;
+			});
+			if (isReinitNeeded) {
+				prepareElements();
+			}
+		};
+
+		var mutationObserver = new MutationObserver(observerCallback);
+		mutationObserver.observe(observerTarget, observerСonfig);
+	}
+
 	// If the page has loaded already, run setup - if it hasn't, run as soon as it has.
 	// Use requestAnimationFrame as this will propably cause repaints
 	if (/comp|inter/.test(document.readyState)) {
 		rAFWrapper(prepareElements);
+		rAFWrapper(startMutationObserver);
 	} else if ('addEventListener' in document) {
 		document.addEventListener('DOMContentLoaded', function() {
 			rAFWrapper(prepareElements);
+			rAFWrapper(startMutationObserver);
 		});
 	} else {
 		document.attachEvent('onreadystatechange', function() {
 			if (document.readyState === 'complete') {
 				prepareElements();
+				startMutationObserver();
 			}
 		});
 	}
-}('loading-lazy', '256px 0px'));
+})('loading-lazy', '256px 0px');
