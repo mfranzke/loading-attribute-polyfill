@@ -124,6 +124,13 @@ In case you'd like to support [older versions of Microsoft Edge, Microsoft Inter
 
 Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users](<(https://caniuse.com/#feat=intersectionobserver)>) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazy loading resource hints](https://caniuse.com/#feat=lazyload).
 
+### Internet Explorer 9
+
+The polyfill has been enhanced to even also provide it's functionality on IE9. But please keep in mind to even also provide the following polyfills, as it would elsewhere fall back to rewriting the image URLs correctly, but not do the lazy loading thing'ish.
+
+* Element.prototype.dataset
+* matchMedia
+
 ## API
 
 Nothing really, just plug it in, it ~~will~~ should work out of the box.

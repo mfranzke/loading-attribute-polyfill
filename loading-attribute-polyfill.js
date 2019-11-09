@@ -128,6 +128,10 @@
 	 * Handle printing the page
 	 */
 	function onPrinting() {
+		if (typeof window.matchMedia === 'undefined') {
+			return;
+		}
+
 		var mediaQueryList = window.matchMedia('print');
 
 		mediaQueryList.addListener(function(mql) {
@@ -155,7 +159,11 @@
 		// The contents of a <noscript> tag are treated as text to JavaScript
 		var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
 
-		if (!capabilities.loading && capabilities.scrolling) {
+		if (
+			!capabilities.loading &&
+			capabilities.scrolling &&
+			typeof document.documentElement.dataset !== 'undefined'
+		) {
 			// Check for IntersectionObserver support
 			if (typeof intersectionObserver === 'undefined') {
 				// Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
@@ -202,6 +210,7 @@
 				!capabilities.loading &&
 				capabilities.scrolling &&
 				typeof intersectionObserver !== 'undefined' &&
+				typeof document.documentElement.dataset !== 'undefined' &&
 				lazyArea.firstChild.tagName &&
 				(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
 					lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
