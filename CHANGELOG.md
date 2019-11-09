@@ -6,9 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
-## [Unreleased]
+## [1.3.0] - 2019-11-09
 
-- Ongoing: Further documentation
+### Added
+
+- Gitter badge
+- Graceful degradation and functionality for IE9 #41
+- Updated with some more supporters
+
+### Changed
+
+- Updated prettier and webdriverio dependencies
+- Further enhanced the documentation, like e.g. for #33
+
+### Fixed
+
+- Reduced the weight of the NPM package by adding a npmignore file
+- Typos in the docs
 
 ## [1.2.0] - 2019-10-15
 
