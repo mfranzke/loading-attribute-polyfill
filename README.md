@@ -31,7 +31,7 @@ The polyfill was designed with the following concepts kept in mind:
 
 ## Installation
 
-Just integrate the JavaScript file into your code - et voilà.
+First you'll need to integrate the JavaScript file into your code.
 
 You may optionally load via NPM or Bower:
 
@@ -40,7 +40,7 @@ You may optionally load via NPM or Bower:
 
 You could even load the polyfill asynchronously: <https://output.jsbin.com/codelib/1>
 
-Afterwards you'll need to wrap all of your `<img>` and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a `loading="lazy"` attribute as well) by an `<noscript>` HTML tag:
+Afterwards you have need to wrap all of your `<img>` and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a `loading="lazy"` attribute as well) by an `<noscript>` HTML tag:
 
 ### Simple image
 

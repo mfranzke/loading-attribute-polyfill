@@ -57,9 +57,6 @@
 		};
 	}
 
-	var temporaryImage =
-		'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-
 	/**
 	 * Put the source and srcset back where it belongs - now that the elements content is attached to the document, it will load now
 	 * @param {Object} lazyItem Current item to be restored after lazy loading.
@@ -158,6 +155,13 @@
 	function getAndPrepareHTMLCode(noScriptTag) {
 		// The contents of a <noscript> tag are treated as text to JavaScript
 		var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
+
+		var getImageWidth = lazyAreaHtml.match(/width=[\'\"]([0-9]+)[\'\"]/) || false;
+		var temporaryImageWidth = getImageWidth[1] || 1;
+		var getImageHeight = lazyAreaHtml.match(/height=[\'\"]([0-9]+)[\'\"]/) || false;
+		var temporaryImageHeight = getImageHeight[1] || 1;
+
+		var temporaryImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 " + temporaryImageWidth + " " + temporaryImageHeight + "'%3E%3C/svg%3E";
 
 		if (
 			!capabilities.loading &&
