@@ -36,7 +36,7 @@
     "husky": "^4.2.1",
     "prettier": "1.19.1",
     "webdriverio": "^5.18.0",
-    "xo": "^0.25.3"
+    "xo": "^0.26.0"
   },
   "scripts": {
     "test": "xo loading-attribute-polyfill.js"
