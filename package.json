@@ -35,7 +35,7 @@
     "@wdio/sync": "^5.18.5",
     "husky": "^4.2.1",
     "prettier": "1.19.1",
-    "webdriverio": "^5.18.0",
+    "webdriverio": "^5.18.7",
     "xo": "^0.25.3"
   },
   "scripts": {
