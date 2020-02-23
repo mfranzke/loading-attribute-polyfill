@@ -1,6 +1,6 @@
-
-webdriverio-tests/
-.editorconfig
-bower.json
+demo
+webdriverio-tests
+.gitignore
+.huskyrc
+commitlint.config.js
 wdio.conf-crossbrowsertesting.js
-config.codekit3
