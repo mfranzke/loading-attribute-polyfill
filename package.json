@@ -1,6 +1,6 @@
 {
   "name": "loading-attribute-polyfill",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Fast and lightweight dependency-free vanilla JavaScript polyfill for native lazy loading / the awesome loading='lazy'-attribute.",
   "main": "loading-attribute-polyfill.min.js",
   "repository": {
