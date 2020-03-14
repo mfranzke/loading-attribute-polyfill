@@ -132,7 +132,7 @@ The polyfill has been enhanced to even also provide it's functionality on IE9. B
 
 * matchMedia
 
-The images are still displaying an error in the demo on IE9, as most likely (from my understanding) this browser doesn't work with the HTTPS protocol any more, but the src-attributes values are correctly rewriten after all.
+The images are still displaying an error in the demo on IE9, as most likely (from my understanding) this browser doesn't work with the HTTPS protocol any more, but the src-attributes values are correctly rewritten after all.
 
 ## API
 
