@@ -34,15 +34,6 @@
 				height: auto;
 			}
 		</style>
-		<!-- Including other optional polyfills depending on expected browser support scope -->
-		<script
-			src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2C%2CmatchMedia"
-			crossorigin="anonymous"
-		></script>
-		<script
-			type="text/javascript"
-			src="../loading-attribute-polyfill.min.js"
-		></script>
 	</head>
 	<body>
 		<p>The sample images embedded into this document are including textual information on their embedding technique, like the HTML tag, attributes and pixel density to show you that the correct image has been loaded.</p>
@@ -205,5 +196,14 @@
 				></iframe>
 			</noscript>
 		</main>
+		<!-- Including other optional polyfills depending on expected browser support scope -->
+		<script
+			src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2C%2CmatchMedia"
+			crossorigin="anonymous"
+		></script>
+		<script
+			type="text/javascript"
+			src="../loading-attribute-polyfill.min.js"
+		></script>
 	</body>
 </html>

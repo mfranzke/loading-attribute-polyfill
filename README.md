@@ -126,6 +126,14 @@ In case you'd like to support [older versions of Microsoft Edge, Microsoft Inter
 
 Nevertheless this polyfill would still work in those browsers without that other polyfill included, but [this small amount of users](<(https://caniuse.com/#feat=intersectionobserver)>) wouldn't totally benefit from the lazy loading functionality - we've at least got you partly covered by using the [Microsoft proprietary lazy loading resource hints](https://caniuse.com/#feat=lazyload).
 
+### Internet Explorer 9 & Internet Explorer 10
+
+> Internet Explorer 9 and 10 have bugs where the 'interactive' state can be fired too early before the document has finished parsing.
+
+Source: https://developer.mozilla.org/en-US/docs/Web/API/Document/readyState
+
+That for you would need to include the polyfill the latest within the HTML code, like the nearest to the closing `body` HTML tag, as including it e.g. within the `head` section might lead to an unexpected state, so that in worst case the images might not get loaded.
+
 ### Internet Explorer 9
 
 The polyfill has been enhanced to even also provide it's functionality on IE9. But please keep in mind to even also include a `matchMedia` polyfill.
