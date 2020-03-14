@@ -78,12 +78,12 @@
 		srcsetItems.forEach(function(item) {
 			if (item.dataset.lazySrcset) {
 				item.setAttribute('srcset', item.dataset.lazySrcset);
-				delete item.dataset.lazySrcset;
+				item.removeAttribute('data-lazy-srcset'); // not using delete .dataset here for compatibility down to IE9
 			}
 		});
 
 		lazyItem.setAttribute('src', lazyItem.dataset.lazySrc);
-		delete lazyItem.dataset.lazySrc;
+		lazyItem.removeAttribute('data-lazy-src'); // not using delete .dataset here for compatibility down to IE9
 	}
 
 	/**
