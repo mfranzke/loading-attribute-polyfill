@@ -244,7 +244,7 @@
 
 	// If the page has loaded already, run setup - if it hasn't, run as soon as it has.
 	// Use requestAnimationFrame as this will propably cause repaints
-	if (/comp|inter/.test(document.readyState)) {
+	if (/comp|inter/.test(document.readyState)) { // https://www.w3schools.com/jsref/prop_doc_readystate.asp
 		rAFWrapper(prepareElements);
 	} else if ('addEventListener' in document) {
 		document.addEventListener('DOMContentLoaded', function() {
