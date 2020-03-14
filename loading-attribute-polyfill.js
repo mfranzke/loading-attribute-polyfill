@@ -77,8 +77,8 @@
 
 		 // Not using .dataset within those upfollowing lines of code for polyfill independent compatibility down to IE9
 		srcsetItems.forEach(function(item) {
-			if (item.getAttribute('data-lazy-srcset')) {
-				item.setAttribute('srcset', item.getAttribute('data-lazysrcset'));
+			if (item.hasAttribute('data-lazy-srcset')) {
+				item.setAttribute('srcset', item.getAttribute('data-lazy-srcset'));
 				item.removeAttribute('data-lazy-srcset'); // Not using delete .dataset here for compatibility down to IE9
 			}
 		});
