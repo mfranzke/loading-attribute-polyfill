@@ -40,7 +40,9 @@ You may optionally load via NPM or Bower:
 
 You could even load the polyfill asynchronously: <https://output.jsbin.com/codelib/1>
 
-Afterwards you have need to wrap all of your `<img>` and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a `loading="lazy"` attribute as well) by an `<noscript>` HTML tag:
+Afterwards you have need to wrap all of your `<img>` (and in case of `<picture>` usage the complementary `<source>` HTML tags as well) and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a `loading="lazy"` attribute as well) by an `<noscript>` HTML tag.
+
+Please keep in mind that it's beneficial to even also include `width` and `height` attributes on `<img>` HTML tags, as the browser could determine the aspect ratio via those two attributes values being set (even if you overwrite them via CSS), compare to e.g. <https://css-tricks.com/do-this-to-improve-image-loading-on-your-website/>
 
 ### Simple image
 
@@ -126,7 +128,7 @@ Nevertheless this polyfill would still work in those browsers without that other
 
 ### Internet Explorer 9
 
-The polyfill has been enhanced to even also provide it's functionality on IE9. But please keep in mind to even also provide the following polyfills, as it would elsewhere fall back to rewriting the image URLs correctly, but not do the lazy loading thing'ish.
+The polyfill has been enhanced to even also provide it's functionality on IE9. But please keep in mind to additionally to the polyfills out of the previous section even also provide the following polyfills, as it would elsewhere fall back to rewriting the image URLs correctly, but not do the lazy loading thing'ish.
 
 * Element.prototype.dataset
 * matchMedia
