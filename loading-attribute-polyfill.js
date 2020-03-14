@@ -75,15 +75,16 @@
 
 		srcsetItems.push(lazyItem);
 
+		 // Not using .dataset within those upfollowing lines of code for polyfill independent compatibility down to IE9
 		srcsetItems.forEach(function(item) {
-			if (item.dataset.lazySrcset) {
-				item.setAttribute('srcset', item.dataset.lazySrcset);
-				item.removeAttribute('data-lazy-srcset'); // not using delete .dataset here for compatibility down to IE9
+			if (item.getAttribute('data-lazy-srcset')) {
+				item.setAttribute('srcset', item.getAttribute('data-lazysrcset'));
+				item.removeAttribute('data-lazy-srcset'); // Not using delete .dataset here for compatibility down to IE9
 			}
 		});
 
-		lazyItem.setAttribute('src', lazyItem.dataset.lazySrc);
-		lazyItem.removeAttribute('data-lazy-src'); // not using delete .dataset here for compatibility down to IE9
+		lazyItem.setAttribute('src', lazyItem.getAttribute('data-lazy-src'));
+		lazyItem.removeAttribute('data-lazy-src'); // Not using delete .dataset here for compatibility down to IE9
 	}
 
 	/**
@@ -165,8 +166,7 @@
 
 		if (
 			!capabilities.loading &&
-			capabilities.scrolling &&
-			typeof document.documentElement.dataset !== 'undefined'
+			capabilities.scrolling
 		) {
 			// Check for IntersectionObserver support
 			if (typeof intersectionObserver === 'undefined') {
@@ -214,7 +214,6 @@
 				!capabilities.loading &&
 				capabilities.scrolling &&
 				typeof intersectionObserver !== 'undefined' &&
-				typeof document.documentElement.dataset !== 'undefined' &&
 				lazyArea.firstChild.tagName &&
 				(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
 					lazyArea.firstChild.tagName.toLowerCase() === 'iframe')

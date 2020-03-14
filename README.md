@@ -130,7 +130,6 @@ Nevertheless this polyfill would still work in those browsers without that other
 
 The polyfill has been enhanced to even also provide it's functionality on IE9. But please keep in mind to additionally to the polyfills out of the previous section even also provide the following polyfills, as it would elsewhere fall back to rewriting the image URLs correctly, but not do the lazy loading thing'ish.
 
-* Element.prototype.dataset
 * matchMedia
 
 The images are still displaying an error in the demo on IE9, as most likely (from my understanding) this browser doesn't work with the HTTPS protocol any more, but the src-attributes values are correctly rewriten after all.
