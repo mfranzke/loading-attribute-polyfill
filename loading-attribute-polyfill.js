@@ -157,17 +157,19 @@
 		// The contents of a <noscript> tag are treated as text to JavaScript
 		var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
 
-		var getImageWidth = lazyAreaHtml.match(/width=['"](\d+)['"]/) || false;
+		var getImageWidth =
+			lazyAreaHtml.match(/width=[\'\"]([0-9]+)[\'\"]/) || false;
 		var temporaryImageWidth = getImageWidth[1] || 1;
-		var getImageHeight = lazyAreaHtml.match(/height=['"](\d+)['"]/) || false;
+		var getImageHeight =
+			lazyAreaHtml.match(/height=[\'\"]([0-9]+)[\'\"]/) || false;
 		var temporaryImageHeight = getImageHeight[1] || 1;
 
 		var temporaryImage =
-			'data:image/svg+xml,%3Csvg xmlns=’http://www.w3.org/2000/svg’ viewBox=’0 0 ' +
+			"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 " +
 			temporaryImageWidth +
 			' ' +
 			temporaryImageHeight +
-			'’%3E%3C/svg%3E';
+			"'%3E%3C/svg%3E";
 
 		if (!capabilities.loading && capabilities.scrolling) {
 			// Check for IntersectionObserver support
