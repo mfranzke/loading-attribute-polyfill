@@ -75,7 +75,7 @@
 
 		srcsetItems.push(lazyItem);
 
-		 // Not using .dataset within those upfollowing lines of code for polyfill independent compatibility down to IE9
+		// Not using .dataset within those upfollowing lines of code for polyfill independent compatibility down to IE9
 		srcsetItems.forEach(function(item) {
 			if (item.hasAttribute('data-lazy-srcset')) {
 				item.setAttribute('srcset', item.getAttribute('data-lazy-srcset'));
@@ -157,17 +157,21 @@
 		// The contents of a <noscript> tag are treated as text to JavaScript
 		var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
 
-		var getImageWidth = lazyAreaHtml.match(/width=[\'\"]([0-9]+)[\'\"]/) || false;
+		var getImageWidth =
+			lazyAreaHtml.match(/width=[\'\"]([0-9]+)[\'\"]/) || false;
 		var temporaryImageWidth = getImageWidth[1] || 1;
-		var getImageHeight = lazyAreaHtml.match(/height=[\'\"]([0-9]+)[\'\"]/) || false;
+		var getImageHeight =
+			lazyAreaHtml.match(/height=[\'\"]([0-9]+)[\'\"]/) || false;
 		var temporaryImageHeight = getImageHeight[1] || 1;
 
-		var temporaryImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 " + temporaryImageWidth + " " + temporaryImageHeight + "'%3E%3C/svg%3E";
+		var temporaryImage =
+			"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 " +
+			temporaryImageWidth +
+			' ' +
+			temporaryImageHeight +
+			"'%3E%3C/svg%3E";
 
-		if (
-			!capabilities.loading &&
-			capabilities.scrolling
-		) {
+		if (!capabilities.loading && capabilities.scrolling) {
 			// Check for IntersectionObserver support
 			if (typeof intersectionObserver === 'undefined') {
 				// Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
@@ -244,7 +248,8 @@
 
 	// If the page has loaded already, run setup - if it hasn't, run as soon as it has.
 	// Use requestAnimationFrame as this will propably cause repaints
-	if (/comp|inter/.test(document.readyState)) { // https://www.w3schools.com/jsref/prop_doc_readystate.asp
+	// document.readyState values: https://www.w3schools.com/jsref/prop_doc_readystate.asp
+	if (/comp|inter/.test(document.readyState)) {
 		rAFWrapper(prepareElements);
 	} else if ('addEventListener' in document) {
 		document.addEventListener('DOMContentLoaded', function() {
@@ -257,4 +262,4 @@
 			}
 		});
 	}
-}('loading-lazy', '256px 0px'));
+})('loading-lazy', '256px 0px');
