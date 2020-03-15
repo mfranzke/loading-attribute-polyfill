@@ -19,6 +19,7 @@ Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meanin
 
 ## Features
 
+- Lightweight: 2.7 kB of minified JavaScript, around 1.2 kB gzipped
 - Web standards: supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
 - Performance: it's based on highly efficient, best practice code.
 - SEO & crawlers: the image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
