@@ -1,7 +1,7 @@
 {
 	"name": "loading-attribute-polyfill",
-	"description": "A minimal and dependency-free vanilla JavaScript polyfill for the awesome loading='lazy'-attribute.",
-	"version": "1.1.0",
+	"description": "Fast and lightweight dependency-free vanilla JavaScript polyfill for native lazy loading / the awesome loading='lazy'-attribute.",
+	"version": "1.5.0",
 	"homepage": "https://github.com/mfranzke/loading-attribute-polyfill",
 	"authors": [
 		{
@@ -12,7 +12,9 @@
 	],
 	"keywords": [
 		"lazy loading",
+		"native lazy loading",
 		"img",
+		"image",
 		"iframe",
 		"polyfill",
 		"web development",
@@ -27,7 +29,12 @@
 	],
 	"ignore": [
 		"bower.json",
-		"demo/index.html",
-		"README.md"
+		"demo",
+		"webdriverio-tests",
+		".gitignore",
+		".huskyrc",
+		"config.codekit3",
+		"commitlint.config.js",
+		"wdio.conf-crossbrowsertesting.js"
 	]
 }
