@@ -46,6 +46,9 @@
       "browser"
     ],
     "prettier": true,
-    "esnext": false
+    "esnext": false,
+    "rules": {
+      "unicorn/prefer-node-remove": "off"
+    }
   }
 }
