@@ -1,15 +1,16 @@
 # loading="lazy" attribute polyfill
 
 [![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg "license badge")](https://opensource.org/licenses/mit-license.php)
-[![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg "npm version")](https://npmjs.com/package/loading-attribute-polyfill "loading=\"lazy\"-attribute polyfill – on NPM")
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/loading-attribute-polyfill)](https://bundlephobia.com/result?p=loading-attribute-polyfill)
 [![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg "Count of total downloads – NPM")](https://npmjs.com/package/loading-attribute-polyfill "loading=\"lazy\"-attribute polyfill – on NPM")
 [![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge "Count of total downloads – jsDelivr")](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill "loading-attribute polyfill – on jsDelivr")
+[![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg "npm version")](https://npmjs.com/package/loading-attribute-polyfill "loading=\"lazy\"-attribute polyfill – on NPM")
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/16c763924903400ca82cfed618a82a6e)](https://app.codacy.com/app/mfranzke_2/loading-attribute-polyfill?utm_source=github.com&utm_medium=referral&utm_content=mfranzke/loading-attribute-polyfill&utm_campaign=Badge_Grade_Dashboard)
+[![Greenkeeper badge](https://badges.greenkeeper.io/mfranzke/loading-attribute-polyfill.svg)](https://greenkeeper.io/)
 [![dependencies Status](https://david-dm.org/mfranzke/loading-attribute-polyfill/status.svg "Count of dependencies")](https://david-dm.org/mfranzke/loading-attribute-polyfill "loading-attribute polyfill – on david-dm")
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
-[![Greenkeeper badge](https://badges.greenkeeper.io/mfranzke/loading-attribute-polyfill.svg)](https://greenkeeper.io/)
 
 Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meaning the behaviour to load elements right before they enter the viewport. Provides graceful degradation, and is - not just thatfor - SEO friendly. Handles images with `srcset` and within `picture`, as well as `iframe` elements. `loading="lazy"` will be a huge improvement for todays web performance challenges, so use and polyfill it today!
 
@@ -19,7 +20,7 @@ Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meanin
 
 ## Features
 
-- Lightweight: 2.7 kB of minified JavaScript, around 1.2 kB gzipped
+- Lightweight (see the badge above)
 - Web standards: supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
 - Performance: it's based on highly efficient, best practice code.
 - SEO & crawlers: the image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
