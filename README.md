@@ -14,7 +14,8 @@
 Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meaning the behaviour to load elements right before they enter the viewport. Provides graceful degradation, and is - not just thatfor - SEO friendly. Handles images with `srcset` and within `picture`, as well as `iframe` elements. `loading="lazy"` will be a huge improvement for todays web performance challenges, so use and polyfill it today!
 
 - Released under the MIT license
-- Made in Germany
+- Made in Germany. And supported by so many great people from all over this planet - see "Credits" accordingly.
+- Compatible down to Microsoft Internet Explorer 9
 
 ## Features
 
@@ -180,6 +181,7 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
     -  Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
     -  Windows 10, Microsoft Edge / versions 17, 18 (via CrossBrowserTesting)
     -  Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting)
+	-  Windows 7 SP1, Internet Explorer 9.0.8112.16421 (manually, localhost)
 
 ### Big Thanks
 
