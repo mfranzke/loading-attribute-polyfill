@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
+## [1.5.0] - 2020-03-15
+
+### Changed
+
+- Updated webdriverio, commitlint and xo dependencies
+- docs: further clarifications
+- IE9 & IE10: removed .dataset reliance
+
+### Fixed
+
+- IE9 & IE10: not deleting dataset items for IE9 compatibility #GH-66
+- IE9 & IE10: added section within the docs on including the polyfill JS file at the end of the body
+
 ## [1.4.1] - 2020-02-26
 
 ### Changed
