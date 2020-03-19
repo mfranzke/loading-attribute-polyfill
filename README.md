@@ -131,7 +131,7 @@ And the images are still displaying an error in the demo on IE9, as most likely 
 
 ## API
 
-Nothing really, just plug it in, it ~~will~~ should work out of the box.
+Nothing really, just integrate it as shown within the "installation" section, and it ~~will~~ should work out of the box.
 
 ## Demo
 
