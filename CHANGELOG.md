@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
+## [1.5.2] - 2020-03-19
+
+### Added
+
+- improvement(prettier): run prettier when committing files
+
+### Changed
+
+- Formatting and code & content optimizations
+- xo: added further rules for IE9 compatibility
+
 ## [1.5.1] - 2020-03-15
 
 ### Fix
