@@ -2,9 +2,9 @@
 
 [![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg "license badge")](https://opensource.org/licenses/mit-license.php)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/loading-attribute-polyfill)](https://bundlephobia.com/result?p=loading-attribute-polyfill)
-[![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg "Count of total downloads – NPM")](https://npmjs.com/package/loading-attribute-polyfill "loading=\"lazy\"-attribute polyfill – on NPM")
+[![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg "Count of total downloads – NPM")](https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM')
 [![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge "Count of total downloads – jsDelivr")](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill "loading-attribute polyfill – on jsDelivr")
-[![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/loading-attribute-polyfill "loading=\"lazy\"-attribute polyfill – on NPM")
+[![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM')
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/16c763924903400ca82cfed618a82a6e)](https://app.codacy.com/app/mfranzke_2/loading-attribute-polyfill?utm_source=github.com&utm_medium=referral&utm_content=mfranzke/loading-attribute-polyfill&utm_campaign=Badge_Grade_Dashboard)
 [![Greenkeeper badge](https://badges.greenkeeper.io/mfranzke/loading-attribute-polyfill.svg)](https://greenkeeper.io/)
 [![dependencies Status](https://david-dm.org/mfranzke/loading-attribute-polyfill/status.svg "Count of dependencies")](https://david-dm.org/mfranzke/loading-attribute-polyfill "loading-attribute polyfill – on david-dm")
@@ -51,13 +51,7 @@ Please keep in mind that it's beneficial to even also include `width` and `heigh
 
 ```html
 <noscript class="loading-lazy">
-    <img
-        src="simpleimage.jpg"
-        loading="lazy"
-        alt=".."
-        width="250"
-        height="150"
-    />
+	<img src="simpleimage.jpg" loading="lazy" alt=".." width="250" height="150" />
 </noscript>
 ```
 
@@ -65,28 +59,20 @@ Please keep in mind that it's beneficial to even also include `width` and `heigh
 
 ```html
 <picture>
-    <noscript class="loading-lazy">
-        <source
-            media="(min-width: 40em)"
-            srcset="
-                simpleimage.huge.jpg 1x,
-                simpleimage.huge.2x.jpg 2x
-            "
-        />
-        <source
-            srcset="
-                simpleimage.jpg 1x,
-                simpleimage.2x.jpg 2x
-            "
-        />
-        <img
-            src="simpleimage.jpg"
-            loading="lazy"
-            alt=".."
-            width="250"
-            height="150"
-        />
-    </noscript>
+	<noscript class="loading-lazy">
+		<source
+			media="(min-width: 40em)"
+			srcset="simpleimage.huge.jpg 1x, simpleimage.huge.2x.jpg 2x"
+		/>
+		<source srcset="simpleimage.jpg 1x, simpleimage.2x.jpg 2x" />
+		<img
+			src="simpleimage.jpg"
+			loading="lazy"
+			alt=".."
+			width="250"
+			height="150"
+		/>
+	</noscript>
 </picture>
 ```
 
@@ -94,17 +80,17 @@ Please keep in mind that it's beneficial to even also include `width` and `heigh
 
 ```html
 <noscript class="loading-lazy">
-    <img
-        src="simpleimage.jpg"
-        srcset="
-            simpleimage.1024.jpg 1024w,
-            simpleimage.640.jpg   640w,
-            simpleimage.320.jpg   320w
-        "
-        sizes="(min-width: 36em) 33.3vw, 100vw"
-        alt="A rad wolf"
-        loading="lazy"
-    />
+	<img
+		src="simpleimage.jpg"
+		srcset="
+			simpleimage.1024.jpg 1024w,
+			simpleimage.640.jpg   640w,
+			simpleimage.320.jpg   320w
+		"
+		sizes="(min-width: 36em) 33.3vw, 100vw"
+		alt="A rad wolf"
+		loading="lazy"
+	/>
 </noscript>
 ```
 
@@ -112,12 +98,12 @@ Please keep in mind that it's beneficial to even also include `width` and `heigh
 
 ```html
 <noscript class="loading-lazy">
-    <iframe
-        src="https://player.vimeo.com/video/87110435"
-        width="320"
-        height="180"
-        loading="lazy"
-    ></iframe>
+	<iframe
+		src="https://player.vimeo.com/video/87110435"
+		width="320"
+		height="180"
+		loading="lazy"
+	></iframe>
 </noscript>
 ```
 
@@ -171,19 +157,18 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 ## Tested with
 
--  Mac
-    -  macOS 10.14, Mozilla Firefox 68.0.1 (manually, localhost)
-    -  macOS 10.14, Safari 12 (via CrossBrowserTesting)
-    -  macOS 10.13, Safari 11 (via CrossBrowserTesting)
+- Mac
 
--  iOS
-    -  iPad 6th Generation Simulator, Mobile Safari 12.0 (via CrossBrowserTesting)
-    
--  Windows
-    -  Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
-    -  Windows 10, Microsoft Edge / versions 17, 18 (via CrossBrowserTesting)
-    -  Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting)
-	-  Windows 7 SP1, Internet Explorer 9.0.8112.16421 (manually, localhost)
+  - macOS 10.14, Mozilla Firefox 68.0.1 (manually, localhost)
+  - macOS 10.14, Safari 12 (via CrossBrowserTesting)
+  - macOS 10.13, Safari 11 (via CrossBrowserTesting)
+
+- iOS
+  - iPad 6th Generation Simulator, Mobile Safari 12.0 (via CrossBrowserTesting)
+- Windows
+  - Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
+  - Windows 10, Microsoft Edge / versions 17, 18 (via CrossBrowserTesting)
+  - Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting) - Windows 7 SP1, Internet Explorer 9.0.8112.16421 (manually, localhost)
 
 ### Big Thanks
 
