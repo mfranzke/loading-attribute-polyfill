@@ -11,6 +11,7 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 ### Added
 
 - improvement(prettier): run prettier when committing files
+- a minzipped size badge
 
 ### Changed
 
