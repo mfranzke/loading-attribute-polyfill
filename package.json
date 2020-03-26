@@ -30,7 +30,7 @@
     "@commitlint/config-conventional": "^8.3.4",
     "@wdio/cli": "^5.22.4",
     "@wdio/dot-reporter": "^5.22.4",
-    "@wdio/local-runner": "^5.22.4",
+    "@wdio/local-runner": "^6.0.1",
     "@wdio/mocha-framework": "^5.18.7",
     "@wdio/sync": "^5.20.1",
     "husky": "^4.2.3",
