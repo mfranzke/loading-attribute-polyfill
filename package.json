@@ -28,15 +28,15 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@wdio/cli": "^6.0.1",
-    "@wdio/dot-reporter": "^5.22.4",
-    "@wdio/local-runner": "^6.0.1",
-    "@wdio/mocha-framework": "^5.18.7",
-    "@wdio/sync": "^5.20.1",
+    "@wdio/cli": "^6.0.2",
+    "@wdio/dot-reporter": "^6.0.1",
+    "@wdio/local-runner": "^6.0.3",
+    "@wdio/mocha-framework": "^6.0.3",
+    "@wdio/sync": "^6.0.1",
     "husky": "^4.2.3",
     "prettier": "2.0.2",
     "pretty-quick": "^2.0.1",
-    "webdriverio": "^6.0.1",
+    "webdriverio": "^6.0.2",
     "xo": "^0.28.0"
   },
   "scripts": {
