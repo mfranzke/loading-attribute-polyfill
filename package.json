@@ -34,7 +34,7 @@
     "@wdio/mocha-framework": "^6.0.13",
     "@wdio/sync": "^6.0.12",
     "husky": "^4.2.3",
-    "prettier": "2.0.2",
+    "prettier": "2.0.4",
     "pretty-quick": "^2.0.1",
     "webdriverio": "^6.0.13",
     "xo": "^0.28.1"
