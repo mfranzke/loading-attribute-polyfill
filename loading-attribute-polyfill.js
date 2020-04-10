@@ -10,7 +10,7 @@
  * Use an IntersectionObserver polyfill in case of IE11 support necessary.
  */
 
-(function(noscriptClass, rootMargin) {
+(function (noscriptClass, rootMargin) {
 	'use strict';
 
 	var config = {
@@ -52,7 +52,7 @@
 	if ('requestAnimationFrame' in window) {
 		rAFWrapper = window.requestAnimationFrame;
 	} else {
-		rAFWrapper = function(func) {
+		rAFWrapper = function (func) {
 			func();
 		};
 	}
@@ -76,7 +76,7 @@
 		srcsetItems.push(lazyItem);
 
 		// Not using .dataset within those upfollowing lines of code for polyfill independent compatibility down to IE9
-		srcsetItems.forEach(function(item) {
+		srcsetItems.forEach(function (item) {
 			if (item.hasAttribute('data-lazy-srcset')) {
 				item.setAttribute('srcset', item.getAttribute('data-lazy-srcset'));
 				item.removeAttribute('data-lazy-srcset'); // Not using delete .dataset here for compatibility down to IE9
@@ -107,7 +107,7 @@
 	 * @param {Object} observer IntersectionObserver instance reference
 	 */
 	function onIntersection(entries, observer) {
-		entries.forEach(function(entry) {
+		entries.forEach(function (entry) {
 			// Mitigation for EDGE lacking support of .isIntersecting until v15, compare to e.g. https://github.com/w3c/IntersectionObserver/issues/211#issuecomment-309144669
 			if (entry.intersectionRatio === 0) {
 				return;
@@ -132,7 +132,7 @@
 
 		var mediaQueryList = window.matchMedia('print');
 
-		mediaQueryList.addListener(function(mql) {
+		mediaQueryList.addListener(function (mql) {
 			if (mql.matches) {
 				document
 					.querySelectorAll(
@@ -141,7 +141,7 @@
 							config.lazyIframe +
 							'[data-lazy-src]'
 					)
-					.forEach(function(lazyItem) {
+					.forEach(function (lazyItem) {
 						restoreSource(lazyItem);
 					});
 			}
@@ -250,11 +250,11 @@
 	if (/comp|inter/.test(document.readyState)) {
 		rAFWrapper(prepareElements);
 	} else if ('addEventListener' in document) {
-		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('DOMContentLoaded', function () {
 			rAFWrapper(prepareElements);
 		});
 	} else {
-		document.attachEvent('onreadystatechange', function() {
+		document.attachEvent('onreadystatechange', function () {
 			if (document.readyState === 'complete') {
 				prepareElements();
 			}
