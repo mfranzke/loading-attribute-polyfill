@@ -1,6 +1,6 @@
 # loading="lazy" attribute polyfill
 
-[![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg "license badge")](https://opensource.org/licenses/mit-license.php)
+[![Financial Contributors on Open Collective](https://opencollective.com/loading-attribute-polyfill/all/badge.svg?label=financial+contributors)](https://opencollective.com/loading-attribute-polyfill) [![MIT license](https://img.shields.io/npm/l/loading-attribute-polyfill.svg "license badge")](https://opensource.org/licenses/mit-license.php)
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/loading-attribute-polyfill)](https://bundlephobia.com/result?p=loading-attribute-polyfill)
 [![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg "Count of total downloads – NPM")](https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM')
 [![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge "Count of total downloads – jsDelivr")](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill "loading-attribute polyfill – on jsDelivr")
@@ -191,3 +191,33 @@ Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbr
 If you're trying out and using my work, feel free to contact me and give me any feedback. I'm curious about how it's gonna be used.
 
 And if you do like this polyfill, please consider even also having a look at the other polyfill we've developed: <https://github.com/mfranzke/datalist-polyfill/>
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/mfranzke/loading-attribute-polyfill/graphs/contributors"><img src="https://opencollective.com/loading-attribute-polyfill/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/loading-attribute-polyfill/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/loading-attribute-polyfill"><img src="https://opencollective.com/loading-attribute-polyfill/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/loading-attribute-polyfill/contribute)]
+
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/0/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/1/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/2/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/3/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/4/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/5/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/6/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/7/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/8/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/loading-attribute-polyfill/organization/9/website"><img src="https://opencollective.com/loading-attribute-polyfill/organization/9/avatar.svg"></a>
