@@ -51,10 +51,5 @@
     "rules": {
       "unicorn/prefer-node-remove": "off"
     }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   }
 }
