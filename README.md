@@ -11,6 +11,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Join the chat at https://gitter.im/loading-attribute-polyfill/community](https://badges.gitter.im/loading-attribute-polyfill/community.svg)](https://gitter.im/loading-attribute-polyfill/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meaning the behaviour to load elements right before they enter the viewport. Provides graceful degradation, and is - not just thatfor - SEO friendly. Handles images with `srcset` and within `picture`, as well as `iframe` elements. `loading="lazy"` will be a huge improvement for todays web performance challenges, so use and polyfill it today!
 
@@ -174,7 +175,7 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbrowsertesting.com)
 
-[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png "CrossBrowserTesting")](https://crossbrowsertesting.com) [![Join the chat at https://gitter.im/loading-attribute-polyfill/community](https://badges.gitter.im/loading-attribute-polyfill/community.svg)](https://gitter.im/loading-attribute-polyfill/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png "CrossBrowserTesting")](https://crossbrowsertesting.com)
 
 ## Things to keep in mind
 
