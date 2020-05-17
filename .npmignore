@@ -5,3 +5,4 @@ webdriverio-tests
 config.codekit3
 commitlint.config.js
 wdio.conf-crossbrowsertesting.js
+.github
