@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
+## [1.5.4] - 2020-05-23
+
+### Changed
+
+- Updated webdriverio, husky, prettier and xo dependencies
+- Replaced Greenkeeper by Snyk for vulnerabilities scanning
+- Formatted code by prettier
+- husky: moved the hook to the dedicated config file
+- README: reordered the badges
+
+### Fixed
+
+- README: Position of Gitter badge
+- npmignore: added necessary folder
+
 ## [1.5.3] - 2020-03-22
 
 ### Changed
