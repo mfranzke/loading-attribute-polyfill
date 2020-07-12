@@ -154,7 +154,7 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Changed
 
-- BREAKING CHANGE: You#ll need to also wrap the `<source>` HTML tags within the `<picture>` tags with `<noscript>`
+- BREAKING CHANGE: You'll need to also wrap the `<source>` HTML tags within the `<picture>` tags with `<noscript>`
 
 ### Fix
 
