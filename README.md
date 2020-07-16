@@ -44,7 +44,7 @@ You may optionally load via NPM or Bower:
 
 You could even load the polyfill asynchronously: <https://output.jsbin.com/codelib/1>
 
-Afterwards you have need to wrap all of your `<img>` (and in case of `<picture>` usage the complementary `<source>` HTML tags as well) and `<iframe>` HTML tags that you'd like to lazy load (and thatfor added a `loading="lazy"` attribute as well) by an `<noscript>` HTML tag.
+Afterwards, you need to wrap all of your `<img>` and `<iframe>` HTML tags (in the case of `<picture>` use the complementary `<source>` HTML tags) that you'd like to lazy load with a `<noscript>` HTML tag (with the attribute `class="loading-lazy"`.)
 
 Please keep in mind that it's beneficial to even also include `width` and `height` attributes on `<img>` HTML tags, as the browser could determine the aspect ratio via those two attributes values being set (even if you overwrite them via CSS), compare to the great work by Jen Simmons on this topic, e.g. within these articles <https://css-tricks.com/do-this-to-improve-image-loading-on-your-website/> (with video) or <https://css-tricks.com/what-if-we-got-aspect-ratio-sized-images-by-doing-almost-nothing/>
 
