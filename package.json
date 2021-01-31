@@ -1,6 +1,6 @@
 {
   "name": "loading-attribute-polyfill",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "description": "Fast and lightweight dependency-free vanilla JavaScript polyfill for native lazy loading / the awesome loading='lazy'-attribute.",
   "main": "loading-attribute-polyfill.min.js",
   "repository": {
@@ -28,16 +28,16 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@wdio/cli": "^6.0.14",
-    "@wdio/dot-reporter": "^6.0.14",
-    "@wdio/local-runner": "^6.0.14",
-    "@wdio/mocha-framework": "^6.0.13",
-    "@wdio/sync": "^6.0.14",
-    "husky": "^4.2.3",
-    "prettier": "2.0.4",
+    "@wdio/cli": "^6.1.12",
+    "@wdio/dot-reporter": "^6.1.9",
+    "@wdio/local-runner": "^6.1.12",
+    "@wdio/mocha-framework": "^6.1.8",
+    "@wdio/sync": "^6.1.8",
+    "husky": "^4.2.5",
+    "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",
-    "webdriverio": "^6.0.14",
-    "xo": "^0.28.3"
+    "webdriverio": "^6.1.12",
+    "xo": "^0.30.0"
   },
   "scripts": {
     "test": "xo loading-attribute-polyfill.js"
@@ -50,11 +50,6 @@
     "esnext": false,
     "rules": {
       "unicorn/prefer-node-remove": "off"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
     }
   }
 }
