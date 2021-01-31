@@ -10,23 +10,23 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Changed
 
-- Updated webdriverio and prettier dependencies
+- Updated `webdriverio` and `prettier` dependencies
 
 ### Fixed
 
-- build: \*.min.js files should't get prettified
+- build: `*.min.js` files should't get prettified
 
 ## [1.5.2] - 2020-03-19
 
 ### Added
 
-- improvement(prettier): run prettier when committing files
+- improvement(prettier): run `prettier` when committing files
 - a minzipped size badge
 
 ### Changed
 
 - Formatting and code & content optimizations
-- xo: added further rules for IE9 compatibility
+- `xo`: added further rules for IE9 compatibility
 
 ## [1.5.1] - 2020-03-15
 
@@ -38,42 +38,42 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Changed
 
-- Updated webdriverio, commitlint and xo dependencies
+- Updated `webdriverio`, `commitlint` and `xo` dependencies
 - docs: further clarifications
-- IE9 & IE10: removed .dataset reliance
+- IE9 & IE10: removed `.dataset` reliance
 
 ### Fixed
 
-- IE9 & IE10: not deleting dataset items for IE9 compatibility #GH-66
+- IE9 & IE10: not deleting `dataset` items for IE9 compatibility #GH-66
 - IE9 & IE10: added section within the docs on including the polyfill JS file at the end of the body
 
 ## [1.4.1] - 2020-02-26
 
 ### Changed
 
-- Updated webdriverio, husky and xo dependencies
-- Optimized the npmignore file
+- Updated `webdriverio`, `husky` and `xo` dependencies
+- Optimized the `.npmignore` file
 
 ## [1.4.0] - 2020-01-25
 
 ### Added
 
-- Commitlint & husky for CI
+- `Commitlint` & `husky` for CI
 
 ### Changed
 
 - Update placeholder to SVG to prevent reflow on lazyloaded images #48
-- Updated webdriverio and xo dependencies
+- Updated `webdriverio` and `xo` dependencies
 
 ### Fixed
 
-- README needed better wording to avoid confusion on installation/integration process #46
+- `README` needed better wording to avoid confusion on installation/integration process #46
 
 ## [1.3.1] - 2019-11-10
 
 ### Fixed
 
-- Added another file to the .npmignore, nevermind ...
+- Added another file to the `.npmignore`, nevermind ...
 
 ## [1.3.0] - 2019-11-10
 
@@ -85,12 +85,12 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Changed
 
-- Updated prettier and webdriverio dependencies
+- Updated `prettier` and `webdriverio` dependencies
 - Further enhanced the documentation, like e.g. for #33
 
 ### Fixed
 
-- Reduced the weight of the NPM package by adding a npmignore file
+- Reduced the weight of the NPM package by adding a `.npmignore` file
 - Typos in the docs
 
 ## [1.2.0] - 2019-10-15
@@ -106,16 +106,16 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Changed
 
-- Made changes regarding to xo/prettier tools and codacys (#12) remarks
+- Made changes regarding to `xo`/`prettier` tools and `codacys` (#12) remarks
 - Some even smaller base64 image as an image replacement
 - Loading the sample images locally
-- Update xo to version 0.25
-- Updated webdriver.io's packages to version 5.13.2
+- Update `xo` to version 0.25
+- Updated `webdriver.io`'s packages to version 5.13.2
 - Code simplifications
 
 ### Fixed
 
-- Outdated JSBin link
+- Outdated `JSBin` link
 - Markdown regarding some readers/interpreters malfunctions
 
 ## [1.1.0] - 2019-08-15
@@ -135,11 +135,11 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 ### Added
 
 - Comment regarding asynchronous loading
-- Webdriver.io testing
+- `Webdriver.io` testing
 
 ### Changed
 
-- BREAKING CHANGE: You#ll need to also wrap the `<source>` HTML tags within the `<picture>` tags with `<noscript>`
+- BREAKING CHANGE: You'll need to also wrap the `<source>` HTML tags within the `<picture>` tags with `<noscript>`
 
 ### Fix
 
@@ -153,9 +153,9 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 ### Added
 
 - Changelog
-- Codacy integration and badge
+- `Codacy` integration and badge
 - Code examples
-- Optional additional dependencies section within the README
+- Optional additional dependencies section within the `README`
 - Optional polyfill for the demo page
 - "Conventional Commits" support as well as their badge - yeah !
 
@@ -175,12 +175,12 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Added
 
-- CHANGELOG.md file
+- `CHANGELOG.md` file
 
 ## [0.1.0] - 2019-05-01
 
 ### Added
 
 - Initial files
-- npm and bower support
+- `npm` and `bower` support
 - code formatting and linting
