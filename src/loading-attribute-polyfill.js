@@ -10,6 +10,8 @@
  * Use an IntersectionObserver polyfill in case of IE11 support necessary.
  */
 
+'use strict';
+
 var config = {
 	// Start download if the item gets within 256px in the Y axis
 	rootMargin: '0px 0px 256px 0px',
