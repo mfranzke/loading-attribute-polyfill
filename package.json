@@ -2,7 +2,11 @@
   "name": "loading-attribute-polyfill",
   "version": "1.5.4",
   "description": "Fast and lightweight dependency-free vanilla JavaScript polyfill for native lazy loading / the awesome loading='lazy'-attribute.",
-  "main": "loading-attribute-polyfill.min.js",
+  "source": "./src/loading-attribute-polyfill.js",
+  "main": "./dist/loading-attribute-polyfill.js",
+  "esmodule": "./dist/loading-attribute-polyfill.modern.js",
+  "module": "./dist/loading-attribute-polyfill.module.js",
+  "umd:main": "./dist/loading-attribute-polyfill.umd.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/mfranzke/loading-attribute-polyfill.git"
@@ -38,9 +42,12 @@
     "pretty-quick": "^2.0.1",
     "webdriverio": "^6.1.12",
     "xo": "^0.30.0"
+    "microbundle": "^0.13.0",
   },
   "scripts": {
-    "test": "xo loading-attribute-polyfill.js"
+    "test": "xo src/loading-attribute-polyfill.js",
+    "build": "microbundle",
+    "dev": "microbundle watch"
   },
   "xo": {
     "envs": [
