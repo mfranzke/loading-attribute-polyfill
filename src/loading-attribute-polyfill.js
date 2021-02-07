@@ -94,7 +94,8 @@ function removePlaceholderSource(lazyItemPicture) {
 	);
 
 	if (placeholderSource) {
-		lazyItemPicture.removeChild(placeholderSource); // Preferred .removeChild over .remove here for IE
+		// Preferred .removeChild over .remove here for IE
+		lazyItemPicture.removeChild(placeholderSource);
 	}
 }
 
