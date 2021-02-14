@@ -18,7 +18,7 @@
 		rootMargin: rootMargin || '0px 0px 256px 0px',
 		threshold: 0.01,
 		lazyImage: 'img[loading="lazy"]',
-		lazyIframe: 'iframe[loading="lazy"]'
+		lazyIframe: 'iframe[loading="lazy"]',
 	};
 
 	// Device/browser capabilities object
@@ -26,7 +26,7 @@
 		loading:
 			'loading' in HTMLImageElement.prototype &&
 			'loading' in HTMLIFrameElement.prototype,
-		scrolling: 'onscroll' in window
+		scrolling: 'onscroll' in window,
 	};
 
 	// Nodelist foreach polyfill / source: https://stackoverflow.com/a/46929259
@@ -178,14 +178,13 @@
 					' lazyload="1" src='
 				);
 			} else {
-				if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
-					// Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
-					lazyAreaHtml =
-						'<source srcset="' +
+				// Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
+				lazyAreaHtml = lazyAreaHtml.replace(
+					'<source',
+					'<source srcset="' +
 						temporaryImage +
-						'" data-lazy-remove="true"></source>' +
-						lazyAreaHtml;
-				}
+						'" data-lazy-remove="true"></source>\n<source'
+				);
 
 				// Temporarily replace a expensive resource load with a simple one by storing the actual source and srcset for later and point src to a temporary replacement (data URI)
 				lazyAreaHtml = lazyAreaHtml
@@ -212,19 +211,26 @@
 
 		// Move all children out of the element
 		while (lazyArea.firstChild) {
+			var actualChild = lazyArea.firstChild;
+
 			if (
 				!capabilities.loading &&
 				capabilities.scrolling &&
 				typeof intersectionObserver !== 'undefined' &&
-				lazyArea.firstChild.tagName &&
-				(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
-					lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
+				actualChild.tagName &&
+				(actualChild.tagName.toLowerCase() === 'img' ||
+					actualChild.tagName.toLowerCase() === 'picture' ||
+					actualChild.tagName.toLowerCase() === 'iframe')
 			) {
+				var observedElement =
+					actualChild.tagName.toLowerCase() === 'picture'
+						? lazyArea.querySelector('img')
+						: actualChild;
 				// Observe the item so that loading could start when it gets close to the viewport
-				intersectionObserver.observe(lazyArea.firstChild);
+				intersectionObserver.observe(observedElement);
 			}
 
-			noScriptTag.parentNode.insertBefore(lazyArea.firstChild, noScriptTag);
+			noScriptTag.parentNode.insertBefore(actualChild, noScriptTag);
 		}
 
 		// Remove the empty element - not using .remove() here for IE11 compatibility

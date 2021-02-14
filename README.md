@@ -61,8 +61,8 @@ Please keep in mind that it's beneficial to even also include `width` and `heigh
 ### Image wrapped in a picture tag
 
 ```html
-<picture>
-	<noscript class="loading-lazy">
+<noscript class="loading-lazy">
+	<picture>
 		<source
 			media="(min-width: 40em)"
 			srcset="simpleimage.huge.jpg 1x, simpleimage.huge.2x.jpg 2x"
@@ -75,8 +75,8 @@ Please keep in mind that it's beneficial to even also include `width` and `heigh
 			width="250"
 			height="150"
 		/>
-	</noscript>
-</picture>
+	</picture>
+</noscript>
 ```
 
 ### Image with `srcset`
