@@ -4,7 +4,7 @@
 
 You'll need to wrap the `<picture>` tag instead of the included HTML tags with `<noscript>`.
 
-##### Previously
+### Previously
 
 ```html
 <picture>
@@ -21,7 +21,7 @@ You'll need to wrap the `<picture>` tag instead of the included HTML tags with `
 </picture>
 ```
 
-##### Now
+### Now
 
 ```html
 <noscript class="loading-lazy">
