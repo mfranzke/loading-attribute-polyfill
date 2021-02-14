@@ -6,49 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
-## [2.0.0] - 2020-07-
+## [2.0.0] - 2021-02-
 
 ### Fixed
 
-- BREAKING CHANGE: wrapping the `<picture>` HTML tags content with `<noscript>` is resulting in W3C HTML validator errors.
-
-#### Migration
-
-You'll need to wrap the `<picture>` tag instead of the included HTML tags with `<noscript>`.
-
-##### Previously
-
-```html
-<picture>
-	<noscript class="loading-lazy">
-		<source srcset="loadinglazy@1x.png 1x, picture-2x-loadinglazy@2x.png 2x" />
-		<img
-			src="loadinglazy@1.png"
-			loading="lazy"
-			alt=".."
-			width="250"
-			height="150"
-		/>
-	</noscript>
-</picture>
-```
-
-##### Now
-
-```html
-<noscript class="loading-lazy">
-	<picture>
-		<source srcset="loadinglazy@1x.png 1x, picture-2x-loadinglazy@2x.png 2x" />
-		<img
-			src="loadinglazy@1.png"
-			loading="lazy"
-			alt=".."
-			width="250"
-			height="150"
-		/>
-	</picture>
-</noscript>
-```
+- BREAKING CHANGE: wrapping the `<picture>` HTML tags content with `<noscript>` is resulting in W3C HTML validator errors. (see [migration guide](migration.md) #90)
 
 ## [1.5.4] - 2020-05-23
 
