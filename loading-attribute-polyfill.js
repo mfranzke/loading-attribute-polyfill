@@ -260,6 +260,8 @@ if (/comp|inter/.test(document.readyState)) {
 	});
 }
 
-export default loadingAttributePolyfill = {
+let loadingAttributePolyfill = {
 	prepareElement: prepareElement
 };
+
+export default loadingAttributePolyfill;
