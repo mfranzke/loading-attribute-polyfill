@@ -1,4 +1,4 @@
-import prepareElement from '../dist/loading-attribute-polyfill.module.js';
+import loadingAttributePolyfill from '../dist/loading-attribute-polyfill.module.js';
 
 // Test for dynamically inserted images
 window.setTimeout(() => {
@@ -17,5 +17,5 @@ window.setTimeout(() => {
 		.getElementsByTagName('main')[0]
 		.insertBefore(child, document.getElementsByTagName('main')[0].firstChild);
 
-	prepareElement(document.querySelector('main noscript.loading-lazy'));
+	loadingAttributePolyfill.prepareElement(document.querySelector('main noscript.loading-lazy'));
 }, 5000);
