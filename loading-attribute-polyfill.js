@@ -255,8 +255,8 @@ if (/comp|inter/.test(document.readyState)) {
 	});
 }
 
-let loadingAttributePolyfill = {
-	prepareElement: prepareElement
+const loadingAttributePolyfill = {
+	prepareElement: prepareElement,
 };
 
 export default loadingAttributePolyfill;
