@@ -28,13 +28,8 @@ var capabilities = {
 	scrolling: 'onscroll' in window,
 };
 
-// Nodelist foreach polyfill / source: https://stackoverflow.com/a/46929259
-if (
-	typeof NodeList !== 'undefined' &&
-	NodeList.prototype &&
-	!NodeList.prototype.forEach
-) {
-	// Yes, there's really no need for `Object.defineProperty` here
+// Nodelist foreach polyfill / source: https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#polyfill
+if (window.NodeList && !NodeList.prototype.forEach) {
 	NodeList.prototype.forEach = Array.prototype.forEach;
 }
 
