@@ -41,15 +41,12 @@ if ('IntersectionObserver' in window) {
 }
 
 // On using a browser w/o requestAnimationFrame support (IE9, Opera Mini), just run the passed function
-var rAFWrapper;
-
-if ('requestAnimationFrame' in window) {
-	rAFWrapper = window.requestAnimationFrame;
-} else {
-	rAFWrapper = function (func) {
-		func();
-	};
-}
+var rAFWrapper =
+	'requestAnimationFrame' in window
+		? window.requestAnimationFrame
+		: function (func) {
+				func();
+		  };
 
 /**
  * Put the source and srcset back where it belongs - now that the elements content is attached to the document, it will load now
