@@ -40,7 +40,9 @@
     "xo": "^0.30.0"
   },
   "scripts": {
-    "test": "xo loading-attribute-polyfill.js"
+    "test": "xo loading-attribute-polyfill.js",
+    "release:minor": "npm version minor -m 'build(release): new minor version' && git push && git push --tags && npm publish",
+    "release:patch": "npm version patch -m 'build(release): new patch version' && git push && git push --tags && npm publish"
   },
   "xo": {
     "envs": [

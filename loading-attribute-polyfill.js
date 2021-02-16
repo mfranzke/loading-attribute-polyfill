@@ -29,13 +29,8 @@
 		scrolling: 'onscroll' in window,
 	};
 
-	// Nodelist foreach polyfill / source: https://stackoverflow.com/a/46929259
-	if (
-		typeof NodeList !== 'undefined' &&
-		NodeList.prototype &&
-		!NodeList.prototype.forEach
-	) {
-		// Yes, there's really no need for `Object.defineProperty` here
+	// Nodelist foreach polyfill / source: https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#polyfill
+	if (window.NodeList && !NodeList.prototype.forEach) {
 		NodeList.prototype.forEach = Array.prototype.forEach;
 	}
 
@@ -47,15 +42,12 @@
 	}
 
 	// On using a browser w/o requestAnimationFrame support (IE9, Opera Mini), just run the passed function
-	var rAFWrapper;
-
-	if ('requestAnimationFrame' in window) {
-		rAFWrapper = window.requestAnimationFrame;
-	} else {
-		rAFWrapper = function (func) {
-			func();
-		};
-	}
+	var rAFWrapper =
+		'requestAnimationFrame' in window
+			? window.requestAnimationFrame
+			: function (func) {
+					func();
+			  };
 
 	/**
 	 * Put the source and srcset back where it belongs - now that the elements content is attached to the document, it will load now
