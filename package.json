@@ -33,16 +33,20 @@
     "@wdio/local-runner": "^6.1.12",
     "@wdio/mocha-framework": "^6.1.8",
     "@wdio/sync": "^6.1.8",
-    "husky": "^4.2.5",
+    "husky": "^5.0.9",
+    "pinst": "^2.1.4",
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",
     "webdriverio": "^6.1.12",
-    "xo": "^0.30.0"
+    "xo": "^0.37.1"
   },
   "scripts": {
     "test": "xo loading-attribute-polyfill.js",
     "release:minor": "npm version minor -m 'build(release): new minor version' && git push && git push --tags && npm publish",
-    "release:patch": "npm version patch -m 'build(release): new patch version' && git push && git push --tags && npm publish"
+    "release:patch": "npm version patch -m 'build(release): new patch version' && git push && git push --tags && npm publish",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "xo": {
     "envs": [
