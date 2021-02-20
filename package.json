@@ -37,8 +37,9 @@
     "@wdio/local-runner": "^6.12.1",
     "@wdio/mocha-framework": "^6.11.0",
     "@wdio/sync": "^6.11.0",
-    "husky": "^4.3.8",
+    "husky": "^5.0.9",
     "microbundle": "^0.13.0",
+    "pinst": "^2.1.4",
     "prettier": "2.2.1",
     "pretty-quick": "^3.1.0",
     "webdriverio": "^6.12.1",
@@ -49,7 +50,10 @@
     "build": "microbundle",
     "dev": "microbundle watch",
     "release:minor": "npm version minor -m 'build(release): new minor version' && git push && git push --tags && npm publish",
-    "release:patch": "npm version patch -m 'build(release): new patch version' && git push && git push --tags && npm publish"
+    "release:patch": "npm version patch -m 'build(release): new patch version' && git push && git push --tags && npm publish",
+    "postinstall": "husky install",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "xo": {
     "envs": [

@@ -229,7 +229,7 @@ function prepareElement(noScriptTag) {
 let prepareElements = () => {
 	var lazyLoadAreas = document.querySelectorAll('noscript.loading-lazy');
 
-	lazyLoadAreas.forEach(prepareElement);
+	lazyLoadAreas.forEach((element) => prepareElement(element));
 
 	// Bind for someone printing the page
 	onPrinting();
