@@ -38,7 +38,7 @@
     "prettier": "2.0.5",
     "pretty-quick": "^2.0.1",
     "webdriverio": "^6.1.12",
-    "xo": "^0.37.1"
+    "xo": "^0.38.1"
   },
   "scripts": {
     "test": "xo loading-attribute-polyfill.js",
