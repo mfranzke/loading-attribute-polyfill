@@ -51,16 +51,5 @@
     "postinstall": "husky install",
     "prepublishOnly": "pinst --disable",
     "postpublish": "pinst --enable"
-  },
-  "xo": {
-    "envs": [
-      "browser"
-    ],
-    "prettier": true,
-    "esnext": false,
-    "rules": {
-      "unicorn/prefer-node-remove": "off",
-      "unicorn/no-array-for-each": "off"
-    }
   }
 }
