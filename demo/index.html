@@ -107,6 +107,7 @@
 					width="320"
 					height="180"
 					loading="lazy"
+					title="vimeo sample video"
 				></iframe>
 			</noscript>
 		</header>
@@ -180,15 +181,18 @@
 					width="320"
 					height="180"
 					loading="lazy"
+					title="vimeo sample video"
 				></iframe>
 			</noscript>
 		</main>
 		<!-- Including other optional polyfills depending on expected browser support scope -->
 		<script
-			src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=IntersectionObserver%2C%2CmatchMedia"
+			src="https://polyfill.io/v3/polyfill.min.js?flags=always&features=IntersectionObserver%2CmatchMedia"
+			integrity="sha384-0lS88tVtaG/wFBGhLbltQH+YsokYzFR53GbESKurNNjMEVpukFjECmLmebK9aMIf"
 			crossorigin="anonymous"
 		></script>
 		<script type="module" src="index.js"></script>
+		<!-- Even though that it's recommended to omit the type on the following script tag, we're keeping it for older browser compatibility -->
 		<script
 			type="text/javascript"
 			src="../dist/loading-attribute-polyfill.umd.js"
