@@ -3,6 +3,7 @@
 
 	"rules": {
 		"void-style": ["warn", { "style": "selfclosing" }],
+		"script-type": "off",
 		"require-sri": ["error", { "target": "crossorigin" }]
 	}
 }
