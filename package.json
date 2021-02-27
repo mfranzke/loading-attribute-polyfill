@@ -35,6 +35,7 @@
     "@wdio/sync": "^6.1.8",
     "html-validate": "^4.6.0",
     "husky": "^5.1.1",
+    "npm-run-all": "^4.1.5",
     "pinst": "^2.1.6",
     "prettier": "2.2.1",
     "pretty-quick": "^3.1.0",
@@ -42,7 +43,8 @@
     "xo": "^0.38.1"
   },
   "scripts": {
-    "test": "xo loading-attribute-polyfill.js",
+    "test": "run-p validate:* lint:*",
+    "lint:xo": "xo loading-attribute-polyfill.js",
     "validate:html": "html-validate demo/index.html",
     "release:minor": "npm version minor -m 'build(release): new minor version' && git push && git push --tags && npm publish",
     "release:patch": "npm version patch -m 'build(release): new patch version' && git push && git push --tags && npm publish",
