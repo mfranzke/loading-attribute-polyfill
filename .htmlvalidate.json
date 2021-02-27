@@ -1,5 +1,5 @@
 {
-	"extends": ["html-validate:recommended"],
+	"extends": ["html-validate:document", "html-validate:recommended"],
 
 	"rules": {
 		"void-style": ["warn", { "style": "selfclosing" }]
