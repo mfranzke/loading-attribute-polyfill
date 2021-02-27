@@ -1,0 +1,9 @@
+{
+	"envs": ["browser"],
+	"prettier": true,
+	"esnext": false,
+	"rules": {
+		"unicorn/prefer-node-remove": "off",
+		"unicorn/no-array-for-each": "off"
+	}
+}
