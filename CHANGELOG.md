@@ -65,7 +65,7 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Fixed
 
-- IE9 & IE10: not deleting `dataset` items for IE9 compatibility https://github.com/mfranzke/loading-attribute-polyfill/issues/66
+- IE9 & IE10: not deleting `dataset` items for IE9 compatibility [#66](https://github.com/mfranzke/loading-attribute-polyfill/issues/66)
 - IE9 & IE10: added section within the docs on including the polyfill JS file at the end of the body
 
 ## [1.4.1] - 2020-02-26
@@ -83,12 +83,12 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Changed
 
-- Update placeholder to SVG to prevent reflow on lazyloaded images https://github.com/mfranzke/loading-attribute-polyfill/issues/48
+- Update placeholder to SVG to prevent reflow on lazyloaded images [#48](https://github.com/mfranzke/loading-attribute-polyfill/issues/48)
 - Updated `webdriverio` and `xo` dependencies
 
 ### Fixed
 
-- `README` needed better wording to avoid confusion on installation/integration process https://github.com/mfranzke/loading-attribute-polyfill/issues/46
+- `README` needed better wording to avoid confusion on installation/integration process [#46](https://github.com/mfranzke/loading-attribute-polyfill/issues/46)
 
 ## [1.3.1] - 2019-11-10
 
@@ -101,13 +101,13 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 ### Added
 
 - Gitter badge
-- Graceful degradation and functionality for IE9 https://github.com/mfranzke/loading-attribute-polyfill/issues/41
+- Graceful degradation and functionality for IE9 [#41](https://github.com/mfranzke/loading-attribute-polyfill/issues/41)
 - Updated with some more supporters
 
 ### Changed
 
 - Updated `prettier` and `webdriverio` dependencies
-- Further enhanced the documentation, like e.g. for https://github.com/mfranzke/loading-attribute-polyfill/issues/33
+- Further enhanced the documentation, like e.g. for [#33](https://github.com/mfranzke/loading-attribute-polyfill/issues/33)
 
 ### Fixed
 
@@ -121,13 +121,13 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - Crawler/"SEO" capabilities
 - Testing: Further browsers and activated the video-recording
 - Lots of further information and documentation
-- Codacy, dependency and Greenkeeper (https://github.com/mfranzke/loading-attribute-polyfill/issues/18) integrations and badges, yeah !
-- Comment within the demo page clarifying the images content https://github.com/mfranzke/loading-attribute-polyfill/issues/8
+- Codacy, dependency and Greenkeeper ([#18](https://github.com/mfranzke/loading-attribute-polyfill/issues/18)) integrations and badges, yeah !
+- Comment within the demo page clarifying the images content [#8](https://github.com/mfranzke/loading-attribute-polyfill/issues/8)
 - Links to further implementations / plugins & extensions
 
 ### Changed
 
-- Made changes regarding to `xo`/`prettier` tools and `codacys` (https://github.com/mfranzke/loading-attribute-polyfill/issues/12) remarks
+- Made changes regarding to `xo`/`prettier` tools and `codacys` ([#12](https://github.com/mfranzke/loading-attribute-polyfill/issues/12)) remarks
 - Some even smaller base64 image as an image replacement
 - Loading the sample images locally
 - Update `xo` to version 0.25
@@ -166,7 +166,7 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 - Documents markup regarding codacy suggestions
 - Corrected sample image measurements
-- The images didn't load lazily in Safari, but directly, as reported with https://github.com/mfranzke/loading-attribute-polyfill/issues/3
+- The images didn't load lazily in Safari, but directly, as reported with [#3](https://github.com/mfranzke/loading-attribute-polyfill/issues/3)
 - Displaying the images on smaller viewports on the sample page
 
 ## [0.2.0] - 2019-05-22
