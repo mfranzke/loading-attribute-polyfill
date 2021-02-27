@@ -10,7 +10,7 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Fixed
 
-- BREAKING CHANGE: wrapping the `<picture>` HTML tag instead of its content with `<noscript>` to prevent W3C HTML validator errors (see [migration guide](migration.md) #90)
+- BREAKING CHANGE: wrapping the `<picture>` HTML tag instead of its content with `<noscript>` to prevent W3C HTML validator errors (see [migration guide](migration.md) https://github.com/mfranzke/loading-attribute-polyfill/issues/90)
 
 ## [1.5.4] - 2020-05-23
 
