@@ -1,7 +1,9 @@
 {
-	"extends": ["html-validate:recommended"],
+	"extends": ["html-validate:document", "html-validate:recommended"],
 
 	"rules": {
-		"void-style": ["warn", { "style": "selfclosing" }]
+		"void-style": ["warn", { "style": "selfclosing" }],
+		"script-type": "off",
+		"require-sri": ["error", { "target": "crossorigin" }]
 	}
 }
