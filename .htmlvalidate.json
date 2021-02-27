@@ -2,6 +2,7 @@
 	"extends": ["html-validate:document", "html-validate:recommended"],
 
 	"rules": {
-		"void-style": ["warn", { "style": "selfclosing" }]
+		"void-style": ["warn", { "style": "selfclosing" }],
+		"require-sri": ["error", { "target": "crossorigin" }]
 	}
 }
