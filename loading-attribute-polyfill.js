@@ -236,7 +236,9 @@
 		//
 		var lazyLoadAreas = document.querySelectorAll('noscript.' + noscriptClass);
 
-		lazyLoadAreas.forEach((element) => prepareElement(element));
+		lazyLoadAreas.forEach(function (element) {
+			prepareElement(element);
+		});
 
 		// Bind for someone printing the page
 		onPrinting();
