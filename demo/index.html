@@ -17,12 +17,16 @@
 					Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
 					"Segoe UI Symbol";
 			}
+			.scrolling-advice span {
+				display: block;
+				text-align: center;
+				margin-top: 1rem;
+				font-size: 2rem;
+			}
 			/* Defing the header to be two screen sizes height at minimum to ensure that the images within the main section are being loaded lazy */
 			body > header {
 				min-height: 200vh;
 			}
-			body > header img,
-			body > header iframe,
 			body > main img,
 			body > main iframe {
 				margin: 1rem;
@@ -36,80 +40,44 @@
 		</style>
 	</head>
 	<body>
-		<p>
-			The sample images embedded into this document are including textual
-			information on their embedding technique, like the HTML tag, attributes
-			and pixel density to show you that the correct image has been loaded.
-		</p>
 		<header>
-			<!-- Regular images with loading="lazy" attribute provided for testing -->
-			<noscript class="loading-lazy">
-				<img
-					src="https://mfranzke.github.io/loading-attribute-polyfill/demo/img/img-src-loadinglazy.250x150.png"
-					loading="lazy"
-					alt=".."
-					width="250"
-					height="150"
-				/>
-			</noscript>
+			<p>
+				The sample images embedded into this document are including textual
+				information on their embedding technique, like the HTML tag, attributes
+				and pixel density to show you that the correct image has been loaded.
+			</p>
 
-			<img
-				src="https://mfranzke.github.io/loading-attribute-polyfill/demo/img/img-src-loadingeager.250x150.png"
-				loading="eager"
-				alt=".."
-				width="250"
-				height="150"
-			/>
+			<p>
+				Notice: We previously had images included here in the first visible
+				viewport aka "above the fold" as well for testing purposes - including
+				them this way on a demo page was misleading, compare to the following
+				advice.
+			</p>
+			<blockquote>
+				<p>
+					You should avoid setting `loading=lazy` for any images that are in the
+					first visible viewport.<br />
+					It is recommended to only add `loading=lazy` to images which are
+					positioned below the fold, if possible.
+				</p>
+				<p>
+					These are some of the relevant remarks within the section "Avoid
+					lazy-loading images that are in the first visible viewport" in the
+					article
+					<cite
+						><a
+							href="https://web.dev/browser-level-image-lazy-loading/#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport"
+							>Browser-level image lazy-loading for the web</a
+						></cite
+					>
+					published on web.dev
+				</p>
+			</blockquote>
 
-			<picture>
-				<noscript class="loading-lazy">
-					<source
-						media="(min-width: 40em)"
-						srcset="
-							https://mfranzke.github.io/loading-attribute-polyfill/demo/img/picture-media1x-loadinglazy.250x150.png 1x,
-							https://mfranzke.github.io/loading-attribute-polyfill/demo/img/picture-media2x-loadinglazy.500x300.png 2x
-						"
-					/>
-					<source
-						srcset="
-							https://mfranzke.github.io/loading-attribute-polyfill/demo/img/picture-1x-loadinglazy.250x150.png 1x,
-							https://mfranzke.github.io/loading-attribute-polyfill/demo/img/picture-2x-loadinglazy.500x300.png 2x
-						"
-					/>
-					<img
-						src="https://mfranzke.github.io/loading-attribute-polyfill/demo/img/picture-imgsrc-loadinglazy.250x150.png"
-						loading="lazy"
-						alt=".."
-						width="250"
-						height="150"
-					/>
-				</noscript>
-			</picture>
-
-			<noscript class="loading-lazy">
-				<img
-					src="https://mfranzke.github.io/loading-attribute-polyfill/demo/img/img-src-loadinglazy.250x150.png"
-					srcset="
-						https://mfranzke.github.io/loading-attribute-polyfill/demo/img/img-srcset1024w-loadinglazy.1024x400.png 1024w,
-						https://mfranzke.github.io/loading-attribute-polyfill/demo/img/img-srcset640w-loadinglazy.640x400.png    640w,
-						https://mfranzke.github.io/loading-attribute-polyfill/demo/img/img-srcset320w-loadinglazy.320x320.png    320w
-					"
-					sizes="(min-width: 36em) 33.3vw, 100vw"
-					alt="A rad wolf"
-					loading="lazy"
-				/>
-			</noscript>
-
-			<!-- Regular iframe with loading="lazy" attribute provided for testing -->
-			<noscript class="loading-lazy">
-				<iframe
-					src="https://player.vimeo.com/video/87110435"
-					width="320"
-					height="180"
-					loading="lazy"
-					title="vimeo sample video"
-				></iframe>
-			</noscript>
+			<p class="scrolling-advice">
+				Please scroll down to see these images being loaded by the polyfill on
+				unsupported browsers<span aria-hidden="true">⬇</span>
+			</p>
 		</header>
 
 		<main>
