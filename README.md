@@ -50,6 +50,10 @@ Afterwards, you need to wrap all of your `<img>` and `<iframe>` HTML tags (in th
 
 Please keep in mind that it's beneficial to even also include `width` and `height` attributes on `<img>` HTML tags, as the browser could determine the aspect ratio via those two attributes values being set (even if you overwrite them via CSS), compare to the great work by Jen Simmons on this topic, e.g. within these articles <https://css-tricks.com/do-this-to-improve-image-loading-on-your-website/> (with video) or <https://css-tricks.com/what-if-we-got-aspect-ratio-sized-images-by-doing-almost-nothing/>
 
+And please "Avoid lazy-loading images that are in the first visible viewport", compare to [the article "Browser-level image lazy-loading for the web"](https://web.dev/browser-level-image-lazy-loading/#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport) published on web.dev:
+
+> You should avoid setting `loading=lazy` for any images that are in the first visible viewport. It is recommended to only add `loading=lazy` to images which are positioned below the fold, if possible.
+
 ### Simple image
 
 ```html
