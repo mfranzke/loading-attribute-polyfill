@@ -39,7 +39,7 @@
     "prettier": "2.2.1",
     "pretty-quick": "^3.1.0",
     "webdriverio": "^6.1.12",
-    "xo": "^0.38.1"
+    "xo": "^0.38.2"
   },
   "scripts": {
     "test": "run-p validate:* lint:*",
