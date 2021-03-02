@@ -18,7 +18,7 @@
 		rootMargin: rootMargin || '0px 0px 256px 0px',
 		threshold: 0.01,
 		lazyImage: 'img[loading="lazy"]',
-		lazyIframe: 'iframe[loading="lazy"]'
+		lazyIframe: 'iframe[loading="lazy"]',
 	};
 
 	// Device/browser capabilities object
@@ -26,7 +26,7 @@
 		loading:
 			'loading' in HTMLImageElement.prototype &&
 			'loading' in HTMLIFrameElement.prototype,
-		scrolling: 'onscroll' in window
+		scrolling: 'onscroll' in window,
 	};
 
 	// Nodelist foreach polyfill / source: https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach#polyfill
@@ -230,7 +230,9 @@
 		//
 		var lazyLoadAreas = document.querySelectorAll('noscript.' + noscriptClass);
 
-		lazyLoadAreas.forEach((element) => prepareElement(element));
+		lazyLoadAreas.forEach(function (element) {
+			prepareElement(element);
+		});
 
 		// Bind for someone printing the page
 		onPrinting();
