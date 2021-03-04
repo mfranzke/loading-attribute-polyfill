@@ -6,11 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
-## [2.0.0] - 2021-02-
+## [2.0.0] - 2021-03-
 
 ### Fixed
 
-- BREAKING CHANGE: wrapping the `<picture>` HTML tag instead of its content with `<noscript>` to prevent W3C HTML validator errors (see [migration guide](migration.md) [#90](https://github.com/mfranzke/loading-attribute-polyfill/issues/90))
+- BREAKING CHANGE: wrapping the `<picture>` HTML tag instead of its content with `<noscript>` to prevent W3C HTML validator errors (see [migration guide](MIGRATION.md) [#90](https://github.com/mfranzke/loading-attribute-polyfill/issues/90))
 
 ## [1.5.4] - 2020-05-23
 
