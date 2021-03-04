@@ -138,7 +138,11 @@ And the images are still displaying an error in the demo on IE9, as most likely 
 
 ## API
 
-Nothing really, just integrate it as shown within the "installation" section, and it ~~will~~ should work out of the box.
+In case that you're dynamically adding HTML elements within the browser, you could call the following method with an included [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) object, like e.g.:
+
+```JavaScript
+loadingAttributePolyfill.prepareElement(document.querySelector('main noscript.loading-lazy'));
+```
 
 ## Demo
 

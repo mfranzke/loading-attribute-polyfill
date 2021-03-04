@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
+## [2.0.0-beta.1] - 2021-03-04
+
+### Changed
+
+- BREAKING CHANGE: Even also generate JS modules from now on supported by [microbundle](https://npmjs.com/microbundle), added the relevant property entries within the `package.json` directing to those files, that are now stored within the `dist/` folder (see [migration guide](MIGRATION.md) [#19](https://github.com/mfranzke/loading-attribute-polyfill/issues/19), [#87](https://github.com/mfranzke/loading-attribute-polyfill/pull/87), [#39](https://github.com/mfranzke/loading-attribute-polyfill/pull/39))
+
 ## [2.0.0-beta.0] - 2021-03-04
 
 ### Fixed

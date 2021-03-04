@@ -1,8 +1,7 @@
 demo
 webdriverio-tests
 .gitignore
-.huskyrc
-config.codekit3
+.husky
 commitlint.config.js
 wdio.conf-crossbrowsertesting.js
 .github
