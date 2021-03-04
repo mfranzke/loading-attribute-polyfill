@@ -1,7 +1,7 @@
 /*
  * Loading attribute polyfill - https://github.com/mfranzke/loading-attribute-polyfill
  * @license Copyright(c) 2019 by Maximilian Franzke
- * Credits for the initial kickstarter / script to @Sora2455, and supported by @cbirdsong, @eklingen, @DaPo, @nextgenthemes, @diogoterremoto, @dracos, @Flimm, @TomS-, @vinyfc93 and @JordanDysart - many thanks for that !
+ * Credits for the initial kickstarter / script to @Sora2455, and supported by @cbirdsong, @eklingen, @DaPo, @nextgenthemes, @diogoterremoto, @dracos, @Flimm, @TomS-, @vinyfc93, @JordanDysart and @denyshutsal - many thanks for that !
  */
 /*
  * A minimal and dependency-free vanilla JavaScript loading attribute polyfill.
@@ -170,14 +170,13 @@ function getAndPrepareHTMLCode(noScriptTag) {
 				' lazyload="1" src='
 			);
 		} else {
-			if (noScriptTag.parentNode.tagName.toLowerCase() === 'picture') {
-				// Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
-				lazyAreaHtml =
-					'<source srcset="' +
+			// Temporarily prevent expensive resource loading by inserting a <source> tag pointing to a simple one (data URI)
+			lazyAreaHtml = lazyAreaHtml.replace(
+				'<source',
+				'<source srcset="' +
 					temporaryImage +
-					'" data-lazy-remove="true"></source>' +
-					lazyAreaHtml;
-			}
+					'" data-lazy-remove="true"></source>\n<source'
+			);
 
 			// Temporarily replace a expensive resource load with a simple one by storing the actual source and srcset for later and point src to a temporary replacement (data URI)
 			lazyAreaHtml = lazyAreaHtml
@@ -204,19 +203,26 @@ function prepareElement(noScriptTag) {
 
 	// Move all children out of the element
 	while (lazyArea.firstChild) {
+		var actualChild = lazyArea.firstChild;
+
 		if (
 			!capabilities.loading &&
 			capabilities.scrolling &&
 			typeof intersectionObserver !== 'undefined' &&
-			lazyArea.firstChild.tagName &&
-			(lazyArea.firstChild.tagName.toLowerCase() === 'img' ||
-				lazyArea.firstChild.tagName.toLowerCase() === 'iframe')
+			actualChild.tagName &&
+			(actualChild.tagName.toLowerCase() === 'img' ||
+				actualChild.tagName.toLowerCase() === 'picture' ||
+				actualChild.tagName.toLowerCase() === 'iframe')
 		) {
+			var observedElement =
+				actualChild.tagName.toLowerCase() === 'picture'
+					? lazyArea.querySelector('img')
+					: actualChild;
 			// Observe the item so that loading could start when it gets close to the viewport
-			intersectionObserver.observe(lazyArea.firstChild);
+			intersectionObserver.observe(observedElement);
 		}
 
-		noScriptTag.parentNode.insertBefore(lazyArea.firstChild, noScriptTag);
+		noScriptTag.parentNode.insertBefore(actualChild, noScriptTag);
 	}
 
 	// Remove the empty element - not using .remove() here for IE11 compatibility

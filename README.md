@@ -65,8 +65,8 @@ And please "Avoid lazy-loading images that are in the first visible viewport", c
 ### Image wrapped in a picture tag
 
 ```html
-<picture>
-	<noscript class="loading-lazy">
+<noscript class="loading-lazy">
+	<picture>
 		<source
 			media="(min-width: 40em)"
 			srcset="simpleimage.huge.jpg 1x, simpleimage.huge.2x.jpg 2x"
@@ -79,8 +79,8 @@ And please "Avoid lazy-loading images that are in the first visible viewport", c
 			width="250"
 			height="150"
 		/>
-	</noscript>
-</picture>
+	</picture>
+</noscript>
 ```
 
 ### Image with `srcset`
@@ -139,6 +139,7 @@ And the images are still displaying an error in the demo on IE9, as most likely 
 ## API
 
 In case that you're dynamically adding HTML elements within the browser, you could call the following method with an included [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) object, like e.g.:
+
 ```JavaScript
 loadingAttributePolyfill.prepareElement(document.querySelector('main noscript.loading-lazy'));
 ```
@@ -163,7 +164,7 @@ Nico23 has developed a WordPress plugin: <https://wordpress.org/plugins/native-l
 
 ## Credits
 
-Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @cbirdsong, @eklingen, @DaPo, @nextgenthemes, @diogoterremoto, @dracos, @Flimm, @TomS-, @vinyfc93 and @JordanDysart. Thank you very much for that, highly appreciated !
+Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @cbirdsong, @eklingen, @DaPo, @nextgenthemes, @diogoterremoto, @dracos, @Flimm, @TomS-, @vinyfc93, @JordanDysart and @denyshutsal. Thank you very much for that, highly appreciated !
 
 ## Tested with
 
