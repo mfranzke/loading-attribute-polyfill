@@ -6,6 +6,7 @@
 [![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge "Count of total downloads – jsDelivr")](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill "loading-attribute polyfill – on jsDelivr")
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/16c763924903400ca82cfed618a82a6e)](https://app.codacy.com/app/mfranzke_2/loading-attribute-polyfill?utm_source=github.com&utm_medium=referral&utm_content=mfranzke/loading-attribute-polyfill&utm_campaign=Badge_Grade_Dashboard)
 [![Known Vulnerabilities](https://snyk.io/test/github/mfranzke/loading-attribute-polyfill/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mfranzke/loading-attribute-polyfill?targetFile=package.json)
+[![CodeQL](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml)
 [![dependencies Status](https://david-dm.org/mfranzke/loading-attribute-polyfill/status.svg "Count of dependencies")](https://david-dm.org/mfranzke/loading-attribute-polyfill "loading-attribute polyfill – on david-dm")
 [![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM')
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -65,8 +66,8 @@ And please "Avoid lazy-loading images that are in the first visible viewport", c
 ### Image wrapped in a picture tag
 
 ```html
-<picture>
-	<noscript class="loading-lazy">
+<noscript class="loading-lazy">
+	<picture>
 		<source
 			media="(min-width: 40em)"
 			srcset="simpleimage.huge.jpg 1x, simpleimage.huge.2x.jpg 2x"
@@ -79,8 +80,8 @@ And please "Avoid lazy-loading images that are in the first visible viewport", c
 			width="250"
 			height="150"
 		/>
-	</noscript>
-</picture>
+	</picture>
+</noscript>
 ```
 
 ### Image with `srcset`
@@ -138,7 +139,11 @@ And the images are still displaying an error in the demo on IE9, as most likely 
 
 ## API
 
-Nothing really, just integrate it as shown within the "installation" section, and it ~~will~~ should work out of the box.
+In case that you're dynamically adding HTML elements within the browser, you could call the following method with an included [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement) object, like e.g.:
+
+```JavaScript
+loadingAttributePolyfill.prepareElement(document.querySelector('main noscript.loading-lazy'));
+```
 
 ## Demo
 
@@ -160,7 +165,7 @@ Nico23 has developed a WordPress plugin: <https://wordpress.org/plugins/native-l
 
 ## Credits
 
-Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @cbirdsong, @eklingen, @DaPo, @nextgenthemes, @diogoterremoto, @dracos, @Flimm, @TomS-, @vinyfc93 and @JordanDysart. Thank you very much for that, highly appreciated !
+Credits for the initial kickstarter / script to @Sora2455 for better expressing my ideas & concepts and support by @cbirdsong, @eklingen, @DaPo, @nextgenthemes, @diogoterremoto, @dracos, @Flimm, @TomS-, @vinyfc93, @JordanDysart and @denyshutsal. Thank you very much for that, highly appreciated !
 
 ## Tested with
 
