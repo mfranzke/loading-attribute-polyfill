@@ -17,5 +17,7 @@ window.setTimeout(() => {
 		.getElementsByTagName('main')[0]
 		.insertBefore(child, document.getElementsByTagName('main')[0].firstChild);
 
-	loadingAttributePolyfill.prepareElement(document.querySelector('main noscript.loading-lazy'));
+	loadingAttributePolyfill.prepareElement(
+		document.querySelector('main noscript.loading-lazy')
+	);
 }, 5000);
