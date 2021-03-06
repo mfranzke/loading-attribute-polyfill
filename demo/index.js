@@ -7,7 +7,7 @@ window.setTimeout(() => {
 	child = child.firstChild;
 
 	let imageElement = document.createElement('img');
-	imageElement.setAttribute('src', 'https://via.placeholder.com/300');
+	imageElement.setAttribute('src', 'https://via.placeholder.com/250x150');
 	imageElement.setAttribute('loading', 'lazy');
 	imageElement.setAttribute('alt', '..');
 	imageElement.setAttribute('width', '250');
