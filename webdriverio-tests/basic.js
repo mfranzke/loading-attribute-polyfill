@@ -3,107 +3,130 @@
 
 const assert = require('assert');
 
-browser.url('index.html');
-
 describe('demo page - img', () => {
+	beforeEach(() => {
+		browser.url('index.html');
+	});
 	it('should not get loaded if below the fold (simple)', () => {
 		const element = $('main img[loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
 
-		assert.equal(
-			element.getAttribute('src'),
-			'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+		assert.strictEqual(
+			element.getAttribute('src').substr(0, 8),
+			// Differentiate by feature detection / the loading capability in between the two different expected values
+			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
 	it('should not get loaded if below the fold (nested in picture)', () => {
 		const element = $('main picture img[loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.equal(
-			element.getAttribute('src'),
-			'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+		assert.strictEqual(
+			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+				0,
+				8
+			),
+			// Differentiate by feature detection / the loading capability in between the two different expected values
+			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
 	it('should not get loaded if below the fold (with srcset attribute)', () => {
-		const element = $('main img[data-lazy-srcset][loading="lazy"]');
+		const element = $('main img[sizes][loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
 
-		assert.equal(
-			element.getAttribute('src'),
-			'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
+		assert.strictEqual(
+			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+				0,
+				8
+			),
+			// Differentiate by feature detection / the loading capability in between the two different expected values
+			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
 });
 describe('demo page - iframe', () => {
+	beforeEach(() => {
+		browser.url('index.html');
+	});
 	it('should not get loaded if below the fold', () => {
 		const element = $('main iframe[loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
 
-		assert.equal(
-			element.getAttribute('src'),
-			'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7'
+		assert.strictEqual(
+			element.getAttribute('src').substr(0, 8),
+			// Differentiate by feature detection / the loading capability in between the two different expected values
+			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
 });
 
 describe('demo page - scrolled - img', () => {
 	beforeEach(() => {
-		// Scroll the main areas first image into view
-		$('main').scrollIntoView();
-		$('main img').scrollIntoView();
+		browser.url('index.html');
 	});
 
-	it('should still be loaded if below the fold (simple)', () => {
+	it('should be loaded if scrolled below the fold (simple)', () => {
 		const element = $('main img[loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
 
-		assert.equal(
-			element.getAttribute('src').slice(0, 26),
-			'https://mfranzke.github.io'
-		);
+		element.scrollIntoView();
+
+		assert.strictEqual(element.getAttribute('src').substr(0, 8), 'https://');
 	});
-	it('should still be loaded if below the fold (nested in picture)', () => {
+	it('should be loaded if scrolled below the fold (nested in picture)', () => {
 		const element = $('main picture img[loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
+
+		element.scrollIntoView();
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.equal(
-			element.getAttribute('src').slice(0, 26),
-			'https://mfranzke.github.io'
+		assert.strictEqual(
+			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+				0,
+				8
+			),
+			'https://'
 		);
 	});
-	it('should still be loaded if below the fold (with srcset attribute)', () => {
-		const element = $('main img[srcset][loading="lazy"]');
+	it('should be loaded if scrolled below the fold (with srcset attribute)', () => {
+		const element = $('main img[sizes][loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
 
-		assert.equal(
-			element.getAttribute('src').slice(0, 26),
-			'https://mfranzke.github.io'
+		element.scrollIntoView();
+
+		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
+		assert.strictEqual(
+			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+				0,
+				8
+			),
+			'https://'
 		);
 	});
 });
 describe('demo page - scrolled - iframe', () => {
-	beforeEach(() => {
-		// Scroll the main areas iframe into view
-		$('main').scrollIntoView();
-		$('main iframe').scrollIntoView();
-	});
-	it('should still be loaded if below the fold', () => {
+	it('should be loaded if scrolled below the fold', () => {
+		browser.url('index.html');
+
 		const element = $('main iframe[loading="lazy"]');
 
-		element.waitForDisplayed(5000);
+		element.waitForExist();
 
-		assert.equal(
-			element.getAttribute('src'),
-			'https://player.vimeo.com/video/20997150'
-		);
+		element.scrollIntoView();
+
+		assert.strictEqual(element.getAttribute('src').substr(0, 8), 'https://');
 	});
 });

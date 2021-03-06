@@ -85,89 +85,78 @@ exports.config = {
 
 		// https://help.crossbrowsertesting.com/selenium-testing/getting-started/crossbrowsertesting-automation-capabilities/
 
-		/*
 		{
 			browserName: 'Chrome',
 			platform: 'Windows 10',
 			version: 'latest',
 			maxInstances: 5,
-			record_video: true
+			record_video: false,
 		},
-		{
-			browserName: 'Chrome',
-			platform: 'Windows 10',
-			version: 'latest-1',
-			maxInstances: 5,
-			record_video: true
-		},/*
-		{
-			browserName: 'Firefox',
-			platform: 'Windows 10',
-			version: 'latest',
-			maxInstances: 5,
-			record_video: true
-		},
-		{
-			browserName: 'Firefox',
-			platform: 'Windows 10',
-			version: 'latest-1',
-			maxInstances: 5,
-			record_video: true
-		}, */
-		{
-			browserName: 'MicrosoftEdge',
-			platform: 'Windows 10',
-			version: '18',
-			maxInstances: 5,
-			record_video: true
-		},
-		{
-			browserName: 'MicrosoftEdge',
-			platform: 'Windows 10',
-			version: '17',
-			maxInstances: 5,
-			record_video: true
-		},
+		// {
+		// 	browserName: 'chrome',
+		// 	platform: 'Windows 10',
+		// 	version: 'latest-1',
+		// 	maxInstances: 5,
+		// 	record_video: false
+		// },
+		// {
+		// 	browserName: 'Firefox',
+		// 	platformName: 'Windows 10',
+		// 	browserVersion: 'latest',
+		// 	maxInstances: 5,
+		// 	record_video: false
+		// },
+		// {
+		// 	browserName: 'firefox',
+		// 	platform: 'Windows 10',
+		// 	version: 'latest-1',
+		// 	maxInstances: 5,
+		// 	record_video: false
+		// },
+		// {
+		// 	browserName: 'MicrosoftEdge',
+		// 	platformName: 'Windows 10',
+		// 	browserVersion: '18',
+		// 	maxInstances: 5,
+		// 	record_video: true
+		// },
+		// {
+		// 	browserName: 'MicrosoftEdge',
+		// 	platform: 'Windows 10',
+		// 	version: '17',
+		// 	maxInstances: 5,
+		// 	record_video: false
+		// },
 		{
 			browserName: 'Internet Explorer',
 			platform: 'Windows 10',
 			version: '11',
 			maxInstances: 5,
-			record_video: true
+			record_video: false,
 		},
 		{
 			browserName: 'Safari',
-			platform: 'Mac OSX 10.14',
-			version: '12',
+			platform: 'MacOS 11.0',
+			version: '14',
 			maxInstances: 5,
-			record_video: true
+			record_video: false,
 		},
-		{
-			browserName: 'Safari',
-			platform: 'Mac OSX 10.13',
-			version: '11',
-			maxInstances: 5,
-			record_video: true
-		},
-		{
-			browserName: 'Safari',
-			deviceName: 'iPad 6th Generation Simulator',
-			platformVersion: '12.0',
-			platformName: 'iOS',
-			deviceOrientation: 'landscape',
-			maxInstances: 5,
-			record_video: true
-		}
-		/*
-		{
-			maxInstances: 5,
-			browserName: 'safari'
-		}, */
-		/* ,
-		{
-			maxInstances: 5,
-			browserName: 'edge'
-		} */
+		// {
+		// 	browserName: 'Safari',
+		// 	platform: 'Mac OSX 10.13',
+		// 	version: '11',
+		//  maxInstances: 5,
+		// 	record_video: false
+		// },
+		// {
+		// 	browserName: 'Safari',
+		// 	deviceName: 'iPad Pro Simulator',
+		// 	platformVersion: '11.0',
+		// 	platformName: 'iOS',
+		// 	deviceOrientation: 'landscape',
+		// 	maxInstances: 5,
+		// 	record_video: false
+		// }
 	],
 	//
 	// ===================
@@ -216,7 +205,7 @@ exports.config = {
 	// Services take over a specific job you don't want to take care of. They enhance
 	// your test setup with almost no effort. Unlike plugins, they don't add new
 	// commands. Instead, they hook themselves up into the test process.
-	// services: [],//
+	services: ['crossbrowsertesting'],
 	// Framework you want to run your specs with.
 	// The following are supported: Mocha, Jasmine, and Cucumber
 	// see also: https://webdriver.io/docs/frameworks.html
@@ -238,8 +227,8 @@ exports.config = {
 	// See the full list at http://mochajs.org/
 	mochaOpts: {
 		ui: 'bdd',
-		timeout: 60000
-	}
+		timeout: 60000,
+	},
 	//
 	// =====
 	// Hooks
@@ -359,4 +348,5 @@ exports.config = {
 	 */
 	// onReload: function(oldSessionId, newSessionId) {
 	// }
+	cbtTunnel: false, //set to true if a local connection is needed
 };
