@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/mfranzke/loading-attribute-polyfill/issues"
   },
-  "homepage": "https://github.com/mfranzke/loading-attribute-polyfill",
+  "homepage": "https://mfranzke.github.io/loading-attribute-polyfill/demo/",
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
@@ -38,8 +38,8 @@
     "@wdio/local-runner": "^7.1.0",
     "@wdio/mocha-framework": "^7.0.7",
     "@wdio/sync": "^7.1.0",
-    "html-validate": "^4.6.0",
-    "husky": "^5.1.2",
+    "html-validate": "^4.6.1",
+    "husky": "^5.1.3",
     "microbundle": "^0.13.0",
     "npm-run-all": "^4.1.5",
     "prettier": "2.2.1",
