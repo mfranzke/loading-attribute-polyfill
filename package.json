@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/mfranzke/loading-attribute-polyfill/issues"
   },
-  "homepage": "https://github.com/mfranzke/loading-attribute-polyfill",
+  "homepage": "https://mfranzke.github.io/loading-attribute-polyfill/demo/",
   "devDependencies": {
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
