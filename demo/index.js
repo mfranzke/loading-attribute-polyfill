@@ -1,23 +1,29 @@
 import loadingAttributePolyfill from '../dist/loading-attribute-polyfill.module.js';
 
 // Test for dynamically inserted images
-window.setTimeout(() => {
-	let child = document.createElement('div');
-	child.innerHTML = '<noscript class="loading-lazy"></noscript>';
-	child = child.firstChild;
+let addImage = (event) => {
+	let noscriptElement = document.createElement('noscript'),
+		imageElement = document.createElement('img');
 
-	let imageElement = document.createElement('img');
+	noscriptElement.classList.add('loading-lazy');
+
 	imageElement.setAttribute('src', 'https://via.placeholder.com/250x150');
 	imageElement.setAttribute('loading', 'lazy');
 	imageElement.setAttribute('alt', '..');
 	imageElement.setAttribute('width', '250');
 	imageElement.setAttribute('height', '150');
-	child.appendChild(imageElement);
+
+	noscriptElement.appendChild(imageElement);
+
 	document
-		.getElementsByTagName('main')[0]
-		.insertBefore(child, document.getElementsByTagName('main')[0].firstChild);
+		.querySelector('main')
+		.insertAdjacentElement('beforeend', noscriptElement);
 
 	loadingAttributePolyfill.prepareElement(
 		document.querySelector('main noscript.loading-lazy')
 	);
-}, 5000);
+
+	event.preventDefault();
+};
+
+document.querySelector('button.add-image').addEventListener('click', addImage);
