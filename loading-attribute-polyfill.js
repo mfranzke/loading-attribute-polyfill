@@ -22,9 +22,10 @@ var config = {
 
 // Device/browser capabilities object
 var capabilities = {
-	loading:
-		'loading' in HTMLImageElement.prototype &&
-		'loading' in HTMLIFrameElement.prototype,
+	loading: {
+		image: 'loading' in HTMLImageElement.prototype,
+		iframe: 'loading' in HTMLIFrameElement.prototype,
+	},
 	scrolling: 'onscroll' in window,
 };
 
@@ -161,7 +162,12 @@ function getAndPrepareHTMLCode(noScriptTag) {
 		temporaryImageHeight +
 		'%27%3E%3C/svg%3E';
 
-	if (!capabilities.loading && capabilities.scrolling) {
+	// Test for whether it's image or iframe content, their support by the browser and regarding the scrolling capability
+	if (
+		((/<img/gim.test(lazyAreaHtml) && !capabilities.loading.image) ||
+			(/<iframe/gim.test(lazyAreaHtml) && !capabilities.loading.iframe)) &&
+		capabilities.scrolling
+	) {
 		// Check for IntersectionObserver support
 		if (typeof intersectionObserver === 'undefined') {
 			// Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
@@ -206,13 +212,14 @@ function prepareElement(noScriptTag) {
 		var actualChild = lazyArea.firstChild;
 
 		if (
-			!capabilities.loading &&
 			capabilities.scrolling &&
 			typeof intersectionObserver !== 'undefined' &&
 			actualChild.tagName &&
-			(actualChild.tagName.toLowerCase() === 'img' ||
-				actualChild.tagName.toLowerCase() === 'picture' ||
-				actualChild.tagName.toLowerCase() === 'iframe')
+			(((actualChild.tagName.toLowerCase() === 'img' ||
+				actualChild.tagName.toLowerCase() === 'picture') &&
+				!capabilities.loading.image) ||
+				(actualChild.tagName.toLowerCase() === 'iframe' &&
+					!capabilities.loading.iframe))
 		) {
 			var observedElement =
 				actualChild.tagName.toLowerCase() === 'picture'
