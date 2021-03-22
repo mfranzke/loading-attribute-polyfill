@@ -6,6 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
+## [2.0.0-rc.0] - 2021-03-22
+
+### Added
+
+- GitHub's static analysis engine CodeQL to check against our repository's source code to find security vulnerabilities
+- Dependabot to ensure devDependencies are up to date ([!106](https://github.com/mfranzke/loading-attribute-polyfill/pull/106))
+
+### Changed
+
+- devDependency: bump husky from 5.1.2 to version 5.1.3
+- devDependency: bump html-validate from 4.6.0 to 4.7.1 (commit [801b314](https://github.com/mfranzke/loading-attribute-polyfill/commit/801b314), [!105](https://github.com/mfranzke/loading-attribute-polyfill/pull/105) and [!109](https://github.com/mfranzke/loading-attribute-polyfill/pull/109))
+
+### Fixed
+
+- testing: updated the tools and removed some old code to make crossbrowsertesting.com work again ([!100](https://github.com/mfranzke/loading-attribute-polyfill/pull/100))
+- browsers capabilities: we need to differentiate in between image and iframe capability, as Firefox only supports images for now, but not iframes
+
 ## [2.0.0-beta.1] - 2021-03-04
 
 ### Changed
