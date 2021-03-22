@@ -83,7 +83,7 @@ exports.config = {
 		// excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
 		// excludeDriverLogs: ['bugreport', 'server'],
 
-		// https://help.crossbrowsertesting.com/selenium-testing/getting-started/crossbrowsertesting-automation-capabilities/
+		// https://support.smartbear.com/crossbrowsertesting/docs/automated-testing/automation-capabilities.html
 
 		{
 			browserName: 'Chrome',
@@ -99,13 +99,13 @@ exports.config = {
 		// 	maxInstances: 5,
 		// 	record_video: false
 		// },
-		// {
-		// 	browserName: 'Firefox',
-		// 	platformName: 'Windows 10',
-		// 	browserVersion: 'latest',
-		// 	maxInstances: 5,
-		// 	record_video: false
-		// },
+		{
+			browserName: 'Firefox',
+			platformName: 'Windows 10',
+			browserVersion: 'latest',
+			maxInstances: 5,
+			record_video: false,
+		},
 		// {
 		// 	browserName: 'firefox',
 		// 	platform: 'Windows 10',
@@ -114,7 +114,7 @@ exports.config = {
 		// 	record_video: false
 		// },
 		// {
-		// 	browserName: 'MicrosoftEdge',
+		// 	browserName: 'edge',
 		// 	platformName: 'Windows 10',
 		// 	browserVersion: '18',
 		// 	maxInstances: 5,

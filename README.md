@@ -171,16 +171,19 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 - Mac
 
-  - macOS 10.14, Mozilla Firefox 68.0.1 (manually, localhost)
-  - macOS 10.14, Safari 12 (via CrossBrowserTesting)
-  - macOS 10.13, Safari 11 (via CrossBrowserTesting)
+  - Safari 14, macOS 11 (via CrossBrowserTesting)
+  - Mozilla Firefox _latest_, macOS 10.14 (manually, localhost)
+  <!-- - macOS 10.14, Safari 12 (via CrossBrowserTesting)
+  - macOS 10.13, Safari 11 (via CrossBrowserTesting) -->
 
 - iOS
-  - iPad 6th Generation Simulator, Mobile Safari 12.0 (via CrossBrowserTesting)
+  - Mobile Safari 12.0, iPad 6th Generation Simulator (manually)
 - Windows
-  - Windows 10, Google Chrome / versions latest & latest-1 (via CrossBrowserTesting)
-  - Windows 10, Microsoft Edge / versions 17, 18 (via CrossBrowserTesting)
-  - Windows 10, Microsoft Internet Explorer / version 11 (via CrossBrowserTesting) - Windows 7 SP1, Internet Explorer 9.0.8112.16421 (manually, localhost)
+  - Google Chrome _latest_, Windows 10 (via CrossBrowserTesting)
+  - Mozilla Firefox _latest_, Windows 10 (via CrossBrowserTesting)
+  - Microsoft Edge version 18, Windows 10 (manually, localhost)
+  - Microsoft Internet Explorer version 11, Windows 10 (via CrossBrowserTesting)
+  - Internet Explorer 9.0.8112.16421, Windows 7 SP1 (manually, localhost)
 
 ### Big Thanks
 
