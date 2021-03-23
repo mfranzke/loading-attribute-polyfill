@@ -135,6 +135,13 @@ exports.config = {
 			record_video: false,
 		},
 		{
+			browserName: 'Internet Explorer',
+			platform: 'Windows 7',
+			version: '9',
+			maxInstances: 5,
+			record_video: false,
+		},
+		{
 			browserName: 'Safari',
 			platform: 'MacOS 11.0',
 			version: '14',
