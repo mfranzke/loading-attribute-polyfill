@@ -86,6 +86,7 @@ exports.config = {
 		// https://support.smartbear.com/crossbrowsertesting/docs/automated-testing/automation-capabilities.html
 
 		{
+			name: 'loading attribute polyfill',
 			browserName: 'Chrome',
 			platform: 'Windows 10',
 			version: 'latest',
@@ -100,6 +101,7 @@ exports.config = {
 		// 	record_video: false
 		// },
 		{
+			name: 'loading attribute polyfill',
 			browserName: 'Firefox',
 			platformName: 'Windows 10',
 			browserVersion: 'latest',
@@ -128,6 +130,7 @@ exports.config = {
 		// 	record_video: false
 		// },
 		{
+			name: 'loading attribute polyfill',
 			browserName: 'Internet Explorer',
 			platform: 'Windows 10',
 			version: '11',
@@ -135,6 +138,7 @@ exports.config = {
 			record_video: false,
 		},
 		{
+			name: 'loading attribute polyfill',
 			browserName: 'Internet Explorer',
 			platform: 'Windows 7',
 			version: '9',
@@ -142,6 +146,7 @@ exports.config = {
 			record_video: false,
 		},
 		{
+			name: 'loading attribute polyfill',
 			browserName: 'Safari',
 			platform: 'MacOS 11.0',
 			version: '14',
@@ -149,6 +154,7 @@ exports.config = {
 			record_video: false,
 		},
 		// {
+		// 	name: 'loading attribute polyfill',
 		// 	browserName: 'Safari',
 		// 	platform: 'Mac OSX 10.13',
 		// 	version: '11',
