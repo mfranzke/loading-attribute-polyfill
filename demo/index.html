@@ -31,6 +31,15 @@
 			body > main iframe {
 				margin: 1rem;
 			}
+			/* dynamically added images */
+			.add-image ~ div {
+				min-height: 100vh;
+				position: relative;
+			}
+			.add-image ~ div img {
+				position: absolute;
+				bottom: 0;
+			}
 
 			/* Displaying the images on smaller viewports */
 			img {
@@ -163,7 +172,13 @@
 			</noscript>
 
 			<h2>dynamic images</h2>
-			<button type="button" class="add-image">Add image</button>
+			<p>
+				Add <code>div</code> element and image underneath (scroll down after
+				pressing the following button)
+			</p>
+			<button type="button" class="add-image">
+				Add dynamic image underneath
+			</button>
 		</main>
 		<!-- Including other optional polyfills depending on expected browser support scope -->
 		<script
