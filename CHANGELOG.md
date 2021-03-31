@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
+## [2.0.0-rc.1] - 2021-xx-xx
+
+### Added
+
+- Automated Mozilla Firefox testing via crossbrowsertesting
+- Automated Microsoft Internet Explorer 9 testing via crossbrowsertesting
+
+### Changed
+
+- build(deps-dev): bump husky from 5.1.3 to 6.0.0 (a.o. [!110](https://github.com/mfranzke/loading-attribute-polyfill/pull/110))
+- build(deps-dev): bump html-validate from 4.6.1 to 4.8.0
+- build(deps-dev): bump webdriverio dependencies
+- Optimized the demo pages functionality for dynamic images, by adding a button
+
 ## [2.0.0-rc.0] - 2021-03-22
 
 ### Added
