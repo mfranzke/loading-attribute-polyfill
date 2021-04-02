@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 And the commit messages from [Conventional Commits](https://conventionalcommits.org) are being used.
 
-## [2.0.0-rc.1] - 2021-xx-xx
+## [2.0.0-rc.1] - 2021-04-03
 
 ### Added
 
@@ -19,6 +19,10 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - build(deps-dev): bump html-validate from 4.6.1 to 4.8.0
 - build(deps-dev): bump webdriverio dependencies
 - Optimized the demo pages functionality for dynamic images, by adding a button
+- refactor: replacing `requestAnimationFrame` by `will-change: contents` (CSS)
+- build(deps-dev): bump @commitlint dependencies from 12.0.1 to 12.1.1
+- chore: moved source file to subfolder for better structure
+- some formatting and codacy feedback
 
 ## [2.0.0-rc.0] - 2021-03-22
 
