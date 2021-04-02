@@ -190,8 +190,11 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
   - macOS 10.13, Safari 11 (via CrossBrowserTesting) -->
 
 - iOS
+
   - Mobile Safari 12.0, iPad 6th Generation Simulator (manually)
+
 - Windows
+
   - Google Chrome _latest_, Windows 10 (via CrossBrowserTesting)
   - Mozilla Firefox _latest_, Windows 10 (via CrossBrowserTesting)
   - Microsoft Edge version 18, Windows 10 (manually, localhost)
