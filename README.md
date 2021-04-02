@@ -47,9 +47,22 @@ You may optionally load via NPM or Bower:
 
 You could even load the polyfill asynchronously: <https://output.jsbin.com/codelib/1>
 
+Include one of the provided JavaScript files depending on your setup plus the CSS file:
+
+```html
+<script src="dist/loading-attribute-polyfill.js" async></script>
+<link rel="stylesheet" href="dist/loading-attribute-polyfill.css" />
+```
+
+or e.g. within JS
+
+```js
+import loadingAttributePolyfill from "node_modules/loading-attribute-polyfill/dist/loading-attribute-polyfill.module.js";
+```
+
 Afterwards, you need to wrap all of your `<img>` and `<iframe>` HTML tags (in the case of `<picture>` use the complementary `<source>` HTML tags) that you'd like to lazy load with a `<noscript>` HTML tag (with the attribute `class="loading-lazy"`.)
 
-Please keep in mind that it's beneficial to even also include `width` and `height` attributes on `<img>` HTML tags, as the browser could determine the aspect ratio via those two attributes values being set (even if you overwrite them via CSS), compare to the great work by Jen Simmons on this topic, e.g. within these articles <https://css-tricks.com/do-this-to-improve-image-loading-on-your-website/> (with video) or <https://css-tricks.com/what-if-we-got-aspect-ratio-sized-images-by-doing-almost-nothing/>
+Please keep in mind that it's important to even also include `width` and `height` attributes on `<img>` HTML tags, as the browser could determine the aspect ratio via those two attributes values being set (even if you overwrite them via CSS), compare to the great work by Jen Simmons on this topic, e.g. within these articles <https://css-tricks.com/do-this-to-improve-image-loading-on-your-website/> (with video) or <https://css-tricks.com/what-if-we-got-aspect-ratio-sized-images-by-doing-almost-nothing/>
 
 And please "Avoid lazy-loading images that are in the first visible viewport", compare to [the article "Browser-level image lazy-loading for the web"](https://web.dev/browser-level-image-lazy-loading/#avoid-lazy-loading-images-that-are-in-the-first-visible-viewport) published on web.dev:
 

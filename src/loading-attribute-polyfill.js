@@ -12,6 +12,8 @@
 
 'use strict';
 
+import './loading-attribute-polyfill.css';
+
 var config = {
 	// Start download if the item gets within 256px in the Y axis
 	rootMargin: '0px 0px 256px 0px',
@@ -40,14 +42,6 @@ var intersectionObserver;
 if ('IntersectionObserver' in window) {
 	intersectionObserver = new IntersectionObserver(onIntersection, config);
 }
-
-// On using a browser w/o requestAnimationFrame support (IE9, Opera Mini), just run the passed function
-var rAFWrapper =
-	'requestAnimationFrame' in window
-		? window.requestAnimationFrame
-		: function (func) {
-				func();
-		  };
 
 /**
  * Put the source and srcset back where it belongs - now that the elements content is attached to the document, it will load now
@@ -249,13 +243,12 @@ let prepareElements = () => {
 };
 
 // If the page has loaded already, run setup - if it hasn't, run as soon as it has.
-// Use requestAnimationFrame as this will propably cause repaints
 // document.readyState values: https://www.w3schools.com/jsref/prop_doc_readystate.asp
 if (/comp|inter/.test(document.readyState)) {
-	rAFWrapper(prepareElements);
+	prepareElements();
 } else if ('addEventListener' in document) {
 	document.addEventListener('DOMContentLoaded', function () {
-		rAFWrapper(prepareElements);
+		prepareElements();
 	});
 } else {
 	document.attachEvent('onreadystatechange', function () {
