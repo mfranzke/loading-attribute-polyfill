@@ -15,9 +15,11 @@
 import './loading-attribute-polyfill.css';
 
 var config = {
-	// Start download if the item gets within 256px in the Y axis
-	rootMargin: '0px 0px 256px 0px',
-	threshold: 0.01,
+	intersectionObserver: {
+		// Start download if the item gets within 256px in the Y axis
+		rootMargin: '0px 0px 256px 0px',
+		threshold: 0.01,
+	},
 	lazyImage: 'img[loading="lazy"]',
 	lazyIframe: 'iframe[loading="lazy"]',
 };
@@ -40,7 +42,10 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 var intersectionObserver;
 
 if ('IntersectionObserver' in window) {
-	intersectionObserver = new IntersectionObserver(onIntersection, config);
+	intersectionObserver = new IntersectionObserver(
+		onIntersection,
+		config.intersectionObserver
+	);
 }
 
 /**
