@@ -49,7 +49,7 @@
     "test": "run-p validate:* lint:*",
     "lint:xo": "xo src/loading-attribute-polyfill.js",
     "validate:html": "html-validate demo/index.html",
-    "test:wdio": "wdio run wdio.conf-crossbrowsertesting.js",
+    "test:wdio": "wdio run webdriverio-tests/wdio.conf-crossbrowsertesting.js",
     "build": "microbundle",
     "dev": "microbundle watch",
     "release:minor": "npm version minor -m 'build(release): new minor version' && git push && git push --tags && npm publish",

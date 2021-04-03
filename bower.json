@@ -33,7 +33,6 @@
 		"webdriverio-tests",
 		".gitignore",
 		".husky",
-		"commitlint.config.js",
-		"wdio.conf-crossbrowsertesting.js"
+		"commitlint.config.js"
 	]
 }
