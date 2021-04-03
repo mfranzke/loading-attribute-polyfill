@@ -236,7 +236,7 @@ function prepareElement(noScriptTag) {
 }
 
 /**
- * Get all the <noscript> tags on the page and setup the printing
+ * Get all the <noscript> tags on the page, prepare each and any one of them and setup the printing
  */
 let prepareElements = () => {
 	var lazyLoadAreas = document.querySelectorAll('noscript.loading-lazy');
