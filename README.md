@@ -149,7 +149,7 @@ That for you would need to include the polyfill the latest within the HTML code,
 
 The polyfill has been enhanced to even also provide it's functionality on IE9. But please keep in mind to even also include a `matchMedia` polyfill.
 
-And the images are still displaying an error in the demo on IE9, as most likely (from my understanding) this browser doesn't work with the HTTPS protocol any more, but the src-attributes values are correctly rewritten after all.
+And the images are still displaying an error in the demo on IE9, as most likely (from my understanding) this browser doesn't work with the HTTPS protocol by GitHub pages any more, but the src-attributes values are correctly rewritten after all.
 
 ## API
 
