@@ -7,3 +7,5 @@ wdio.conf-crossbrowsertesting.js
 .github
 .gitattributes
 .prettierignore
+.htmlvalidate.json
+bower.json
