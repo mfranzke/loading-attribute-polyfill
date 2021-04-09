@@ -15,6 +15,21 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - Description on how to use with MutationObserver (won't be included within the polyfill itself)
 - Test case for dynamic images
 
+## [2.0.0] - 2021-04-09
+
+### Added
+
+- Further entries for npm package to ignore files
+- Adapted code of conduct
+
+### Changed
+
+- Moved the webdriverio config file to its subdirectory
+- Corrected the bower ignore entries
+- Bump html-validate from 4.8.0 to 4.9.0 (#126)
+- Code regarding codacys feedback
+- Bump webdriverio dependencies
+
 ## [2.0.0-rc.1] - 2021-04-03
 
 ### Added
