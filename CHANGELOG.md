@@ -17,6 +17,8 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ## [2.0.0] - 2021-04-09
 
+It's polyfills birthday today! Yeah! So to cheer this, we're releasing the new major release.
+
 ### Added
 
 - Further entries for npm package to ignore files
