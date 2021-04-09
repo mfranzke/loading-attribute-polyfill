@@ -10,9 +10,10 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 
 ### Added
 
-- Method for reinit with a specific scope without the <noscript> HTML tag, compare to #94
+- Method for reinit with a specific scope without the `<noscript>` HTML tag, compare to #94
 - CONTRIBUTING.MD
 - Description on how to use with MutationObserver (won't be included within the polyfill itself)
+- Test case for dynamic images
 
 ## [2.0.0-rc.1] - 2021-04-03
 
