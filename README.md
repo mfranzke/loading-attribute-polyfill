@@ -27,7 +27,7 @@ Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meanin
 ## Features
 
 - Lightweight (see the badge above)
-- Web standards: supports the standard `loading="lazy"` attribute on `image` and `iframe` elements
+- Web standards: supports the standard `loading="lazy"` attribute on `img` and `iframe` elements
 - Performance: it's based on highly efficient, best practice code.
 - SEO & crawlers: the image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
 
