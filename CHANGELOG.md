@@ -15,6 +15,29 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - Description on how to use with MutationObserver (won't be included within the polyfill itself)
 - Test case for dynamic images
 
+## [2.0.1] - 2021-05-13
+
+### Added
+
+- build: added CI/CD yaml for pull-requests 2f59306
+
+### Changed
+
+- refactor: removed two CSS files which aren't generated any more by `microbundle` c960f13
+- test: specified the browser versions within their test-browser-names cacceaf
+- Formatted the code with `xo` and `prettier` again
+- build: replaced manual versioning via `np` package 0b4f9ef
+- build(deps-dev): bump `xo` from 0.39.1 to 0.40.1 (#170) b4b58eb
+- build(deps-dev): bump `prettier` from 2.2.1 to 2.3.0 (#168) 75696fc
+- build(deps-dev): bump `@commitlint` dependencies ce81f5d
+- build(deps-dev): bump `webdriverio` dependencies
+- build(deps-dev): bump `html-validate` from to 4.11.0
+- build(deps-dev): bump `xo` from 0.38.2 to 0.39.1 (#143) 2514fcb
+
+### Fixed
+
+- Description within the README on the correct `UMD` JavaScript files to include
+
 ## [2.0.0] - 2021-04-09
 
 It's polyfills birthday today! Yeah! So to cheer this, we're releasing the new major release.
