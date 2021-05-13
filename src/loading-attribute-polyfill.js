@@ -10,11 +10,9 @@
  * Use an IntersectionObserver polyfill in case of IE11 support necessary.
  */
 
-'use strict';
-
 import './loading-attribute-polyfill.css';
 
-var config = {
+const config = {
 	intersectionObserver: {
 		// Start download if the item gets within 256px in the Y axis
 		rootMargin: '0px 0px 256px 0px',
@@ -25,7 +23,7 @@ var config = {
 };
 
 // Device/browser capabilities object
-var capabilities = {
+const capabilities = {
 	loading: {
 		image: 'loading' in HTMLImageElement.prototype,
 		iframe: 'loading' in HTMLIFrameElement.prototype,
@@ -39,7 +37,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 }
 
 // Define according to browsers support of the IntersectionObserver feature (missing e.g. on IE11 or Safari 11)
-var intersectionObserver;
+let intersectionObserver;
 
 if ('IntersectionObserver' in window) {
 	intersectionObserver = new IntersectionObserver(
@@ -53,7 +51,7 @@ if ('IntersectionObserver' in window) {
  * @param {Object} lazyItem Current item to be restored after lazy loading.
  */
 function restoreSource(lazyItem) {
-	var srcsetItems = [];
+	let srcsetItems = [];
 
 	// Just in case the img is the decendent of a picture element, check for source tags
 	if (lazyItem.parentNode.tagName.toLowerCase() === 'picture') {
@@ -67,7 +65,7 @@ function restoreSource(lazyItem) {
 	srcsetItems.push(lazyItem);
 
 	// Not using .dataset within those upfollowing lines of code for polyfill independent compatibility down to IE9
-	srcsetItems.forEach(function (item) {
+	srcsetItems.forEach((item) => {
 		if (item.hasAttribute('data-lazy-srcset')) {
 			item.setAttribute('srcset', item.getAttribute('data-lazy-srcset'));
 			item.removeAttribute('data-lazy-srcset'); // Not using delete .dataset here for compatibility down to IE9
@@ -83,7 +81,7 @@ function restoreSource(lazyItem) {
  * @param {Object} lazyItemPicture Current <picture> item to be restored after lazy loading.
  */
 function removePlaceholderSource(lazyItemPicture) {
-	var placeholderSource = lazyItemPicture.querySelector(
+	const placeholderSource = lazyItemPicture.querySelector(
 		'source[data-lazy-remove]'
 	);
 
@@ -99,14 +97,14 @@ function removePlaceholderSource(lazyItemPicture) {
  * @param {Object} observer IntersectionObserver instance reference
  */
 function onIntersection(entries, observer) {
-	entries.forEach(function (entry) {
+	entries.forEach((entry) => {
 		// Mitigation for EDGE lacking support of .isIntersecting until v15, compare to e.g. https://github.com/w3c/IntersectionObserver/issues/211#issuecomment-309144669
 		if (entry.intersectionRatio === 0) {
 			return;
 		}
 
 		// If the item is visible now, load it and stop watching it
-		var lazyItem = entry.target;
+		const lazyItem = entry.target;
 
 		observer.unobserve(lazyItem);
 
@@ -122,9 +120,9 @@ function onPrinting() {
 		return;
 	}
 
-	var mediaQueryList = window.matchMedia('print');
+	const mediaQueryList = window.matchMedia('print');
 
-	mediaQueryList.addListener(function (mql) {
+	mediaQueryList.addListener((mql) => {
 		if (mql.matches) {
 			document
 				.querySelectorAll(
@@ -133,7 +131,7 @@ function onPrinting() {
 						config.lazyIframe +
 						'[data-lazy-src]'
 				)
-				.forEach(function (lazyItem) {
+				.forEach((lazyItem) => {
 					restoreSource(lazyItem);
 				});
 		}
@@ -147,14 +145,14 @@ function onPrinting() {
  */
 function getAndPrepareHTMLCode(noScriptTag) {
 	// The contents of a <noscript> tag are treated as text to JavaScript
-	var lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
+	let lazyAreaHtml = noScriptTag.textContent || noScriptTag.innerHTML;
 
-	var getImageWidth = lazyAreaHtml.match(/width=['"](\d+)['"]/) || false;
-	var temporaryImageWidth = getImageWidth[1] || 1;
-	var getImageHeight = lazyAreaHtml.match(/height=['"](\d+)['"]/) || false;
-	var temporaryImageHeight = getImageHeight[1] || 1;
+	const getImageWidth = lazyAreaHtml.match(/width=['"](\d+)['"]/) || false;
+	const temporaryImageWidth = getImageWidth[1] || 1;
+	const getImageHeight = lazyAreaHtml.match(/height=['"](\d+)['"]/) || false;
+	const temporaryImageHeight = getImageHeight[1] || 1;
 
-	var temporaryImage =
+	const temporaryImage =
 		'data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 ' +
 		temporaryImageWidth +
 		' ' +
@@ -202,13 +200,13 @@ function getAndPrepareHTMLCode(noScriptTag) {
  */
 function prepareElement(noScriptTag) {
 	// Sticking the noscript HTML code in the innerHTML of a new <div> tag to 'load' it after creating that <div>
-	var lazyArea = document.createElement('div');
+	const lazyArea = document.createElement('div');
 
 	lazyArea.innerHTML = getAndPrepareHTMLCode(noScriptTag);
 
 	// Move all children out of the element
 	while (lazyArea.firstChild) {
-		var actualChild = lazyArea.firstChild;
+		const actualChild = lazyArea.firstChild;
 
 		if (
 			capabilities.scrolling &&
@@ -220,7 +218,7 @@ function prepareElement(noScriptTag) {
 				(actualChild.tagName.toLowerCase() === 'iframe' &&
 					!capabilities.loading.iframe))
 		) {
-			var observedElement =
+			const observedElement =
 				actualChild.tagName.toLowerCase() === 'picture'
 					? lazyArea.querySelector('img')
 					: actualChild;
@@ -238,8 +236,8 @@ function prepareElement(noScriptTag) {
 /**
  * Get all the <noscript> tags on the page, prepare each and any one of them and setup the printing
  */
-let prepareElements = () => {
-	var lazyLoadAreas = document.querySelectorAll('noscript.loading-lazy');
+const prepareElements = () => {
+	const lazyLoadAreas = document.querySelectorAll('noscript.loading-lazy');
 
 	lazyLoadAreas.forEach((element) => prepareElement(element));
 
@@ -252,11 +250,11 @@ let prepareElements = () => {
 if (/comp|inter/.test(document.readyState)) {
 	prepareElements();
 } else if ('addEventListener' in document) {
-	document.addEventListener('DOMContentLoaded', function () {
+	document.addEventListener('DOMContentLoaded', () => {
 		prepareElements();
 	});
 } else {
-	document.attachEvent('onreadystatechange', function () {
+	document.attachEvent('onreadystatechange', () => {
 		if (document.readyState === 'complete') {
 			prepareElements();
 		}
@@ -264,7 +262,7 @@ if (/comp|inter/.test(document.readyState)) {
 }
 
 const loadingAttributePolyfill = {
-	prepareElement: prepareElement,
+	prepareElement,
 };
 
 export default loadingAttributePolyfill;
