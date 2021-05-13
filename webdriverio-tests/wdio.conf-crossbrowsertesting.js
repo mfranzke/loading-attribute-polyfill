@@ -131,7 +131,7 @@ exports.config = {
 		// },
 		{
 			name: 'loading attribute polyfill',
-			browserName: 'Internet Explorer',
+			browserName: 'Internet Explorer 11',
 			platform: 'Windows 10',
 			version: '11',
 			maxInstances: 5,
@@ -139,7 +139,7 @@ exports.config = {
 		},
 		{
 			name: 'loading attribute polyfill',
-			browserName: 'Internet Explorer',
+			browserName: 'Internet Explorer 9',
 			platform: 'Windows 7',
 			version: '9',
 			maxInstances: 5,
@@ -147,7 +147,7 @@ exports.config = {
 		},
 		{
 			name: 'loading attribute polyfill',
-			browserName: 'Safari',
+			browserName: 'Safari 14',
 			platform: 'MacOS 11.0',
 			version: '14',
 			maxInstances: 5,
@@ -205,11 +205,11 @@ exports.config = {
 	baseUrl: 'https://mfranzke.github.io/loading-attribute-polyfill/demo/',
 	//
 	// Default timeout for all waitFor* commands.
-	waitforTimeout: 10000,
+	waitforTimeout: 10_000,
 	//
 	// Default timeout in milliseconds for request
 	// if Selenium Grid doesn't send response
-	connectionRetryTimeout: 90000,
+	connectionRetryTimeout: 90_000,
 	//
 	// Default request retries count
 	connectionRetryCount: 3,
@@ -240,7 +240,7 @@ exports.config = {
 	// See the full list at http://mochajs.org/
 	mochaOpts: {
 		ui: 'bdd',
-		timeout: 60000,
+		timeout: 60_000,
 	},
 	//
 	// =====
@@ -361,5 +361,5 @@ exports.config = {
 	 */
 	// onReload: function(oldSessionId, newSessionId) {
 	// }
-	cbtTunnel: false, //set to true if a local connection is needed
+	cbtTunnel: false, // Set to true if a local connection is needed
 };

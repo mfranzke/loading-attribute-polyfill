@@ -13,7 +13,7 @@ describe('demo page - img', () => {
 		element.waitForExist();
 
 		assert.strictEqual(
-			element.getAttribute('src').substr(0, 8),
+			element.getAttribute('src').slice(0, 8),
 			// Differentiate by feature detection / the loading capability in between the two different expected values
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
@@ -26,7 +26,7 @@ describe('demo page - img', () => {
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
 		assert.strictEqual(
 			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
 				0,
 				8
 			),
@@ -42,7 +42,7 @@ describe('demo page - img', () => {
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
 		assert.strictEqual(
 			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
 				0,
 				8
 			),
@@ -61,7 +61,7 @@ describe('demo page - iframe', () => {
 		element.waitForExist();
 
 		assert.strictEqual(
-			element.getAttribute('src').substr(0, 8),
+			element.getAttribute('src').slice(0, 8),
 			// Differentiate by feature detection / the loading capability in between the two different expected values
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
@@ -80,7 +80,7 @@ describe('demo page - scrolled - img', () => {
 
 		element.scrollIntoView();
 
-		assert.strictEqual(element.getAttribute('src').substr(0, 8), 'https://');
+		assert.strictEqual(element.getAttribute('src').slice(0, 8), 'https://');
 	});
 	it('should be loaded if scrolled below the fold (nested in picture)', () => {
 		const element = $('main picture img[loading="lazy"]');
@@ -92,7 +92,7 @@ describe('demo page - scrolled - img', () => {
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
 		assert.strictEqual(
 			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
 				0,
 				8
 			),
@@ -109,7 +109,7 @@ describe('demo page - scrolled - img', () => {
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
 		assert.strictEqual(
 			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).substr(
+			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
 				0,
 				8
 			),
@@ -127,6 +127,6 @@ describe('demo page - scrolled - iframe', () => {
 
 		element.scrollIntoView();
 
-		assert.strictEqual(element.getAttribute('src').substr(0, 8), 'https://');
+		assert.strictEqual(element.getAttribute('src').slice(0, 8), 'https://');
 	});
 });
