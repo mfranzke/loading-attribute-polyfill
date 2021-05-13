@@ -3,7 +3,6 @@
   "version": "2.0.0",
   "description": "Fast and lightweight dependency-free vanilla JavaScript polyfill for native lazy loading / the awesome loading='lazy'-attribute.",
   "source": "./src/loading-attribute-polyfill.js",
-  "main": "./dist/loading-attribute-polyfill.js",
   "esmodule": "./dist/loading-attribute-polyfill.modern.js",
   "module": "./dist/loading-attribute-polyfill.module.js",
   "umd:main": "./dist/loading-attribute-polyfill.umd.js",
@@ -40,6 +39,7 @@
     "html-validate": "^4.10.1",
     "husky": "^6.0.0",
     "microbundle": "^0.13.0",
+    "np": "^7.5.0",
     "npm-run-all": "^4.1.5",
     "prettier": "2.3.0",
     "pretty-quick": "^3.1.0",
@@ -52,8 +52,7 @@
     "test:wdio": "wdio run webdriverio-tests/wdio.conf-crossbrowsertesting.js",
     "build": "microbundle",
     "dev": "microbundle watch",
-    "release:minor": "npm version minor -m 'build(release): new minor version' && git push && git push --tags && npm publish",
-    "release:patch": "npm version patch -m 'build(release): new patch version' && git push && git push --tags && npm publish",
+    "release": "np",
     "prepare": "husky install"
   }
 }

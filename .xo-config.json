@@ -5,6 +5,10 @@
 	"rules": {
 		"unicorn/prefer-node-remove": "off",
 		"unicorn/no-array-for-each": "off",
-		"unicorn/prefer-dom-node-remove": "off"
+		"unicorn/prefer-dom-node-remove": "off",
+		"no-var": "off",
+		"prefer-arrow-callback": "off",
+		"prefer-const": "off",
+		"object-shorthand": "off"
 	}
 }
