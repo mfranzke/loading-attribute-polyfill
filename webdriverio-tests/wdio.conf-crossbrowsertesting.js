@@ -131,7 +131,7 @@ exports.config = {
 		// },
 		{
 			name: 'loading attribute polyfill',
-			browserName: 'Internet Explorer 11',
+			browserName: 'Internet Explorer',
 			platform: 'Windows 10',
 			version: '11',
 			maxInstances: 5,
@@ -139,7 +139,7 @@ exports.config = {
 		},
 		{
 			name: 'loading attribute polyfill',
-			browserName: 'Internet Explorer 9',
+			browserName: 'Internet Explorer',
 			platform: 'Windows 7',
 			version: '9',
 			maxInstances: 5,
@@ -147,7 +147,7 @@ exports.config = {
 		},
 		{
 			name: 'loading attribute polyfill',
-			browserName: 'Safari 14',
+			browserName: 'Safari',
 			platform: 'MacOS 11.0',
 			version: '14',
 			maxInstances: 5,
