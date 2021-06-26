@@ -41,7 +41,7 @@
     "microbundle": "^0.13.3",
     "np": "^7.5.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "2.3.1",
+    "prettier": "2.3.2",
     "pretty-quick": "^3.1.1",
     "xo": "^0.40.3"
   },
