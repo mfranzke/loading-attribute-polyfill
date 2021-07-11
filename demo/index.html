@@ -91,8 +91,38 @@
 			</blockquote>
 
 			<p class="scrolling-advice">
-				The following whitespace is included as a threshold, <strong>please scroll down to the very end of this demo page</strong> to see these images being loaded by the polyfill on
+				The following whitespace is included as a threshold,
+				<strong>please scroll down to the very end of this demo page</strong> to
+				see these images and iframe content being loaded by the polyfill on
 				<a href="https://caniuse.com/loading-lazy-attr">unsupported browsers</a>
+				(hint:
+				<strong
+					>Your browser
+					<script type="text/javascript">
+						if (
+							"loading" in HTMLImageElement.prototype ||
+							"loading" in HTMLIFrameElement.prototype
+						) {
+							document.write(
+								"supports the following native loading lazy capabilities:"
+							);
+
+							if ("loading" in HTMLImageElement.prototype) {
+								document.write("images");
+
+								if ("loading" in HTMLIFrameElement.prototype) {
+									document.write(", iframes");
+								}
+							} else if ("loading" in HTMLIFrameElement.prototype) {
+								document.write("iframes");
+							}
+						} else {
+							document.write(
+								"doesn't support the native loading lazy capabilities"
+							);
+						}
+					</script></strong
+				>)
 				<span aria-hidden="true">⬇</span>
 			</p>
 		</header>
