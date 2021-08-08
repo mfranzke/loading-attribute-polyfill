@@ -43,7 +43,7 @@
     "npm-run-all": "^4.1.5",
     "prettier": "2.3.2",
     "pretty-quick": "^3.1.1",
-    "xo": "^0.43.0"
+    "xo": "^0.44.0"
   },
   "scripts": {
     "test": "run-p validate:* lint:*",
