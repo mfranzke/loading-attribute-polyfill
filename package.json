@@ -30,7 +30,7 @@
   "homepage": "https://mfranzke.github.io/loading-attribute-polyfill/demo/",
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
-    "@commitlint/config-conventional": "^14.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "@wdio/cli": "^7.9.0",
     "@wdio/dot-reporter": "^7.9.0",
     "@wdio/local-runner": "^7.9.0",
