@@ -52,8 +52,8 @@ You could even load the polyfill asynchronously: <https://output.jsbin.com/codel
 Include one of the provided JavaScript files depending on your setup plus the CSS file:
 
 ```html
-<script src="dist/loading-attribute-polyfill.umd.js" async></script>
 <link rel="stylesheet" href="dist/loading-attribute-polyfill.css" />
+<script src="dist/loading-attribute-polyfill.umd.js" async></script>
 ```
 
 or e.g. within JS
