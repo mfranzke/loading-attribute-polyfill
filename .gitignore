@@ -102,3 +102,10 @@ typings/
 
 # TernJS port file
 .tern-port
+
+
+# # # Individual additions
+.browserslistrc
+.vscode
+renovate.json
+CODE-OF-CONDUCT.md
