@@ -207,7 +207,7 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbrowsertesting.com)
 
-[![CrossBrowserTesting](https://crossbrowsertesting.com/blog/wp-content/uploads/2017/09/cbt-wp-logo.png "CrossBrowserTesting")](https://crossbrowsertesting.com)
+[![CrossBrowserTesting](https://static1.smartbear.co/crossbrowsertesting/media/site/cbt-smartbear-logo.svg "CrossBrowserTesting")](https://crossbrowsertesting.com)
 
 ## Things to keep in mind
 
