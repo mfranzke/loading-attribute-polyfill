@@ -4,7 +4,7 @@
 [![npm bundle size](https://img.shields.io/bundlephobia/minzip/loading-attribute-polyfill)](https://bundlephobia.com/result?p=loading-attribute-polyfill)
 [![Total downloads ~ Npmjs](https://img.shields.io/npm/dt/loading-attribute-polyfill.svg "Count of total downloads – NPM")](https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM')
 [![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge "Count of total downloads – jsDelivr")](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill "loading-attribute polyfill – on jsDelivr")
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/16c763924903400ca82cfed618a82a6e)](https://app.codacy.com/app/mfranzke_2/loading-attribute-polyfill?utm_source=github.com&utm_medium=referral&utm_content=mfranzke/loading-attribute-polyfill&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4f4cc692565d425c82860d18a11f17d4)](https://www.codacy.com/gh/mfranzke/loading-attribute-polyfill/dashboard)
 [![Known Vulnerabilities](https://snyk.io/test/github/mfranzke/loading-attribute-polyfill/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mfranzke/loading-attribute-polyfill?targetFile=package.json)
 [![CodeQL](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml)
 [![GitHub Super-Linter](https://github.com/mfranzke/loading-attribute-polyfill/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/linter.yml)
