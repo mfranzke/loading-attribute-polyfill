@@ -27,6 +27,7 @@ describe('demo page - img', () => {
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
+	/* jscpd:ignore-start */
 	it('should not get loaded if below the fold (with srcset attribute)', async () => {
 		const element = await $('main img[sizes][loading="lazy"]');
 		// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
@@ -40,6 +41,7 @@ describe('demo page - img', () => {
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
+	/* jscpd:ignore-end */
 });
 describe('demo page - iframe', () => {
 	beforeEach(async () => {
