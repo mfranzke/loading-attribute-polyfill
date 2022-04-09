@@ -1,67 +1,57 @@
 /* global browser $ $$ */
 /* eslint-env mocha */
 
-const assert = require('assert');
-
 describe('demo page - img', () => {
-	beforeEach(() => {
-		browser.url('index.html');
+	beforeEach(async () => {
+		await browser.url('index.html');
 	});
-	it('should not get loaded if below the fold (simple)', () => {
-		const element = $('main img[loading="lazy"]');
+	it('should not get loaded if below the fold (simple)', async () => {
+		const element = await $('main img[loading="lazy"]');
+		const src = await element.getAttribute('src');
 
-		element.waitForExist();
-
-		assert.strictEqual(
-			element.getAttribute('src').slice(0, 8),
+		expect(src.slice(0, 8)).toEqual(
 			// Differentiate by feature detection / the loading capability in between the two different expected values
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
-	it('should not get loaded if below the fold (nested in picture)', () => {
-		const element = $('main picture img[loading="lazy"]');
-
-		element.waitForExist();
+	it('should not get loaded if below the fold (nested in picture)', async () => {
+		const element = await $('main picture img[loading="lazy"]');
+		// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+		const src =
+			(await element.getProperty('currentSrc')) ||
+			(await element.getAttribute('src'));
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.strictEqual(
-			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
-				0,
-				8
-			),
+		expect(src.slice(0, 8)).toEqual(
 			// Differentiate by feature detection / the loading capability in between the two different expected values
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
-	it('should not get loaded if below the fold (with srcset attribute)', () => {
-		const element = $('main img[sizes][loading="lazy"]');
-
-		element.waitForExist();
+	/* jscpd:ignore-start */
+	it('should not get loaded if below the fold (with srcset attribute)', async () => {
+		const element = await $('main img[sizes][loading="lazy"]');
+		// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+		const src =
+			(await element.getProperty('currentSrc')) ||
+			(await element.getAttribute('src'));
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.strictEqual(
-			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
-				0,
-				8
-			),
+		expect(src.slice(0, 8)).toEqual(
 			// Differentiate by feature detection / the loading capability in between the two different expected values
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
 	});
+	/* jscpd:ignore-end */
 });
 describe('demo page - iframe', () => {
-	beforeEach(() => {
-		browser.url('index.html');
+	beforeEach(async () => {
+		await browser.url('index.html');
 	});
-	it('should not get loaded if below the fold', () => {
-		const element = $('main iframe[loading="lazy"]');
+	it('should not get loaded if below the fold', async () => {
+		const element = await $('main iframe[loading="lazy"]');
+		const src = await element.getAttribute('src');
 
-		element.waitForExist();
-
-		assert.strictEqual(
-			element.getAttribute('src').slice(0, 8),
+		expect(src.slice(0, 8)).toEqual(
 			// Differentiate by feature detection / the loading capability in between the two different expected values
 			element.getProperty('loading') ? 'https://' : 'data:ima'
 		);
@@ -69,64 +59,54 @@ describe('demo page - iframe', () => {
 });
 
 describe('demo page - scrolled - img', () => {
-	beforeEach(() => {
-		browser.url('index.html');
+	beforeEach(async () => {
+		await browser.url('index.html');
 	});
 
-	it('should be loaded if scrolled below the fold (simple)', () => {
-		const element = $('main img[loading="lazy"]');
+	it('should be loaded if scrolled below the fold (simple)', async () => {
+		const element = await $('main img[loading="lazy"]');
+		const src = await element.getAttribute('src');
 
-		element.waitForExist();
+		await element.scrollIntoView();
 
-		element.scrollIntoView();
-
-		assert.strictEqual(element.getAttribute('src').slice(0, 8), 'https://');
+		expect(src.slice(0, 8)).toEqual('https://');
 	});
-	it('should be loaded if scrolled below the fold (nested in picture)', () => {
-		const element = $('main picture img[loading="lazy"]');
+	it('should be loaded if scrolled below the fold (nested in picture)', async () => {
+		const element = await $('main picture img[loading="lazy"]');
+		// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+		const src =
+			(await element.getProperty('currentSrc')) ||
+			(await element.getAttribute('src'));
 
-		element.waitForExist();
-
-		element.scrollIntoView();
+		await element.scrollIntoView();
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.strictEqual(
-			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
-				0,
-				8
-			),
-			'https://'
-		);
+		expect(src.slice(0, 8)).toEqual('https://');
 	});
-	it('should be loaded if scrolled below the fold (with srcset attribute)', () => {
-		const element = $('main img[sizes][loading="lazy"]');
+	/* jscpd:ignore-start */
+	it('should be loaded if scrolled below the fold (with srcset attribute)', async () => {
+		const element = await $('main img[sizes][loading="lazy"]');
+		// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
+		const src =
+			(await element.getProperty('currentSrc')) ||
+			(await element.getAttribute('src'));
 
-		element.waitForExist();
-
-		element.scrollIntoView();
+		await element.scrollIntoView();
 
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
-		assert.strictEqual(
-			// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
-			(element.getProperty('currentSrc') || element.getAttribute('src')).slice(
-				0,
-				8
-			),
-			'https://'
-		);
+		expect(src.slice(0, 8)).toEqual('https://');
 	});
+	/* jscpd:ignore-end */
 });
 describe('demo page - scrolled - iframe', () => {
-	it('should be loaded if scrolled below the fold', () => {
-		browser.url('index.html');
+	it('should be loaded if scrolled below the fold', async () => {
+		await browser.url('index.html');
 
-		const element = $('main iframe[loading="lazy"]');
+		const element = await $('main iframe[loading="lazy"]');
+		const src = await element.getAttribute('src');
 
-		element.waitForExist();
+		await element.scrollIntoView();
 
-		element.scrollIntoView();
-
-		assert.strictEqual(element.getAttribute('src').slice(0, 8), 'https://');
+		expect(src.slice(0, 8)).toEqual('https://');
 	});
 });
