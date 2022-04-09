@@ -89,51 +89,48 @@ exports.config = {
 
 		// https://support.smartbear.com/crossbrowsertesting/docs/automated-testing/automation-capabilities.html
 
-		/*
 		{
 			browserName: 'chrome',
 			platform: 'macOS',
 			version: 'latest',
 			maxInstances: 1,
 		},
-		*/
 		{
 			browserName: 'chrome',
 			platform: 'Win10',
 			version: 'latest',
+			maxInstances: 1,
+		},
+		{
+			browserName: 'chrome',
+			platform: 'Win10',
+			version: 'latest-1',
 			maxInstances: 5,
 		},
-		/*
-		// {
-		// 	browserName: 'chrome',
-		// 	platform: 'Win10',
-		// 	version: 'latest-1',
-		// 	maxInstances: 5,
-		// },
 		{
 			browserName: 'Firefox',
 			platform: 'Win10',
 			version: 'latest',
 			maxInstances: 5,
 		},
-		// {
-		// 	browserName: 'firefox',
-		// 	platform: 'Win10',
-		// 	version: 'latest-1',
-		// 	maxInstances: 5,
-		// },
-		// {
-		// 	browserName: 'edge',
-		// 	platform: 'Win10',
-		// 	version: '18',
-		// 	maxInstances: 5,
-		// },
-		// {
-		// 	browserName: 'MicrosoftEdge',
-		// 	platform: 'Win10',
-		// 	version: '17',
-		// 	maxInstances: 5,
-		// },
+		{
+			browserName: 'firefox',
+			platform: 'Win10',
+			version: 'latest-1',
+			maxInstances: 5,
+		},
+		{
+			browserName: 'edge',
+			platform: 'Win10',
+			version: '18',
+			maxInstances: 5,
+		},
+		{
+			browserName: 'MicrosoftEdge',
+			platform: 'Win10',
+			version: '17',
+			maxInstances: 5,
+		},
 		{
 			browserName: 'Internet Explorer',
 			platform: 'Win10',
@@ -150,22 +147,22 @@ exports.config = {
 			browserName: 'Safari',
 			platform: 'MacOS 11.0',
 			version: '14',
+			maxInstances: 1,
+		},
+		{
+			browserName: 'Safari',
+			platform: 'Mac OSX 10.13',
+			version: '11',
+			maxInstances: 1,
+		},
+		{
+			browserName: 'Safari',
+			deviceName: 'iPad Pro Simulator',
+			platformVersion: '11.0',
+			platform: 'iOS',
+			deviceOrientation: 'landscape',
 			maxInstances: 5,
 		},
-		// {
-		// 	browserName: 'Safari',
-		// 	platform: 'Mac OSX 10.13',
-		// 	version: '11',
-		//  maxInstances: 5,
-		// },
-		// {
-		// 	browserName: 'Safari',
-		// 	deviceName: 'iPad Pro Simulator',
-		// 	platformVersion: '11.0',
-		// 	platform: 'iOS',
-		// 	deviceOrientation: 'landscape',
-		// 	maxInstances: 5,
-		// }*/
 	],
 	//
 	// ===================
