@@ -101,7 +101,7 @@ exports.config = {
 			browserName: 'chrome',
 			platform: 'Win10',
 			version: 'latest',
-			maxInstances: 1,
+			maxInstances: 5,
 		},
 		/*
 		// {
