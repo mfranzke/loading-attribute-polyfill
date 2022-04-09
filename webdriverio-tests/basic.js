@@ -83,6 +83,7 @@ describe('demo page - scrolled - img', () => {
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
 		expect(src.slice(0, 8)).toEqual('https://');
 	});
+	/* jscpd:ignore-start */
 	it('should be loaded if scrolled below the fold (with srcset attribute)', async () => {
 		const element = await $('main img[sizes][loading="lazy"]');
 		// We'd like to use the currentSrc property preferably, as it shows the correct image source usage
@@ -95,6 +96,7 @@ describe('demo page - scrolled - img', () => {
 		// Let's use .getProperty('currentSrc') as soon as this feature is implemented
 		expect(src.slice(0, 8)).toEqual('https://');
 	});
+	/* jscpd:ignore-end */
 });
 describe('demo page - scrolled - iframe', () => {
 	it('should be loaded if scrolled below the fold', async () => {
