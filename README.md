@@ -6,7 +6,7 @@
 [![jsDelivr CDN downloads](https://data.jsdelivr.com/v1/package/npm/loading-attribute-polyfill/badge "Count of total downloads – jsDelivr")](https://www.jsdelivr.com/package/npm/loading-attribute-polyfill "loading-attribute polyfill – on jsDelivr")
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4f4cc692565d425c82860d18a11f17d4)](https://www.codacy.com/gh/mfranzke/loading-attribute-polyfill/dashboard)
 [![Known Vulnerabilities](https://snyk.io/test/github/mfranzke/loading-attribute-polyfill/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mfranzke/loading-attribute-polyfill?targetFile=package.json)
-[![CodeQL](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml)
+[![CodeQL](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/codeql-analysis.yml)
 [![GitHub Super-Linter](https://github.com/mfranzke/loading-attribute-polyfill/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/mfranzke/loading-attribute-polyfill/actions/workflows/linter.yml)
 [![dependencies Status](https://david-dm.org/mfranzke/loading-attribute-polyfill/status.svg "Count of dependencies")](https://david-dm.org/mfranzke/loading-attribute-polyfill "loading-attribute polyfill – on david-dm")
 [![loading-attribute-polyfill on Npmjs](https://img.shields.io/npm/v/loading-attribute-polyfill.svg?color=rgb%28237%2C%2028%2C%2036%29 "npm version")](https://npmjs.com/package/loading-attribute-polyfill 'loading="lazy"-attribute polyfill – on NPM')
