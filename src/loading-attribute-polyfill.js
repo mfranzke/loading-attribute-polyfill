@@ -66,14 +66,18 @@ function restoreSource(lazyItem) {
 
 	// Not using .dataset within those upfollowing lines of code for polyfill independent compatibility down to IE9
 	srcsetItems.forEach((item) => {
+		/* eslint-disable unicorn/prefer-dom-node-dataset */
 		if (item.hasAttribute('data-lazy-srcset')) {
 			item.setAttribute('srcset', item.getAttribute('data-lazy-srcset'));
 			item.removeAttribute('data-lazy-srcset'); // Not using delete .dataset here for compatibility down to IE9
 		}
+		/* eslint-enable unicorn/prefer-dom-node-dataset */
 	});
 
+	/* eslint-disable unicorn/prefer-dom-node-dataset */
 	lazyItem.setAttribute('src', lazyItem.getAttribute('data-lazy-src'));
 	lazyItem.removeAttribute('data-lazy-src'); // Not using delete .dataset here for compatibility down to IE9
+	/* eslint-enable unicorn/prefer-dom-node-dataset */
 }
 
 /**
