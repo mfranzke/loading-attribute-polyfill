@@ -8,3 +8,8 @@ commitlint.config.js
 .prettierignore
 .htmlvalidate.json
 bower.json
+
+# # # Individual additions
+.browserslistrc
+.vscode
+renovate.json
