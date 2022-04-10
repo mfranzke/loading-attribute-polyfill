@@ -30,6 +30,7 @@ Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meanin
 - Web standards: supports the standard `loading="lazy"` attribute on `img` and `iframe` elements
 - Performance: it's based on highly efficient, best practice code.
 - SEO & crawlers: the image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
+- Supporting HTML generating JavaScript frameworks through a method provided to reinit its functionality
 
 ## Core concepts
 
@@ -47,7 +48,9 @@ You may optionally load via NPM or Bower:
     $ npm install loading-attribute-polyfill
     $ bower install loading-attribute-polyfill
 
-You could even load the polyfill asynchronously: <https://output.jsbin.com/codelib/1>
+You could load the polyfill asynchronously as well: <https://output.jsbin.com/codelib/1>
+
+## Integration
 
 Include one of the provided JavaScript files depending on your setup plus the CSS file:
 
