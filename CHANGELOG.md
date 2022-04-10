@@ -15,7 +15,7 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - Description on how to use with MutationObserver (won't be included within the polyfill itself)
 - Test case for dynamic images
 
-## [2.x.x] - 2022-04-10
+## [2.0.2] - 2022-04-10
 
 It's polyfills birthday (okay, it has been yesterday), so I did a lot of housekeeping and even also released a new version of the polyfill with another concept (using Service Worker to prevent loading images and iframes contents). Check it out and evaluate its usage in your project: <https://github.com/mfranzke/loading-attribute-polyfill-with-serviceworker>
 
