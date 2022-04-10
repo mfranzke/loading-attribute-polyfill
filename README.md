@@ -30,7 +30,7 @@ Fast and lightweight vanilla JavaScript polyfill for native lazy loading, meanin
 - Web standards: supports the standard `loading="lazy"` attribute on `img` and `iframe` elements
 - Performance: it's based on highly efficient, best practice code.
 - SEO & crawlers: the image and iframe contents aren't being hidden from crawlers that aren't capable of scrolling.
-- Supporting HTML generating JavaScript frameworks through a method provided to reinit its functionality
+- Supporting HTML generating JavaScript frameworks through a method provided to reinit its functionality (see "Another solution, especially in combination with JavaScript framework usage" as well)
 
 ## Core concepts
 
@@ -38,6 +38,16 @@ The polyfill was designed with the following concepts kept in mind:
 
 - dependency-free
 - using JavaScript with graceful degradation
+
+## Another solution, especially in combination with JavaScript framework usage
+
+We're even also providing [another solution](https://github.com/mfranzke/loading-attribute-polyfill-with-serviceworker), which main architectural decision is that we're using Service Worker to intercept the image and iframe contents network requests there. This comes with some aspects that are important to mention, that might be either acceptable (have a look at the [other solution](https://github.com/mfranzke/loading-attribute-polyfill-with-serviceworker)) or not (stay with this one) on your requirements and technical context.
+
+- Service Workers only run over **HTTPS**, for security reasons
+- Service Worker need to get **registered on first page visit**
+- Only works on **same domain** network requests
+
+Whereas the first topic might not be a problem (anymore) on most websites – as this should be the de-facto standard nowadays – the second and third might be acceptable in your context, as this polyfill behaves as a progressive enhancement to provide the expected functionality even for non-supporting browsers both only on seconds pages request and any revisits and for same origin image and contents (iframe) requests even only.
 
 ## Installation
 
