@@ -13,3 +13,4 @@ bower.json
 .browserslistrc
 .vscode
 renovate.json
+.nvmrc
