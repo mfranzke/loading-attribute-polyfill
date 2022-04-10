@@ -15,6 +15,29 @@ And the commit messages from [Conventional Commits](https://conventionalcommits.
 - Description on how to use with MutationObserver (won't be included within the polyfill itself)
 - Test case for dynamic images
 
+## [2.x.x] - 2022-04-10
+
+It's polyfills birthday (okay, it has been yesterday), so I did a lot of housekeeping and even also released a new version of the polyfill with another concept (using Service Worker to prevent loading images and iframes contents). Check it out and evaluate its usage in your project: <https://github.com/mfranzke/loading-attribute-polyfill-with-serviceworker>
+
+### Added
+
+- Information on the new complementary polyfill <https://github.com/mfranzke/loading-attribute-polyfill-with-serviceworker>
+
+### Changed
+
+- build: updated gitignore file according to githubs default content
+- documentation: a lot of simple optimizations, like e.g. added further notice on the users browser capabilities
+- updated a lot of `devDependencies`
+- `master` to `main` as the default branch
+- using Ndoe 16 now (for development and CI/CD)
+- replaced dependencies update status badge
+
+### Fixed
+
+- documentation: crossbrowsertestings logo URL
+- documentation: codacy badge URL
+- test: webdriverio tests
+
 ## [2.0.1] - 2021-05-13
 
 ### Added
