@@ -3,6 +3,7 @@
   "version": "2.0.2",
   "description": "Fast and lightweight dependency-free vanilla JavaScript polyfill for native lazy loading / the awesome loading='lazy'-attribute.",
   "source": "./src/loading-attribute-polyfill.js",
+  "browser": "./dist/loading-attribute-polyfill.js",
   "esmodule": "./dist/loading-attribute-polyfill.modern.js",
   "module": "./dist/loading-attribute-polyfill.module.js",
   "umd:main": "./dist/loading-attribute-polyfill.umd.js",
