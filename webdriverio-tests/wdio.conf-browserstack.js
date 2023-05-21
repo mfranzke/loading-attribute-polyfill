@@ -1,3 +1,5 @@
+require('dotenv').config(); // eslint-disable-line unicorn/prefer-module
+
 exports.config = {
 	//
 	// ====================
@@ -15,9 +17,9 @@ exports.config = {
 	// according to your user and key information. However, if you are using a private Selenium
 	// backend you should define the host address, port, and path here.
 	//
-	hostname: 'hub.crossbrowsertesting.com',
-	port: 80,
-	path: '/wd/hub',
+	// hostname: 'hub.crossbrowsertesting.com',
+	// port: 80,
+	// path: '/wd/hub',
 	//
 	// =================
 	// Service Providers
@@ -26,8 +28,8 @@ exports.config = {
 	// should work too though). These services define specific user and key (or access key)
 	// values you need to put in here in order to connect to these services.
 	//
-	user: process.env.XBROWSERTESTING_USERNAME,
-	key: process.env.XBROWSERTESTING_ACCESS_KEY,
+	user: process.env.BROWSERSTACK_USERNAME,
+	key: process.env.BROWSERSTACK_ACCESS_KEY,
 	//
 	// If you run your tests on Sauce Labs you can specify the region you want to run your tests
 	// in via the `region` property. Available short handles for regions are `us` (default), `eu` and `apac`.
@@ -50,7 +52,7 @@ exports.config = {
 	// then the current working directory is where your `package.json` resides, so `wdio`
 	// will be called from there.
 	//
-	specs: ['./webdriverio-tests/basic.js'],
+	specs: ['./basic.js'],
 	// Patterns to exclude.
 	exclude: [
 		// 'path/to/excluded/files'
