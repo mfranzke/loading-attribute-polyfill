@@ -198,10 +198,10 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 - Mac
 
-  - Safari 14, macOS 11 (via CrossBrowserTesting)
+  - Safari 14, macOS 11 (via BrowserStack)
   - Mozilla Firefox _latest_, macOS 10.14 (manually, localhost)
-  <!-- - macOS 10.14, Safari 12 (via CrossBrowserTesting)
-  - macOS 10.13, Safari 11 (via CrossBrowserTesting) -->
+  <!-- - macOS 10.14, Safari 12 (via BrowserStack)
+  - macOS 10.13, Safari 11 (via BrowserStack) -->
 
 - iOS
 
@@ -209,17 +209,15 @@ Credits for the initial kickstarter / script to @Sora2455 for better expressing 
 
 - Windows
 
-  - Google Chrome _latest_, Windows 10 (via CrossBrowserTesting)
-  - Mozilla Firefox _latest_, Windows 10 (via CrossBrowserTesting)
+  - Google Chrome _latest_, Windows 10 (via BrowserStack)
+  - Mozilla Firefox _latest_, Windows 10 (via BrowserStack)
   - Microsoft Edge version 18, Windows 10 (manually, localhost)
-  - Microsoft Internet Explorer version 11, Windows 10 (via CrossBrowserTesting)
+  - Microsoft Internet Explorer version 11, Windows 10 (via BrowserStack)
   - Internet Explorer 9.0.8112.16421, Windows 7 SP1 (manually, localhost)
 
 ### Big Thanks
 
-Cross-browser testing platform provided by [CrossBrowserTesting](https://crossbrowsertesting.com)
-
-[![CrossBrowserTesting](https://static1.smartbear.co/crossbrowsertesting/media/site/cbt-smartbear-logo.svg "CrossBrowserTesting")](https://crossbrowsertesting.com)
+[![BrowserStack](https://avatars.githubusercontent.com/u/1119453?s=16&v=4 "")]([https://browserstack.com](https://www.browserstack.com/)) Cross-browser testing platform provided by [BrowserStack](https://www.browserstack.com/)
 
 ## Things to keep in mind
 
