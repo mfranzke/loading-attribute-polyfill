@@ -120,7 +120,7 @@ function onIntersection(entries, observer) {
  * Handle printing the page
  */
 function onPrinting() {
-	if (typeof window.matchMedia === 'undefined') {
+	if (window.matchMedia === undefined) {
 		return;
 	}
 
@@ -170,7 +170,7 @@ function getAndPrepareHTMLCode(noScriptTag) {
 		capabilities.scrolling
 	) {
 		// Check for IntersectionObserver support
-		if (typeof intersectionObserver === 'undefined') {
+		if (intersectionObserver === undefined) {
 			// Attach abandonned attribute 'lazyload' to the HTML tags on browsers w/o IntersectionObserver being available
 			lazyAreaHtml = lazyAreaHtml.replace(
 				/(?:\r\n|\r|\n|\t| )src=/g,
@@ -214,7 +214,7 @@ function prepareElement(noScriptTag) {
 
 		if (
 			capabilities.scrolling &&
-			typeof intersectionObserver !== 'undefined' &&
+			intersectionObserver !== undefined &&
 			actualChild.tagName &&
 			(((actualChild.tagName.toLowerCase() === 'img' ||
 				actualChild.tagName.toLowerCase() === 'picture') &&
