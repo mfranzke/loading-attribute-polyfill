@@ -1,1 +1,2 @@
 pretty-quick --staged
+git update-index --again
