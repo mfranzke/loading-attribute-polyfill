@@ -54,6 +54,6 @@
     "build": "microbundle",
     "dev": "microbundle watch",
     "release": "np",
-    "prepare": "husky install"
+    "prepare": "husky"
   }
 }
