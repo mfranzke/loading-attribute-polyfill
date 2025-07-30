@@ -37,7 +37,7 @@
     "@wdio/dot-reporter": "^8.0.0",
     "@wdio/local-runner": "^8.0.0",
     "@wdio/mocha-framework": "^8.0.0",
-    "html-validate": "^8.0.0",
+    "html-validate": "^9.0.0",
     "husky": "^9.0.0",
     "microbundle": "^0.15.0",
     "np": "^9.0.0",
