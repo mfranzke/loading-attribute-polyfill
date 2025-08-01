@@ -1,0 +1,44 @@
+# Configuration: Each entry is an array with [pattern, command, description]
+# Format: "pattern" "command" "pattern description"
+CHECKS=('^(package\.json|package-lock\.json)$' 'npm install --package-lock-only --ignore-scripts' 'package.json or package-lock.json – please run npm install to update dependencies')
+
+# Check for changes in specified files before pushing and run corresponding commands
+## Get the upstream branch
+UPSTREAM=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo "")
+if [ -z "$UPSTREAM" ]; then
+  echo "No upstream configured, detecting default branch."
+  # Try to detect the default branch from origin/HEAD
+  DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+  if [ -z "$DEFAULT_BRANCH" ]; then
+    echo "Could not detect default branch, falling back to 'main'."
+    DEFAULT_BRANCH="main"
+  fi
+  UPSTREAM="$DEFAULT_BRANCH"
+fi
+
+## Get the list of files changed between upstream and HEAD
+FILES=$(git diff --name-only $UPSTREAM..HEAD)
+
+## Check each pattern and run corresponding command
+for ((i=0; i<${#CHECKS[@]}; i+=3)); do
+  pattern="${CHECKS[i]}"
+  command="${CHECKS[i+1]}"
+  description="${CHECKS[i+2]}"
+
+  if echo "$FILES" | grep -qE "$pattern"; then
+    echo "Detected changes in $description"
+
+    ## Run the corresponding command
+    eval "$command"
+
+    if [ $? -ne 0 ]; then
+      echo "Command failed: $command. Aborting push."
+      exit 1
+    fi
+
+    # Exit after first match to avoid running multiple commands
+    exit 0
+  fi
+done
+
+echo "No monitored file changes detected. Skipping checks."
