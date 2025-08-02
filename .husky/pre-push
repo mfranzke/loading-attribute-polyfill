@@ -20,7 +20,7 @@ check_pnpm_files() {
 # Detect the lock file to determine the package manager
 if [ -f "pnpm-lock.yaml" ]; then
   CHECK_FUNCTIONS=(
-	"check_pnpm_files"
+  "check_pnpm_files"
 )
 elif [ -f "package-lock.json" ]; then
   CHECK_FUNCTIONS=(
@@ -46,7 +46,7 @@ if [ -z "$UPSTREAM" ]; then
 fi
 
 ## Get the list of files changed between upstream and HEAD
-FILES=$(git diff --name-only $UPSTREAM..HEAD)
+FILES=$(git diff --name-only "$UPSTREAM"..HEAD)
 
 ## Check each pattern and run corresponding command
 for check_function in "${CHECK_FUNCTIONS[@]}"; do
@@ -57,7 +57,7 @@ for check_function in "${CHECK_FUNCTIONS[@]}"; do
     echo "Detected changes in $DESCRIPTION"
 
     ## Run the corresponding command
-    eval "$COMMAND"
+    $COMMAND
 
     if [ $? -ne 0 ]; then
       echo "Command failed: $COMMAND. Aborting push."
