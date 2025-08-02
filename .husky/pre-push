@@ -1,0 +1,78 @@
+# Configuration: Define checks as functions for better maintainability
+# Each check function should:
+# - Define a PATTERN variable for file matching
+# - Define a COMMAND variable for the command to run
+# - Define a DESCRIPTION variable for user feedback
+
+check_npm_files() {
+  PATTERN='^(package\.json|package-lock\.json)$'
+  COMMAND='npm install --package-lock-only --ignore-scripts'
+  DESCRIPTION='package.json or package-lock.json – please run npm install to update dependencies'
+}
+
+check_pnpm_files() {
+  PATTERN='^(package\.json|pnpm-lock\.yaml)$'
+  COMMAND='pnpm install --lockfile-only --ignore-scripts'
+  DESCRIPTION='package.json or pnpm-lock.yaml – please run pnpm install to update dependencies'
+}
+
+# List of all check functions
+# Detect the lock file to determine the package manager
+if [ -f "pnpm-lock.yaml" ]; then
+  CHECK_FUNCTIONS=(
+  "check_pnpm_files"
+)
+elif [ -f "package-lock.json" ]; then
+  CHECK_FUNCTIONS=(
+	"check_npm_files"
+  )
+else
+  echo "No lock file detected for pnpm or npm. Aborting pre-push checks."
+  exit 1
+fi
+
+# Check for changes in specified files before pushing and run corresponding commands
+## Get the upstream branch
+UPSTREAM=$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2>/dev/null || echo "")
+if [ -z "$UPSTREAM" ]; then
+  echo "No upstream configured, detecting default branch."
+  # Try to detect the default branch from origin/HEAD
+  DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's@^refs/remotes/origin/@@')
+  if [ -z "$DEFAULT_BRANCH" ]; then
+    echo "Could not detect default branch, falling back to 'main'."
+    DEFAULT_BRANCH="main"
+  fi
+  UPSTREAM="$DEFAULT_BRANCH"
+fi
+
+## Get the list of files changed between upstream and HEAD
+FILES=$(git diff --name-only "$UPSTREAM"..HEAD)
+
+## Check each pattern and run corresponding command
+for check_function in "${CHECK_FUNCTIONS[@]}"; do
+  # Call the check function to set variables
+  $check_function
+
+  if echo "$FILES" | grep -qE "$PATTERN"; then
+    echo "Detected changes in $DESCRIPTION"
+
+    ## Run the corresponding command
+    $COMMAND
+
+    if [ $? -ne 0 ]; then
+      echo "Command failed: $COMMAND. Aborting push."
+      exit 1
+    fi
+
+    # Check for file modifications after running the command
+    MODIFIED_FILES=$(git diff --name-only)
+    if [ -n "$MODIFIED_FILES" ]; then
+      echo "Detected file modifications after running $COMMAND:"
+      echo "$MODIFIED_FILES"
+      echo "Please stage the changes before pushing."
+      exit 1
+    fi
+  fi
+done
+
+echo "No monitored file changes detected. Skipping checks."
