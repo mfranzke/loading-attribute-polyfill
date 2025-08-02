@@ -17,10 +17,19 @@ check_pnpm_files() {
 }
 
 # List of all check functions
-CHECK_FUNCTIONS=(
-  "check_npm_files"
-  "check_pnpm_files"
+# Detect the lock file to determine the package manager
+if [ -f "pnpm-lock.yaml" ]; then
+  CHECK_FUNCTIONS=(
+	"check_pnpm_files"
 )
+elif [ -f "package-lock.json" ]; then
+  CHECK_FUNCTIONS=(
+	"check_npm_files"
+  )
+else
+  echo "No lock file detected for pnpm or npm. Aborting pre-push checks."
+  exit 1
+fi
 
 # Check for changes in specified files before pushing and run corresponding commands
 ## Get the upstream branch
@@ -43,7 +52,7 @@ FILES=$(git diff --name-only $UPSTREAM..HEAD)
 for check_function in "${CHECK_FUNCTIONS[@]}"; do
   # Call the check function to set variables
   $check_function
-  
+
   if echo "$FILES" | grep -qE "$PATTERN"; then
     echo "Detected changes in $DESCRIPTION"
 
