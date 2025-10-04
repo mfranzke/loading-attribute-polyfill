@@ -55,5 +55,8 @@
     "dev": "microbundle watch",
     "release": "np",
     "prepare": "husky"
+  },
+  "engines": {
+    "node": ">= 22"
   }
 }
